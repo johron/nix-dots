@@ -50,6 +50,12 @@
     };
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
