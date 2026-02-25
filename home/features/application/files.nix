@@ -37,7 +37,7 @@
           ColorScheme=BreezeDark
 
           [KDE]
-          ShowDeleteCommand=false
+          ShowDeleteCommand=true
 
           [KFileDialog Settings]
           Allow Expansion=false
