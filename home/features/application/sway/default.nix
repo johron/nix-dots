@@ -158,9 +158,8 @@ in
           "${super}+Shift+c" = "exec hyprpicker --autocopy";
 
           # Scripts
-          "${mod}+dead_diaeresis" = "exec /storage/Scripts/rofi-audio";
-          "${mod}+Control+a" = "exec /storage/Scripts/toggle-mic-mute";
-          "${mod}+Control+s" = "exec /storage/Scripts/toggle-output-mute";
+          "${mod}+Control+a" = "exec $HOME/.config/waybar/mic-mute.sh";
+          "${mod}+Control+s" = "exec $HOME/.config/waybar/output-mute.sh";
         };
 
         window.commands = [

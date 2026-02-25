@@ -12,11 +12,9 @@
     htop
     unzip
     seatd
-    #polkit
     libgcc
     gnumake
     gparted
-    flatpak
     dnsmasq
     pciutils
     onefetch
@@ -77,6 +75,7 @@
 
   services.seatd.enable = true;
   services.gvfs.enable = true;
+  services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
