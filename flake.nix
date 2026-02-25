@@ -7,11 +7,13 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };
 
   outputs =
     {
       self,
+      nix-flatpak,
       ...
     }@inputs:
 
@@ -48,6 +50,7 @@
         nixpkgs.lib.nixosSystem {
           system = host.arch;
           modules = [
+            nix-flatpak.nixosModules.nix-flatpak
             ./hosts/${host.dir}/configuration.nix
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager

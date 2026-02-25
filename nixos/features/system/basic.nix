@@ -28,6 +28,14 @@
     xdg-desktop-portal-wlr
   ];
 
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.github.gabutakut.gabutdm"
+      "com.github.tchx84.Flatseal"
+    ];
+  };
+
   fonts = {
     packages = with pkgs; [
       adwaita-fonts
@@ -75,7 +83,6 @@
 
   services.seatd.enable = true;
   services.gvfs.enable = true;
-  services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
