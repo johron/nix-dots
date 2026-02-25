@@ -5,4 +5,5 @@ in
 
 {
   networking.hostName = hosts.nixstation.hostname;
+  networking.networkmanager.enable = true;
 }

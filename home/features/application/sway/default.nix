@@ -198,9 +198,7 @@ in
       #  -b "Exit" "swaymsg exit" \
       #  -b "Reboot" "reboot"
 
-      #exec mpvpaper -o "--loop=inf" ALL /home/johron/Videos/cubebg.mp4
-
-      exec swaybg -i "$HOME/Pictures/Backgrounds/reef-1920x1080-2.png" -m fill
+      exec swaybg -i "/storage/Pictures/Backgrounds/reef-1920x1080-2.png" -m fill
 
       exec_always {
         systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
