@@ -3,5 +3,6 @@
 
 ## Usage
 ```bash
+nix flake show
 sudo nixos-rebuild switch --flake .#nixstation
 ```
