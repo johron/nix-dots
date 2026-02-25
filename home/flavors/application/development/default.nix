@@ -20,5 +20,6 @@
     rustPlatform.rustLibSrc
     rust-analyzer
     lua51Packages.lua
+    google-cloud-sdk
   ];
 }

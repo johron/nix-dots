@@ -11,7 +11,6 @@
     kdePackages.kdenlive
     kdePackages.ark
     kdePackages.dolphin
-    google-cloud-sdk
     obsidian
     vlc
     inkscape
