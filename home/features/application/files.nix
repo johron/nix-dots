@@ -12,7 +12,6 @@
             (( SHLVL > 1 )) && printf '(%d)' "$SHLVL"
           }
           PS1='$(shlvl_prompt)(\[\033[01;94m\]\u\[\033[00;00m\]@\[\033[01;94m\]\h\[\033[00;00m\]:\[\033[01;34m\]\w\[\033[00m\])\[\033[01;32m\]$(current_git_branch)\[\033[00m\]$ '
-          alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
           nix-update() {
             set -e
 

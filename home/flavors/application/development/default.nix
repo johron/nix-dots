@@ -10,7 +10,6 @@
     google-cloud-sdk
     ninja
     godot-mono
-    #ida-free
     gdb
     flatpak-xdg-utils
     vscode
