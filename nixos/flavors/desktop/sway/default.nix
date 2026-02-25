@@ -11,7 +11,6 @@
     hyprpicker
     flameshot
     nomacs
-    nemo
     gammastep
     geoclue2
   ];

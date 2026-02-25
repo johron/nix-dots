@@ -149,7 +149,7 @@ in
 
           # Applications
           "${super}+q" = "exec firefox";
-          "${super}+e" = "exec nemo";
+          "${super}+e" = "exec dolphin";
           "${super}+s" = "exec spotify";
           "${super}+d" = "exec discord";
 
