@@ -41,7 +41,7 @@ in
             "Right" = "resize grow width 10 px or 10 ppt";
 
             # Exit mode
-            "Escape" = "mode default";
+            "${mod}+r" = "mode default";
             "Return" = "mode default";
           };
           passthrough = { # Passthrough mode, disables all sway keybinds to let other apps use them, eg. use sway mod in other apps.
