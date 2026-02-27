@@ -185,6 +185,7 @@ in
       workspace 11 output HDMI-A-1
       workspace 12 output HDMI-A-1
       workspace 13 output HDMI-A-1
+      workspace 14 output HDMI-A-1
 
       exec wl-paste --watch cliphist store
       exec flameshot

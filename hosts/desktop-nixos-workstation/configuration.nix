@@ -35,6 +35,7 @@ in
     ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/wifi/bcm4360.nix
     ../../nixos/hardware/sound
+    ../../nixos/hardware/bluetooth
     ../../nixos/flavors/desktop/sway
     ../../nixos/flavors/desktop/sway/greeter-default.nix
     ../../nixos/features/system/basic.nix
