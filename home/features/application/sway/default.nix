@@ -44,6 +44,9 @@ in
             "Escape" = "mode default";
             "Return" = "mode default";
           };
+          passthrough = { # Passthrough mode, disables all sway keybinds to let other apps use them, eg. use sway mod in other apps.
+            "${mod}+c" = "mode default";
+          };
         };
         keybindings = {
           "${mod}+Shift+r" = "reload";
@@ -52,6 +55,8 @@ in
           "${mod}+Return" = "exec alacritty";
           "${super}+l" = "exec swaylock";
           "${mod}+r" = "mode \"resize\"";
+
+          "${mod}+c" = "mode \"passthrough\"";
 
           "${mod}+Shift+e" = "exec /home/johron/.config/rofi/powermenu/type-1/powermenu.sh";
 
