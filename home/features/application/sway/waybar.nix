@@ -15,7 +15,7 @@
         spacing = 5;
         modules-left = [ "custom/block_start" "sway/workspaces" "mpris" "custom/block_stop" "sway/mode" ];
         modules-center = [ "custom/block_start" "custom/clock" "custom/block_stop" ];
-        modules-right = [ "custom/block_start" "custom/memory" "custom/slash" "custom/volume" "custom/block_stop" "tray" ];
+        modules-right = [ "custom/block_start" "custom/net" "custom/slash" "custom/memory" "custom/slash" "custom/mic" "custom/volume" "custom/block_stop" "tray" ];
 
         "mpris" = {
           player = "spotify";
@@ -70,6 +70,20 @@
         "custom/volume" = {
           format = "<span color=\"#ACA69E\">vol:</span> {} ";
           exec = "~/.config/waybar/volume.sh";
+          return-type = "json";
+          restart-interval = 0;
+        };
+
+        "custom/mic" = {
+          format = "<span color=\"#ACA69E\">mic:</span> {} ";
+          exec = "~/.config/waybar/mic.sh";
+          return-type = "json";
+          restart-interval = 0;
+        };
+
+        "custom/net" = {
+          format = "<span color=\"#ACA69E\">net:</span> {} ";
+          exec = "~/.config/waybar/net.sh";
           return-type = "json";
           restart-interval = 0;
         };

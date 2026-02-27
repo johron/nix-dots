@@ -33,7 +33,7 @@
           VOL_PERC=$(awk -v n="$VOL_NUM" 'BEGIN {print int(n * 100)}')
 
           if [[ "$VOLUME_INFO" == *"[MUTED]"* ]]; then
-              RESULT="Muted ($VOL_PERC%)"
+              RESULT="M($VOL_PERC%)"
           else
               RESULT="$VOL_PERC%"
           fi
@@ -41,6 +41,48 @@
           echo "{\"text\": \"$RESULT\"}"
         '';
         executable = true;
+      };
+      mic = {
+        target = ".config/waybar/mic.sh";
+        text = ''
+          VOLUME_INFO=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+          VOL_NUM=$(echo "$VOLUME_INFO" | awk '{print $2}')
+          VOL_PERC=$(awk -v n="$VOL_NUM" 'BEGIN {print int(n * 100)}')
+
+          if [[ "$VOLUME_INFO" == *"[MUTED]"* ]]; then
+              RESULT="M($VOL_PERC%)"
+          else
+              RESULT="$VOL_PERC%"
+          fi
+
+          echo "{\"text\": \"$RESULT\"}"
+        '';
+        executable = true;
+      };
+      net = {
+        target = ".config/waybar/net.sh";
+        executable = true;
+        text = ''
+          #!/usr/bin/env bash
+
+          # Get default network interface
+          DEVICE=$(ip route | awk '/default/ {print $5; exit}')
+
+          if [[ -n "$DEVICE" ]]; then
+              # Get local IPv4 address
+              IP=$(ip -4 addr show "$DEVICE" | awk '/inet / {print $2}' | cut -d/ -f1 | head -n1)
+
+              if [[ -n "$IP" ]]; then
+                  RESULT="$DEVICE ($IP)"
+              else
+                  RESULT="$DEVICE (no ip)"
+              fi
+          else
+              RESULT="Disconnected"
+          fi
+
+          echo "{\"text\": \"$RESULT\"}"
+        '';
       };
       mic-mute = {
         target = ".config/waybar/mic-mute.sh";
