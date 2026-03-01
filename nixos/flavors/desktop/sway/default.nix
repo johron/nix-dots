@@ -13,6 +13,7 @@
     nomacs
     gammastep
     geoclue2
+    wtype
   ];
 
   programs.sway = {

@@ -69,14 +69,9 @@
           DEVICE=$(ip route | awk '/default/ {print $5; exit}')
 
           if [[ -n "$DEVICE" ]]; then
-              # Get local IPv4 address
               IP=$(ip -4 addr show "$DEVICE" | awk '/inet / {print $2}' | cut -d/ -f1 | head -n1)
 
-              if [[ -n "$IP" ]]; then
-                  RESULT="$DEVICE ($IP)"
-              else
-                  RESULT="$DEVICE (no ip)"
-              fi
+              RESULT="$DEVICE"
           else
               RESULT="Disconnected"
           fi
@@ -118,6 +113,20 @@
         '';
         executable = true;
       };
+      #futhark-xkb = {
+      #  target = ".config/xkb/symbols/futhark";
+      #  text = ''
+      #    default partial alphanumeric_keys
+      #    xkb_symbols "basic" {
+#
+      #        name[Group1]= "Futhark";
+#
+      #        key <AD04> { [ U16A0 ] }; // f -> ᚠ
+#
+      #        include "no(basic)"
+      #    };
+      #  '';
+      #};
     };
   };
 }

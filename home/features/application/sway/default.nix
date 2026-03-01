@@ -41,11 +41,38 @@ in
             "Right" = "resize grow width 10 px or 10 ppt";
 
             # Exit mode
-            "${mod}+r" = "mode default";
+            "Escape" = "mode default";
             "Return" = "mode default";
           };
           passthrough = { # Passthrough mode, disables all sway keybinds to let other apps use them, eg. use sway mod in other apps.
             "${mod}+c" = "mode default";
+          };
+          futhark = {
+            "f" = "exec wtype ᚠ";
+            "u" = "exec wtype ᚢ";
+            "q" = "exec wtype ᚦ";
+            "a" = "exec wtype ᚨ";
+            "r" = "exec wtype ᚱ";
+            "k" = "exec wtype ᚲ";
+            "x" = "exec wtype ᚷ";
+            "v" = "exec wtype ᚹ";
+            "h" = "exec wtype ᚺ";
+            "n" = "exec wtype ᚾ";
+            "i" = "exec wtype ᛁ";
+            "j" = "exec wtype ᛃ";
+            "ae" = "exec wtype ᛇ";
+            "p" = "exec wtype ᛈ";
+            "z" = "exec wtype ᛉ";
+            "s" = "exec wtype ᛊ";
+            "t" = "exec wtype ᛏ";
+            "b" = "exec wtype ᛒ";
+            "e" = "exec wtype ᛖ";
+            "m" = "exec wtype ᛗ";
+            "l" = "exec wtype ᛚ";
+            "g" = "exec wtype ᛝ";
+            "d" = "exec wtype ᛞ";
+            "o" = "exec wtype ᛟ";
+            "Escape" = "mode default";
           };
         };
         keybindings = {
@@ -57,6 +84,7 @@ in
           "${mod}+r" = "mode \"resize\"";
 
           "${mod}+c" = "mode \"passthrough\"";
+          "${mod}+x" = "mode \"futhark\"";
 
           "${mod}+Shift+e" = "exec /home/johron/.config/rofi/powermenu/type-1/powermenu.sh";
 
