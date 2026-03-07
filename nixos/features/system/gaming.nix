@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     lutris
     prismlauncher
+    nvidia-vaapi-driver
   ];
 
   services.flatpak = {
