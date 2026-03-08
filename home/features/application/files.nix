@@ -18,9 +18,8 @@
             ORIG_CWD="$(pwd)"
 
             sudo nix-channel --update
-            cd "$HOME/home-manager"
-            make
-            sudo nixos-rebuild switch
+            cd "$HOME/nix-dots"
+            sudo nixos-rebuild switch --flake .#nixstation
             flatpak update -y
             sudo flatpak update -y
             cd "$ORIG_CWD"
