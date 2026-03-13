@@ -26,6 +26,7 @@
     kdePackages.qt6ct
     lxqt.lxqt-policykit
     xdg-desktop-portal-wlr
+    neovim
   ];
 
   services.flatpak = {
@@ -58,6 +59,7 @@
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
+    EDITOR = "nvim";
   };
 
   services.xserver.xkb = {
