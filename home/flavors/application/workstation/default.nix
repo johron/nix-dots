@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   imports = [
-
+    ../../../features/application/helix.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,5 +16,6 @@
     inkscape
     f3d
     geogebra6
+    dotnetCorePackages.sdk_9_0-bin
   ];
 }

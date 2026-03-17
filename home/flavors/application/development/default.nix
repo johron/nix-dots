@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     jetbrains.idea
     jetbrains.rust-rover
-    google-cloud-sdk
+    jetbrains.rider
     ninja
     godot-mono
     gdb
