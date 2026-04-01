@@ -71,7 +71,7 @@
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
             "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
-            ./hosts/iso/configuration.nix
+            ./hosts/${host.dir}/iso-configuration.nix
             {
               # ISO-specific configuration
               image.fileName = "${host.hostname}-installer.iso";
