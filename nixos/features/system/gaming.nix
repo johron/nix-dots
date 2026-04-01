@@ -4,6 +4,9 @@
     lutris
     prismlauncher
     nvidia-vaapi-driver
+    steam
+    SDL2
+    dualsensectl
   ];
 
   services.flatpak = {
@@ -13,5 +16,7 @@
     ];
   };
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 }

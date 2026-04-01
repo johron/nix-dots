@@ -20,5 +20,6 @@
     rust-analyzer
     lua51Packages.lua
     google-cloud-sdk
+    dotnetCorePackages.sdk_9_0_1xx
   ];
 }

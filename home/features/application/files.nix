@@ -19,6 +19,7 @@
 
             sudo nix-channel --update
             cd "$HOME/nix-dots"
+            nix flake update
             sudo nixos-rebuild switch --flake .#nixstation
             flatpak update -y
             sudo flatpak update -y

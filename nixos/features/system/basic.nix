@@ -27,6 +27,7 @@
     lxqt.lxqt-policykit
     xdg-desktop-portal-wlr
     neovim
+    google-fonts
   ];
 
   services.flatpak = {
@@ -42,6 +43,7 @@
       adwaita-fonts
       jetbrains-mono
       nerd-fonts.jetbrains-mono
+      google-fonts
     ];
     fontconfig = {
       defaultFonts = {

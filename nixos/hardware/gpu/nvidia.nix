@@ -27,9 +27,7 @@
     #package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   
-  hardware.graphics.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    cudaPackages.cudatoolkit
-  ];
+  hardware.graphics = {
+    enable = true;
+  };
 }

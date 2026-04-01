@@ -16,6 +16,7 @@
     inkscape
     f3d
     geogebra6
-    dotnetCorePackages.sdk_9_0-bin
+    ungoogled-chromium
+    mediawriter
   ];
 }
