@@ -31,6 +31,18 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/nvme" =
+    { device = "/dev/disk/by-uuid/aa535a01-d005-4fd2-9e95-3787ce33b6f3";
+      fsType = "btrfs";
+      options = [ "defaults" "nofail" ];
+    };
+
+  fileSystems."/hdd" =
+    { device = "/dev/disk/by-uuid/995f3a39-f893-497d-bc2a-c0cb1f4c913c";
+      fsType = "ext4";
+      options = [ "defaults" "nofail" ];
+    };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
