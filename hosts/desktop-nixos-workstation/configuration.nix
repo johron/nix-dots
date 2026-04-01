@@ -1,31 +1,31 @@
 { config, pkgs, lib, ... }:
 
 let
-  user = "johron";
-  storageRoot = "/storage";
+  #user = "johron";
+  #storageRoot = "/storage";
 
-  folders = [
-    "Applications"
-    "Documents"
-    "Downloads"
-    "Games"
-    "Machines"
-    "Music"
-    "Pictures"
-    "Projects"
-    "Scripts"
-    "Videos"
-    "Wineprefixes"
-  ];
+  #folders = [
+  #  "Applications"
+  #  "Documents"
+  #  "Downloads"
+  #  "Games"
+  #  "Machines"
+  #  "Music"
+  #  "Pictures"
+  #  "Projects"
+  #  "Scripts"
+  #  "Videos"
+  #  "Wineprefixes"
+  #];
 
-  mkBindMount = folder: {
-    name = "/home/${user}/${folder}";
-    value = {
-      device = "${storageRoot}/${folder}";
-      options = [ "bind" "nofail" "x-systemd.automount" ];
-      depends = [ storageRoot ];
-    };
-  };
+  #mkBindMount = folder: {
+  #  name = "/home/${user}/${folder}";
+  #  value = {
+  #    device = "${storageRoot}/${folder}";
+  #    options = [ "bind" "nofail" "x-systemd.automount" ];
+  #    depends = [ storageRoot ];
+  #  };
+  #};
 in
 {
   imports = [
@@ -46,9 +46,9 @@ in
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  fileSystems = lib.mkMerge [
-    (builtins.listToAttrs (map mkBindMount folders))
-  ];
+  #fileSystems = lib.mkMerge [
+  #  (builtins.listToAttrs (map mkBindMount folders))
+  #];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

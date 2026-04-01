@@ -13,6 +13,7 @@
     enable = true;
     packages = [
       "org.vinegarhq.Sober"
+      "org.vinegarhq.Vinegar"
     ];
   };
 
