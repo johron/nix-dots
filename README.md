@@ -6,3 +6,8 @@
 nix flake show
 sudo nixos-rebuild switch --flake .#nixstation
 ```
+
+## Build ISO
+```bash
+nix build ".#isos.nixstation"
+```
