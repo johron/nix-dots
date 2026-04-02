@@ -28,6 +28,7 @@
           jclone() {
             git clone https://github.com/johron/$1
           }
+          XCOMPOSEFILE=$HOME/.XCompose
         '';
       };
       kdeglobals = {
@@ -59,6 +60,14 @@
           [PreviewSettings]
           EnableRemoteFolderThumbnail=false
           MaximumRemoteSize=0
+        '';
+      };
+      xcompose = {
+        target = ".XCompose";
+        text = ''
+          include "%L"
+
+          <Multi_key> <comma> : "̨" U0328
         '';
       };
     };

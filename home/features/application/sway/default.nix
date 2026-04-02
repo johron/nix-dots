@@ -233,6 +233,8 @@ in
 
       exec swaybg -i "$HOME/Pictures/Backgrounds/reef-1920x1080-2.png" -m fill
 
+      input * xkb_options compose:rctrl
+
       exec_always {
         systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
         lxqt-policykit-agent
