@@ -28,6 +28,8 @@
     xdg-desktop-portal-wlr
     neovim
     google-fonts
+    ffmpeg_7-full
+    libGL
   ];
 
   services.flatpak = {
@@ -53,11 +55,11 @@
     };
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "weekly";
+  #  options = "--delete-older-than 7d";
+  #};
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -90,6 +92,29 @@
   programs.nix-ld.enable = true;
 
   programs.firefox.enable = true;
+  programs.noisetorch.enable = true;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: 
+      [
+        pkgs.icu
+        pkgs.libxcrypt-legacy
+        pkgs.python312
+        pkgs.python312Packages.torch
+        pkgs.zstd
+      ]; 
+    };
+  };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/johron/nix-dots/";
+  };
 
   services.seatd.enable = true;
   services.gvfs.enable = true;
