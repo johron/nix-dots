@@ -20,7 +20,7 @@
             sudo nix-channel --update
             cd "$HOME/nix-dots"
             nix flake update
-            sudo nixos-rebuild switch --flake .#nixstation
+            sudo nh os switch
             flatpak update -y
             sudo flatpak update -y
             cd "$ORIG_CWD"
