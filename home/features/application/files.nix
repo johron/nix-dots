@@ -20,7 +20,7 @@
             sudo nix-channel --update
             cd "$HOME/nix-dots"
             nix flake update
-            sudo nh os switch
+            nh os switch
             flatpak update -y
             sudo flatpak update -y
             cd "$ORIG_CWD"

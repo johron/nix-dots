@@ -41,6 +41,7 @@
   };
 
   fonts = {
+    enableDefaultPackages = true;
     packages = with pkgs; [
       adwaita-fonts
       jetbrains-mono
@@ -48,6 +49,7 @@
       google-fonts
     ];
     fontconfig = {
+      enable = true;
       defaultFonts = {
         sansSerif = [ "Adwaita Sans" ];
         monospace = [ "JetBrains Mono" "Adwaita Mono" ];
@@ -114,6 +116,11 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "$HOME/nix-dots/";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
   services.seatd.enable = true;

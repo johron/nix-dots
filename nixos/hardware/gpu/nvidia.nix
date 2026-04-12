@@ -24,10 +24,6 @@
     };
 
     nvidiaSettings = true;
-    #package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-  
-  hardware.graphics = {
-    enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }
