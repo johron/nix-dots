@@ -4,7 +4,6 @@
     lutris
     prismlauncher
     nvidia-vaapi-driver
-    steam
     SDL2
     dualsensectl
   ];
@@ -24,19 +23,5 @@
     gamescopeSession = {
       enable = true;
     };
-    extraCompatPackages = with pkgs; [
-      gtk2
-      gdk-pixbuf
-      libpulseaudio
-      pipewire
-      bzip2
-      xorg.libXtst
-      xorg.libXi
-      xorg.libXrandr
-      xorg.libXrender
-      libvdpau
-      freetype
-      proton-ge-bin
-    ];
   };
 }
