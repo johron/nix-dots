@@ -29,6 +29,7 @@
             git clone https://github.com/johron/$1
           }
           XCOMPOSEFILE=$HOME/.XCompose
+          #eval "$(direnv hook bash)"
         '';
       };
       kdeglobals = {

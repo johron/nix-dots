@@ -21,6 +21,11 @@
     lua51Packages.lua
     google-cloud-sdk
     dotnetCorePackages.sdk_9_0_1xx
-    direnv
   ];
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true; 
+    nix-direnv.enable = true; 
+  };
 }
