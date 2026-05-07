@@ -37,6 +37,7 @@
     packages = [
       "com.github.gabutakut.gabutdm"
       "com.github.tchx84.Flatseal"
+      "com.dec05eba.gpu_screen_recorder"
     ];
   };
 
