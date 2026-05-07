@@ -6,8 +6,8 @@
       main = {
         layer = "top";
         position = "bottom";
-        height = 32;
-        spacing = 2;
+        height = 16;
+        spacing = 0;
 
         modules-left = [
           "sway/workspaces"
@@ -17,10 +17,12 @@
           "clock"
         ];
         modules-right = [
+          "tray"
+          "custom/cap-left"
           "pulseaudio"
           "network"
           "battery"
-          "tray"
+          "custom/cap-right"
         ];
 
         clock = {
@@ -45,13 +47,15 @@
         };
 
         network = {
-          format-wifi = "";
-          format-ethernet = "";
-          tooltip-format = "{essid}";
+          format-wifi = "󰖩";
+          format-ethernet = "󰈀";
+          format-disconnected = "󰖪";
+          tooltip-format = "{essid}\n{ipaddr}";
         };
 
         pulseaudio = {
-          format = "{icon} {volume}%";
+          format = "{icon}";
+          tooltip-format = "{volume}%";
           format-icons = {
             default = [
               "󰕿"
@@ -66,30 +70,35 @@
           format-paused = "{artist} - {title}";
           max-length = 25;
         };
+
+        "custom/cap-left" = {
+          format = " ";
+          tooltip = false;
+        };
+
+        "custom/cap-right" = {
+          format = " ";
+          tooltip = false;
+        };
       };
     };
     style = ''
       * {
         border: none;
-        font-family: "Roboto", "Material Symbols Rounded";
-        font-size: 14px;
-        min-height: 0;
+        font-family: "JetBrainsMono Nerd Font", "Material Symbols Rounded";
+        font-size: 12px;
       }
 
       window#waybar {
         background: rgb(26,28,23);
-        margin-top: 8px;
         border-radius: 0px;
       }
 
-      /* Shared module styling */
       #clock,
-      #battery,
-      #network,
-      #pulseaudio,
       #tray,
       #mpris,
-      #workspaces {
+      #workspaces,
+      #workspace button {
         background: rgb(35,39,29);
 
         color: #e6e1e5;
@@ -102,6 +111,7 @@
         border-radius: 10px;
 
         border: 1px solid rgba(255,255,255,0.08);
+        transition: all 0.2s ease;
       }
 
       #workspaces {
@@ -111,13 +121,6 @@
       #workspaces button label {
         padding: 0;
         margin: 0;
-      }
-
-      #workspaces button {
-        color: #c4c7c5;
-        padding: 0 10px;
-        border-radius: 10px;
-        transition: all 0.2s ease;
       }
 
       #workspaces button.active,
@@ -142,16 +145,45 @@
         background: rgba(255,102,42,0.2);
       }
 
+      #pulseaudio,
+      #network,
       #battery {
-      }
+        background: rgb(35,39,29);
+        color: #e6e1e5;
+        font-weight: 600;
 
-      #network {
+        padding: 0 6px;
+        margin: 2px 0;
+        border-radius: 0;
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
       }
 
       #pulseaudio {
+        font-size: 18px;
       }
 
-      #clock {
+      #custom-cap-left {
+        background: rgb(35,39,29);
+        margin: 2px 0 2px 2px;
+
+        border-radius: 12px 0 0 12px;
+        padding: 0 3px;
+
+        border: 1px solid rgba(255,255,255,0.08);
+        border-right: none;
+      }
+
+      #custom-cap-right {
+        background: rgb(35,39,29);
+        margin: 2px 2px 2px 0;
+
+        border-radius: 0 12px 12px 0;
+        padding: 0 2px;
+
+        border: 1px solid rgba(255,255,255,0.08);
+        border-left: none;
       }
     '';
   };

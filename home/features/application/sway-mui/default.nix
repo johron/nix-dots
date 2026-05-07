@@ -11,6 +11,7 @@ in
 {
   imports = [
     ./waybar.nix
+    ./scripts.nix
   ];
 
   home.packages = with pkgs; [
