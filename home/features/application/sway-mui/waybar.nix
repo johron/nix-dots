@@ -90,7 +90,8 @@
       }
 
       window#waybar {
-        background: rgb(26,28,23);
+        /*background: rgb(26,28,23);*/
+        background: rgb(10,1,1);
         border-radius: 0px;
       }
 
@@ -99,7 +100,7 @@
       #mpris,
       #workspaces,
       #workspace button {
-        background: rgb(35,39,29);
+        background: rgb(15,2,2);
 
         color: #e6e1e5;
         font-weight: 600;
@@ -125,7 +126,7 @@
 
       #workspaces button.active,
       #workspaces button.focused {
-        background: rgba(103, 80, 164, 0.4);
+        background: rgba(57, 150, 181, 0.1);
         color: white;
       }
 
@@ -134,21 +135,21 @@
       }
 
       #mpris.playing {
-        background: rgba(139, 188, 255, 0.2);
+        background: rgba(57, 150, 181, 0.1);
       }
 
       #mpris.spotify.playing {
-        background: rgba(29,185,84,0.2);
+        background: rgba(29,185,84,0.1);
       }
 
       #mpris.firefox.playing {
-        background: rgba(255,102,42,0.2);
+        background: rgba(255,102,42,0.1);
       }
 
       #pulseaudio,
       #network,
       #battery {
-        background: rgb(35,39,29);
+        background: rgb(15,2,2);
         color: #e6e1e5;
         font-weight: 600;
 
@@ -165,7 +166,7 @@
       }
 
       #custom-cap-left {
-        background: rgb(35,39,29);
+        background: rgb(15,2,2);
         margin: 2px 0 2px 2px;
 
         border-radius: 12px 0 0 12px;
@@ -176,7 +177,7 @@
       }
 
       #custom-cap-right {
-        background: rgb(35,39,29);
+        background: rgb(15,2,2);
         margin: 2px 2px 2px 0;
 
         border-radius: 0 12px 12px 0;
