@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ../../../features/application/sway
+    ../../../features/application/sway-mui
     ../../../features/application/mako.nix
     ../../../features/application/rofi.nix
     ../../../features/application/files.nix
