@@ -14,24 +14,32 @@
           "mpris"
         ];
         modules-center = [
-          "clock"
+          "custom/clock"
         ];
         modules-right = [
           "tray"
           "custom/cap-left"
           "pulseaudio"
+          "bluetooth"
           "network"
           "battery"
           "custom/cap-right"
         ];
 
-        clock = {
-          format = "󰥔  {:%H:%M}";
-          tooltip = false;
+        "custom/clock" = {
+          format = "{}";
+          exec = "~/.config/waybar/clock.sh";
+          return-type = "json";
+          restart-interval = 1;
+        };
+
+        tray = {
+          spacing = 8;
         };
 
         battery = {
-          format = "{icon} {capacity}%";
+          format = "{icon}";
+          tooltip-format = "{capacity}%";
           format-icons = [
             "󰁺"
             "󰁻"
@@ -47,7 +55,14 @@
         };
 
         network = {
-          format-wifi = "󰖩";
+          format-wifi = "{icon}";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
           format-ethernet = "󰈀";
           format-disconnected = "󰖪";
           tooltip-format = "{essid}\n{ipaddr}";
@@ -71,6 +86,15 @@
           max-length = 25;
         };
 
+        bluetooth = {
+          format-on = "󰂯";
+          format-off = "󰂲";
+          format-disabled = "";
+          format-connected = "󰂱 {num_connections}";
+          tooltip-format-connected = "{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+        };
+
         "custom/cap-left" = {
           format = " ";
           tooltip = false;
@@ -87,6 +111,7 @@
         border: none;
         font-family: "JetBrainsMono Nerd Font", "Material Symbols Rounded";
         font-size: 12px;
+        font-weight: 700;
       }
 
       window#waybar {
@@ -95,7 +120,7 @@
         border-radius: 0px;
       }
 
-      #clock,
+      #custom-clock,
       #tray,
       #mpris,
       #workspaces,
@@ -103,7 +128,6 @@
         background: rgb(15,2,2);
 
         color: #e6e1e5;
-        font-weight: 600;
 
         min-width: 12px;
         min-height: 12px;
@@ -148,7 +172,10 @@
 
       #pulseaudio,
       #network,
-      #battery {
+      #bluetooth,
+      #battery,
+      #custom-taskmgr {
+        font-family: "Material Symbols Rounded";
         background: rgb(15,2,2);
         color: #e6e1e5;
         font-weight: 600;
@@ -165,12 +192,17 @@
         font-size: 18px;
       }
 
+      #bluetooth,
+      #network {
+        font-size: 14px;
+      }
+
       #custom-cap-left {
         background: rgb(15,2,2);
         margin: 2px 0 2px 2px;
 
         border-radius: 12px 0 0 12px;
-        padding: 0 3px;
+        padding: 0 1px;
 
         border: 1px solid rgba(255,255,255,0.08);
         border-right: none;

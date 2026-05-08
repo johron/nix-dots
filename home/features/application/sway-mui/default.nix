@@ -15,7 +15,7 @@ in
   ];
 
   home.packages = with pkgs; [
-    
+    material-symbols
   ];
 
   wayland.windowManager.sway = {
