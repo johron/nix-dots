@@ -125,7 +125,7 @@
       #mpris,
       #workspaces,
       #workspace button {
-        background: rgb(15,2,2);
+        background: rgb(16,2,2);
 
         color: #e6e1e5;
 
@@ -135,7 +135,7 @@
         margin: 2px 2px;
         border-radius: 10px;
 
-        border: 1px solid rgba(255,255,255,0.08);
+        /*border: 1px solid rgba(255,255,255,0.08);*/
         transition: all 0.2s ease;
       }
 
@@ -176,7 +176,7 @@
       #battery,
       #custom-taskmgr {
         font-family: "Material Symbols Rounded";
-        background: rgb(15,2,2);
+        background: rgb(16,2,2);
         color: #e6e1e5;
         font-weight: 600;
 
@@ -184,8 +184,8 @@
         margin: 2px 0;
         border-radius: 0;
 
-        border-top: 1px solid rgba(255,255,255,0.08);
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        /*border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);*/
       }
 
       #pulseaudio {
@@ -198,25 +198,25 @@
       }
 
       #custom-cap-left {
-        background: rgb(15,2,2);
+        background: rgb(16,2,2);
         margin: 2px 0 2px 2px;
 
         border-radius: 12px 0 0 12px;
         padding: 0 1px;
 
-        border: 1px solid rgba(255,255,255,0.08);
-        border-right: none;
+        /*border: 1px solid rgba(255,255,255,0.08);
+        border-right: none;*/
       }
 
       #custom-cap-right {
-        background: rgb(15,2,2);
+        background: rgb(16,2,2);
         margin: 2px 2px 2px 0;
 
         border-radius: 0 12px 12px 0;
         padding: 0 3px;
 
-        border: 1px solid rgba(255,255,255,0.08);
-        border-left: none;
+        /*border: 1px solid rgba(255,255,255,0.08);
+        border-left: none;*/
       }
     '';
   };
