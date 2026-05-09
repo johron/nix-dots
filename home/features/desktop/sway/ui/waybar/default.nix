@@ -15,6 +15,7 @@
 
         modules-left = [
           "sway/workspaces"
+          "sway/mode"
           "mpris"
         ];
         modules-center = [
@@ -30,6 +31,10 @@
           "custom/cap-right"
         ];
 
+        "sway/mode" = {
+          format = "transform";
+        };
+
         "custom/clock" = {
           format = "{}";
           exec = "~/.config/waybar/clock.sh";
@@ -44,31 +49,41 @@
         battery = {
           format = "{icon}";
           tooltip-format = "{capacity}%";
-          format-icons = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
+          format-icons = {
+            default = [
+              "battery_android_0"
+              "battery_android_1"
+              "battery_android_2"
+              "battery_android_3"
+              "battery_android_4"
+              "battery_android_5"
+              "battery_android_6"
+              "battery_android_full"
+            ];
+            charging = [
+              "battery_charging_full_2"
+              "battery_charging_20_2"
+              "battery_charging_30_2"
+              "battery_charging_50_2"
+              "battery_charging_60_2"
+              "battery_charging_80_2"
+            ];
+          };
         };
 
         network = {
           format-wifi = "{icon}";
           format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
+            "network_wifi_0_bar"
+            "network_wifi_1_bar"
+            "network_wifi_2_bar"
+            "network_wifi_3_bar"
+            "network_wifi"
+            "network_wifi_4_bar"
           ];
-          format-ethernet = "󰈀";
-          format-disconnected = "󰖪";
+          format-ethernet = "lan";
+          format-disconnected = "signal_wifi_off";
+          format-disabled = "signal_wifi_off";
           tooltip-format = "{essid}\n{ipaddr}";
         };
 
@@ -91,10 +106,11 @@
         };
 
         bluetooth = {
-          format-on = "󰂯";
-          format-off = "󰂲";
-          format-disabled = "";
-          format-connected = "󰂱 {num_connections}";
+          format = "{icon}";
+          format-on = "bluetooth";
+          format-off = "bluetooth_disabled";
+          format-disabled = "bluetooth_disabled";
+          format-connected = "bluetooth_connected";
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
         };

@@ -5,7 +5,7 @@
     style = ''
       * {
         border: none;
-        font-family: "JetBrainsMono Nerd Font", "Material Symbols Rounded";
+        font-family: "JetBrainsMono Nerd Font", "Material Symbols Outlined";
         font-size: 12px;
         font-weight: 700;
       }
@@ -20,6 +20,7 @@
       #tray,
       #mpris,
       #workspaces,
+      #mode,
       #workspace button {
         background: rgb(20,2,2);
 
@@ -33,6 +34,11 @@
 
         /*border: 1px solid rgba(255,255,255,0.08);*/
         transition: all 0.2s ease;
+      }
+
+      #mode {
+        background: rgba(57, 150, 181, 0.1);
+        font-family: "Material Symbols Outlined";
       }
 
       #workspaces {
@@ -75,7 +81,7 @@
       #bluetooth,
       #battery,
       #custom-taskmgr {
-        font-family: "Material Symbols Rounded";
+        font-family: "Material Symbols Outlined";
         background: rgb(20,2,2);
         color: #e6e1e5;
         font-weight: 600;
