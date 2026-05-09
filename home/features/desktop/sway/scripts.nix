@@ -113,6 +113,16 @@
         '';
         executable = true;
       };
+      screenshot = {
+        target = "Scripts/ss.sh";
+        text = ''
+          FILE=~/Pictures/Screenshots/$(date +%F_%T).png
+          grim -g "$(slurp)" "$FILE"
+          wl-copy < "$FILE"
+          swappy -f "$FILE"
+        '';
+        executable = true;
+      };
       #futhark-xkb = {
       #  target = ".config/xkb/symbols/futhark";
       #  text = ''

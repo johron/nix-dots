@@ -25,7 +25,6 @@
     pkg-config
     kdePackages.qt6ct
     lxqt.lxqt-policykit
-    xdg-desktop-portal-wlr
     neovim
     google-fonts
     ffmpeg_7-full

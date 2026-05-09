@@ -13,7 +13,7 @@
     window {
       background-color: rgba(10,1,1,0.999);
 
-      border-radius: 12px;
+      /*border-radius: 12px;*/
       margin: 0px;
     }
 

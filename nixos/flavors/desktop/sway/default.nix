@@ -9,7 +9,6 @@
     wl-clipboard
     mission-center
     hyprpicker
-    flameshot
     nomacs
     gammastep
     geoclue2
@@ -32,6 +31,22 @@
   environment.variables = {
     GDK_BACKEND = "wayland";
     XDG_SESSION_TYPE = "wayland";
+  };
+
+  xdg.portal = {
+    enable = true;
+
+    wlr.enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "wayland";
+    XDG_CURRENT_DESKTOP = "sway";
   };
 
   security.pam.services.swaylock = {};

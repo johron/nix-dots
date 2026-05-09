@@ -178,8 +178,8 @@ in
         "${super}+s" = "exec spotify";
         "${super}+d" = "exec discord";
 
-        "${super}+v" = "exec cliphist list | rofi -dmenu | cliphist decode | wl-copy";
-        "${super}+Shift+s" = "exec flameshot gui";
+        "${super}+v" = "exec cliphist list | wofi --dmenu | cliphist decode | wl-copy";
+        "${super}+Shift+s" = ''exec $HOME/Scripts/ss.sh'';
         "${super}+Shift+c" = "exec hyprpicker --autocopy";
 
         # Scripts
@@ -237,7 +237,6 @@ in
       workspace 14 output HDMI-A-1
 
       exec wl-paste --watch cliphist store
-      exec flameshot
 
       seat seat0 xcursor_theme Notwaita-Black 20
 
