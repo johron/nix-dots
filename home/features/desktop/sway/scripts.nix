@@ -6,7 +6,7 @@
         target = ".config/waybar/clock.sh";
         text = ''
         # Generate the formatted date string
-        formatted_date=$(LC_TIME=nb_NO.UTF-8 date +"%H:%M %A, %b %d" | tr '[:upper:]' '[:lower:]' | sed 's/\.//g')
+        formatted_date=$(LC_TIME=nb_NO.UTF-8 date +"%H:%M %A, %d %b" | tr '[:upper:]' '[:lower:]' | sed 's/\.//g')
 
         # Output as JSON for Waybar
         printf '{"text": "%s"}\n' "$formatted_date"

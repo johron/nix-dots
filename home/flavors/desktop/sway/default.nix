@@ -1,12 +1,8 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ../../../features/application/sway-mui
-    ../../../features/application/mako.nix
-    ../../../features/application/rofi.nix
-    ../../../features/application/files.nix
-    ../../../features/application/notwaita.nix
+    ../../../features/desktop/sway
+    ../../../features/application/bashrc.nix
     ../../../features/application/alacritty.nix
-    ../../../features/application/breeze-dark.nix
   ];
 }
