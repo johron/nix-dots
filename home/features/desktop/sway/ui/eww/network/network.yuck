@@ -1,0 +1,27 @@
+(defpoll network_connections
+    :interval "5s"
+    "~/.config/eww/widgets/network/scripts/connections.sh")
+
+(defwindow network
+    :monitor 0
+    :geometry (geometry
+        :x "70%"
+        :y "40px"
+        :width "360px"
+        :height "600px")
+    :anchor "top left"
+    :stacking "fg"
+    (network-menu))
+
+(defwidget network-menu []
+    (box
+        :orientation "v"
+        :class "network-menu"
+
+    (label
+        :class "title"
+        :text "Internet")
+
+    (scroll
+        :vexpand true
+        (literal :content network_connections))))

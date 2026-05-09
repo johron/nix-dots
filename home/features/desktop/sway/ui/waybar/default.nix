@@ -85,6 +85,7 @@
           format-disconnected = "signal_wifi_off";
           format-disabled = "signal_wifi_off";
           tooltip-format = "{essid}\n{ipaddr}";
+          on-click = "eww open --toggle network";
         };
 
         pulseaudio = {

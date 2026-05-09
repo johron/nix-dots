@@ -5,6 +5,7 @@
     ./sway.nix
     ./scripts.nix
 
+    ./ui/eww
     ./ui/wofi
     ./ui/waybar
     ./ui/mako.nix
