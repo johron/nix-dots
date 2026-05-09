@@ -11,3 +11,7 @@ sudo nixos-rebuild switch --flake .#nixstation
 ```bash
 nix build ".#isos.nixstation"
 ```
+
+## Screenshot
+### Sway
+<img width="1924" height="1080" alt="image" src="https://github.com/user-attachments/assets/acbdc8e4-487d-49c3-9370-25b71b4a2d92" />
