@@ -31,10 +31,10 @@
           style = "Bold Italic";
         };
       };
-      colors = { # Enfocado Dark colorscheme
+      colors = { # Enfocado Dark colorscheme ++
         primary = {
-          background =  "#181818";
-          foreground =  "#b9b9b9";
+          background =  "#090603"; # modified
+          foreground =  "#DDDDDD"; # modified
         };
 
         normal = {
