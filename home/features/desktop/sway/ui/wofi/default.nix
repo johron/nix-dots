@@ -17,6 +17,8 @@
       term = "alacritty";
       prompt = "drun";
       show = "drun";
+      insensitive = true;
+      matching = "fuzzy";
     };
   };
 }

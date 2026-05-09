@@ -70,7 +70,7 @@ in
       keybindings = {
         "${mod}+Shift+r" = "reload";
         "${mod}+Shift+q" = "kill";
-        "${mod}+d" = "exec wofi --show drun";
+        "${mod}+d" = "exec wofi";
         "${mod}+Return" = "exec alacritty";
         "${super}+l" = "exec swaylock";
         "${mod}+r" = "mode \"resize\"";

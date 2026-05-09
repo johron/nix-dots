@@ -7,7 +7,6 @@
 
     ./ui/wofi
     ./ui/waybar
-    ./ui/rofi.nix
     ./ui/mako.nix
     
     ./theming/notwaita.nix
