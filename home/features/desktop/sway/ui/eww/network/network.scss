@@ -1,0 +1,38 @@
+.network-menu {
+    background: #0A0101;
+    padding: 16px;
+    min-width: 320px;
+    transition: all 0.3s ease-in;
+}
+
+.title {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+button {
+    background: #0A0101;
+    border-radius: 14px;
+    padding: 10px;
+    margin: 4px 0;
+}
+
+button:hover {
+    background: #190202;
+}   
+
+button.active-wifi {
+    background: #140202;
+}
+
+button.active-wifi:hover {
+    background: #190202;
+}
+
+button.inactive-wifi {
+    background: #0A0101;
+}
+
+button.inactive-wifi:hover {
+    background: #261616;
+}

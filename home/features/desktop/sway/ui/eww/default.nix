@@ -19,7 +19,14 @@
       eww_scss = {
         target = ".config/eww/eww.scss";
         text = ''
-          
+          @import "widgets/network/network.scss";
+
+          * {
+            border: none;
+            font-family: "JetBrainsMono Nerd Font", "Material Symbols Outlined";
+            font-size: 12px;
+            font-weight: 700;
+          }
         '';
       };
     };
