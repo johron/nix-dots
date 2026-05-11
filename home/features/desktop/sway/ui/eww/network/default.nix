@@ -18,6 +18,10 @@ in
         source = ./scripts/connected.py;
         executable = true;
       };
+      "${scripts}/devices.py" = {
+        source = ./scripts/devices.py;
+        executable = true;
+      };
 
       "${scripts}/connect_wifi.sh" = {
         source = ./scripts/connect_wifi.sh;
@@ -27,6 +31,20 @@ in
         text = ''
           #!/usr/bin/env bash
           nmcli connection down id "$1"
+        '';
+        executable = true;
+      };
+      "${scripts}/device_up.sh" = {
+        text = ''
+          #!/usr/bin/env bash
+          nmcli device up "$1"
+        '';
+        executable = true;
+      };
+      "${scripts}/device_down.sh" = {
+        text = ''
+          #!/usr/bin/env bash
+          nmcli device down "$1"
         '';
         executable = true;
       };

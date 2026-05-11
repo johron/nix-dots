@@ -77,12 +77,12 @@
         network = {
           format-wifi = "{icon}";
           format-icons = [
-            "network_wifi_0_bar"
+            "signal_wifi_0_bar"
             "network_wifi_1_bar"
             "network_wifi_2_bar"
             "network_wifi_3_bar"
             "network_wifi"
-            "network_wifi_4_bar"
+            "signal_wifi_4_bar"
           ];
           format-ethernet = "lan";
           format-disconnected = "signal_wifi_off";

@@ -1,38 +1,94 @@
 .network-menu {
     background: #0A0101;
-    padding: 16px;
-    min-width: 320px;
+    padding: 20px;
+    min-width: 360px;
     transition: all 0.3s ease-in;
 }
 
 .title {
-    font-size: 22px;
-    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: #999999;
+    margin-bottom: 16px;
+    font-weight: 500;
 }
 
 button {
-    background: #0A0101;
-    border-radius: 14px;
-    padding: 10px;
-    margin: 4px 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    all: unset;
 }
 
 button:hover {
-    background: #190202;
-}   
+    opacity: 0.8;
+}
 
-button.active-wifi {
+.network-item {
     background: #140202;
+    border-radius: 20px;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
 }
 
-button.active-wifi:hover {
+.network-item:hover {
     background: #190202;
 }
 
-button.inactive-wifi {
-    background: #0A0101;
+.network-item.active {
+    background: #3a0505;
+    border: 1px solid #1A0909;
 }
 
-button.inactive-wifi:hover {
-    background: #261616;
+.network-item.active:hover {
+    background: #450707;
+}
+
+.network-header {
+}
+
+.network-info {
+}
+
+.network-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.network-subtext {
+    font-size: 11px;
+    color: #999999;
+}
+
+.network-signal {
+    font-size: 12px;
+    color: #aaaaaa;
+} 
+
+.network-icon {
+    font-size: 24px;
+    font-family: "Material Symbols Outlined";
+}
+
+.device-item {
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+}
+
+.device-icon {
+    font-size: 20px;
+    font-family: "Material Symbols Outlined";
+}
+
+.device-subtext {
+    font-size: 11px;
+    color: #999999;
 }
