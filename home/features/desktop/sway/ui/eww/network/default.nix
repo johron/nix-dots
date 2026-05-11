@@ -37,14 +37,14 @@ in
       "${scripts}/device_up.sh" = {
         text = ''
           #!/usr/bin/env bash
-          nmcli device up "$1"
+          nmcli device connect $1
         '';
         executable = true;
       };
       "${scripts}/device_down.sh" = {
         text = ''
           #!/usr/bin/env bash
-          nmcli device down "$1"
+          nmcli device disconnect $1
         '';
         executable = true;
       };

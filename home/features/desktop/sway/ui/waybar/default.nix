@@ -86,9 +86,9 @@
           ];
           format-ethernet = "lan";
           format-disconnected = "signal_wifi_off";
-          format-disabled = "signal_wifi_off";
+          format-disabled = "flight";
           tooltip-format = "{essid}\n{ipaddr}";
-          on-click = "eww open --toggle network";
+          on-click = "eww open network --toggle --screen $(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')";
         };
 
         pulseaudio = {

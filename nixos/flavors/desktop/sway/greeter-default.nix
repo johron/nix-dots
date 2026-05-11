@@ -14,7 +14,7 @@ in
     enable = true;
     settings.default_session = {
       command = ''
-        ${pkgs.tuigreet}/bin/tuigreet --time --cmd "sway --unsupported-gpu"
+        ${pkgs.tuigreet}/bin/tuigreet --time --cmd "WLR_RENDERER=vulkan sway --unsupported-gpu"
       '';
       user = users.default;
     };

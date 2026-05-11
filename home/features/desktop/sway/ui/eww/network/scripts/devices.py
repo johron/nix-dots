@@ -60,8 +60,35 @@ def devices() -> list:
         })
     return devices
 
+def wifi_enabled() -> bool:
+    result = subprocess.run(
+        ["nmcli", "radio", "wifi"],
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    return result.stdout.strip() == "enabled"
+
 def yuck() -> str:
     ret = r"""(box :orientation "v" :spacing 8"""
+
+    ret += rf"""
+    (box :orientation "h" :space-evenly false :spacing 16 :class "device-item"
+        (label
+            :class "device-icon"
+            :text "{"airplanemode_inactive" if wifi_enabled() else "flight"}"
+        )
+        (box :orientation "v" :space-evenly true :spacing 2
+            (label :class "device-name" :text "Airplane mode" :xalign 0)
+        )
+        (box :hexpand true)
+        (checkbox
+            :checked {str(not wifi_enabled()).lower()}
+            :onunchecked "nmcli radio wifi on"
+            :onchecked "nmcli radio wifi off"
+        )
+    )
+    """
 
     for device in devices():
         safe_name = device["device"].replace('"', r'\"')

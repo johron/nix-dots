@@ -13,7 +13,7 @@
       eww_yuck = {
         target = ".config/eww/eww.yuck";
         text = ''
-          (include "./widgets/network/network.yuck")
+          (include "./widgets/network/network.yuck")'
         '';
       };
       eww_scss = {

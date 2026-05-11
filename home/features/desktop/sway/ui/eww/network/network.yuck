@@ -8,6 +8,11 @@
     "~/.config/eww/widgets/network/scripts/devices.py"
 )
 
+(defpoll wifi_enabled
+    :interval "5s"
+    "nmcli radio wifi"
+)
+
 (defwindow network
     :monitor 0
     :geometry (geometry
@@ -16,7 +21,9 @@
         :anchor "bottom right"
     )
     :stacking "fg"
-    (network-menu)
+    (eventbox :onhoverlost "eww close network"
+        (network-menu)
+    )
 )
 
 (defwidget network-menu []
@@ -24,13 +31,6 @@
         :orientation "v"
         :class "network-menu"
         :space-evenly false
-
-        (label
-            :class "title"
-            :text "Internet"
-            :xalign 0.5
-            :yalign 0.2
-        )
 
         (literal :content devices)
 
