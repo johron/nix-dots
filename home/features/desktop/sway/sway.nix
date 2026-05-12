@@ -188,7 +188,7 @@ in
       };
 
       window.commands = [
-        { command = "floating enable"; criteria.instance = "spotify"; }
+        { command = "floating enable"; criteria.app_id = "spotify"; }
         #{ command = "floating enable"; criteria.class = "steam"; }
       ];
 
@@ -226,6 +226,8 @@ in
     extraConfig = ''
       output DP-2 pos 0 0 mode 1920x1080@143.981Hz
       output HDMI-A-1 mode 1920x1080@143.981Hz
+
+      output * adaptive_sync off
 
       workspace 1 output DP-2
       workspace 2 output DP-2

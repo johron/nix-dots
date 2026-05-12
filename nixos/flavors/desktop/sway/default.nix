@@ -47,6 +47,7 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
     XDG_CURRENT_DESKTOP = "sway";
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   security.pam.services.swaylock = {};
