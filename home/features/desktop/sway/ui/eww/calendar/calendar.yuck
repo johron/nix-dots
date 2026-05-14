@@ -1,0 +1,45 @@
+(defpoll current-year :interval "60m"
+  :initial 1
+  `date +%Y`
+)
+
+(defpoll current-month :interval "60m"
+    :initial 1
+    `date +%m`
+)
+
+(defpoll current-day :interval "60m"
+    :initial 1
+    `date +%d`
+)
+
+(defwindow calendar
+    :monitor 0
+    :geometry (geometry
+        :width "480px"
+        :height "150px"
+        :anchor "bottom center"
+    )
+    :stacking "fg"
+    (eventbox :onhoverlost "eww close calendar"
+        (calendar-menu)
+    )
+)
+
+(defwidget calendar-menu []
+    (box
+        :orientation "v"
+        :class "calendar-menu"
+        :space-evenly false
+
+        (calendar
+            :day current-day
+            :month current-month
+            :year current-year
+            :show-week-numbers true
+            :show-day-names true
+            :show-heading true
+            :show-details true
+        )
+    )
+)

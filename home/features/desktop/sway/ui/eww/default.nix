@@ -2,6 +2,7 @@
 {
   imports = [
     ./network
+    ./calendar
   ];
 
   programs.eww = {
@@ -13,13 +14,15 @@
       eww_yuck = {
         target = ".config/eww/eww.yuck";
         text = ''
-          (include "./widgets/network/network.yuck")'
+          (include "./widgets/network/network.yuck")
+          (include "./widgets/calendar/calendar.yuck")
         '';
       };
       eww_scss = {
         target = ".config/eww/eww.scss";
         text = ''
           @import "widgets/network/network.scss";
+          @import "widgets/calendar/calendar.scss";
 
           * {
             border: none;

@@ -6,7 +6,6 @@
 
   home.packages = with pkgs; [
     spotify
-    discord
     feishin
     kdePackages.kdenlive
     kdePackages.ark

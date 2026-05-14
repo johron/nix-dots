@@ -1,0 +1,18 @@
+.calendar-menu {
+    background: #0A0101;
+    transition: all 0.3s ease-in;
+    padding: 20px;
+}
+
+calendar {
+    background: #0A0101;
+}
+
+calendar:selected {
+    background: #3A0505;
+    border-radius: 6px;
+}
+
+calendar.button {
+  color: #3A0505;
+}

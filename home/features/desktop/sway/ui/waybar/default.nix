@@ -43,6 +43,7 @@
           '';
           return-type = "json";
           restart-interval = 1;
+          on-click = "eww open calendar --toggle --screen $(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')";
         };
 
         tray = {

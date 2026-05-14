@@ -31,6 +31,11 @@
   environment.variables = {
     GDK_BACKEND = "wayland";
     XDG_SESSION_TYPE = "wayland";
+    WLR_DRM_NO_ATOMIC = "1";
+    NIXOS_OZONE_WL = "1";
+    WLR_RENDERER = "vulkan";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 
   xdg.portal = {

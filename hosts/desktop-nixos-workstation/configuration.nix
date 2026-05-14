@@ -5,7 +5,7 @@
     ./networking.nix
     ./hardware-configuration.nix
 
-    ../../nixos/hardware/gpu/nvidia-open.nix
+    ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/wifi/bcm4360.nix
     ../../nixos/hardware/sound
     ../../nixos/hardware/bluetooth

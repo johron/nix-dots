@@ -29,6 +29,7 @@
     google-fonts
     ffmpeg_7-full
     libGL
+    discord
   ];
 
   services.flatpak = {
@@ -131,4 +132,8 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
+
+  systemd.user.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 }
