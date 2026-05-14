@@ -87,6 +87,7 @@
           format-ethernet = "lan";
           format-disconnected = "signal_wifi_off";
           format-disabled = "flight";
+          format-linked = "lan";
           tooltip-format = "{essid}\n{ipaddr}";
           on-click = "eww open network --toggle --screen $(swaymsg -t get_outputs | jq 'map(.focused) | index(true)')";
         };

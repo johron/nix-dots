@@ -18,5 +18,6 @@
     geogebra6
     ungoogled-chromium
     mediawriter
+    tailscale
   ];
 }

@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
 {
+  boot.kernelModules = [ "wl" ];
+
   boot.blacklistedKernelModules = [ "b43" "bcma" "brcmfmac" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ broadcom_sta ];
 
