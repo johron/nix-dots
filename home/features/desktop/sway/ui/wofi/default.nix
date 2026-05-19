@@ -18,7 +18,7 @@
       prompt = "drun";
       show = "drun";
       insensitive = true;
-      matching = "fuzzy";
+      matching = "multi-contains";
     };
   };
 }

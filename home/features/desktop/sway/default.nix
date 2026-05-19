@@ -5,6 +5,7 @@
     ./sway.nix
     ./scripts.nix
 
+    ./bg
     ./ui/eww
     ./ui/wofi
     ./ui/waybar

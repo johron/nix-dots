@@ -248,7 +248,7 @@ in
       #  -b "Exit" "swaymsg exit" \
       #  -b "Reboot" "reboot"
 
-      exec swaybg -i "$HOME/Pictures/Backgrounds/reef-1920x1080-2.png" -m fill
+      exec swaybg -i "$HOME/.config/sway/bg/reef-2.png" -m fill
 
       input * xkb_options compose:rctrl
 
