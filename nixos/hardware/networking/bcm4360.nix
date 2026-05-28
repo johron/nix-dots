@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+  imports = [
+    ./default.nix
+  ];
+
   boot.kernelModules = [ "wl" ];
 
   boot.blacklistedKernelModules = [ "b43" "bcma" "brcmfmac" ];

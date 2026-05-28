@@ -27,6 +27,7 @@
   };
 
   programs.foot.enable = false;
+  programs.kdeconnect.enable = true;
 
   environment.variables = {
     GDK_BACKEND = "wayland";

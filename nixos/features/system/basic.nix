@@ -30,6 +30,8 @@
     ffmpeg_7-full
     libGL
     discord
+    protonvpn-gui
+    wireguard-tools
   ];
 
   services.flatpak = {
