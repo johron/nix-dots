@@ -15,7 +15,7 @@
     inkscape
     f3d
     geogebra6
-    ungoogled-chromium
+    chromium
     mediawriter
     tailscale
   ];

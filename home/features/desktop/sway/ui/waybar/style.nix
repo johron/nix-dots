@@ -119,7 +119,7 @@
         margin: 2px 2px 2px 0;
 
         border-radius: 0 12px 12px 0;
-        padding: 0 3px;
+        padding: 0 1px;
 
         /*border: 1px solid rgba(255,255,255,0.08);
         border-left: none;*/

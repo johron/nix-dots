@@ -32,7 +32,10 @@
         :class "network-menu"
         :space-evenly false
 
-        (literal :content devices)
+        (scroll
+            :height 200
+           (literal :content devices)
+        )
 
         (scroll
             :vexpand true
