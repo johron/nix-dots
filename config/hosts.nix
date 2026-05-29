@@ -8,9 +8,9 @@ in
     arch = "x86_64-linux";
     user = users.default;
   };
-  nixtop = {
-    hostname = "nixtop";
-    dir = "laptop-nixos-dell";
+  dellaptop = {
+    hostname = "dellaptop";
+    dir = "dellaptop";
     arch = "x86_64-linux";
     user = users.default;  
   };
