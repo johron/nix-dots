@@ -4,7 +4,7 @@ in
 {
   nixstation = {
     hostname = "nixstation";
-    dir = "desktop-nixos-workstation";
+    dir = "nixstation";
     arch = "x86_64-linux";
     user = users.default;
   };

@@ -74,16 +74,10 @@
         home-manager = inputs.home-manager;
       };
 
-      #homeConfigurations."${hosts.workstation.user}@${hosts.workstation.hostname}" = mkHomeConfigurations {
-      #  host = hosts.workstation;
-      #  nixpkgs = inputs.nixpkgs;
-      #  home-manager = inputs.home-manager;
-      #};
-
-      #homeConfigurations."${hosts.wsl.hostname}" = mkHomeConfigurations {
-      #  host = hosts.wsl;
-      #  nixpkgs = inputs.nixpkgs-stable;
-      #  home-manager = inputs.home-manager-stable;
-      #};
+      homeConfigurations."${hosts.nixstation.user}@${hosts.nixstation.hostname}" = mkHomeConfigurations {
+        host = hosts.nixstation;
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
+      };
     };
 }

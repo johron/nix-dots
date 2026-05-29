@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
 
     ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/networking/bcm4360.nix
