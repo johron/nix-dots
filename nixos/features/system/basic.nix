@@ -49,6 +49,8 @@
       jetbrains-mono
       nerd-fonts.jetbrains-mono
       google-fonts
+      material-symbols
+      material-icons
     ];
     fontconfig = {
       enable = true;
@@ -98,20 +100,20 @@
   programs.firefox.enable = true;
   programs.noisetorch.enable = true;
 
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-    package = pkgs.appimage-run.override {
-      extraPkgs = pkgs: 
-      [
-        pkgs.icu
-        pkgs.libxcrypt-legacy
-        pkgs.python312
-        pkgs.python312Packages.torch
-        pkgs.zstd
-      ]; 
-    };
-  };
+  #programs.appimage = {
+  #  enable = true;
+  #  binfmt = true;
+  #  package = pkgs.appimage-run.override {
+  #    extraPkgs = pkgs: 
+  #    [
+  #      pkgs.icu
+  #      pkgs.libxcrypt-legacy
+  #      pkgs.python312
+  #      pkgs.python312Packages.torch
+  #      pkgs.zstd
+  #    ]; 
+  #  };
+  #};
 
   programs.nh = {
     enable = true;

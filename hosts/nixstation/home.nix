@@ -16,7 +16,7 @@ in
   home = {
     username = users.default;
     homeDirectory = "/home/${users.default}";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
 
 }

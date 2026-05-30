@@ -16,7 +16,6 @@
   ];
 
   home.packages = with pkgs; [
-    material-symbols
     grim
     slurp
     swappy
