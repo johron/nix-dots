@@ -4,7 +4,13 @@
 ## Usage
 ```bash
 nix flake show
-sudo nixos-rebuild switch --flake .#nixstation
+```
+```bash
+sudo nixos-rebuild switch --flake .#configuration
+```
+or with `nh`
+```bash
+nh os switch .#configuration
 ```
 
 ## Screenshots
