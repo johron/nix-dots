@@ -68,8 +68,8 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
-      nixosConfigurations."${hosts.nixtop.hostname}" = mkNixOSConfigurations {
-        host = hosts.nixtop;
+      nixosConfigurations."${hosts.dellaptop.hostname}" = mkNixOSConfigurations {
+        host = hosts.dellaptop;
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
