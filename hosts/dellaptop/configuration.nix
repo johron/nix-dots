@@ -18,6 +18,7 @@ in
   ];
 
   nixpkgs.config.allowUnfree = true;
+  hardware.enableAllFirmware = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

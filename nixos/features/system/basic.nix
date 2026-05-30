@@ -30,7 +30,7 @@
     ffmpeg_7-full
     libGL
     discord
-    protonvpn-gui
+    proton-vpn
     wireguard-tools
   ];
 
