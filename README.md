@@ -6,11 +6,16 @@
 nix flake show
 ```
 ```bash
-sudo nixos-rebuild switch --flake .#configuration
+sudo nixos-rebuild switch --flake .#<hostname>
 ```
 or with `nh`
 ```bash
-nh os switch .#configuration
+nh os switch .#<hostname>
+```
+
+## Building installer ISOs
+```bash
+nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
 ```
 
 ## Screenshots

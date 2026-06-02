@@ -60,6 +60,18 @@
             }
           ] ++ modules;
         };
+      mkISOConfiguration = # Build with: nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
+        {
+          host,
+          nixpkgs,
+        }:
+        nixpkgs.lib.nixosSystem {
+          system = host.arch;
+          modules = [
+            ./hosts/${host.dir}/iso.nix
+            { networking.hostName = "${host.hostname}-iso"; }
+          ];
+        };
 
     in
     {
@@ -72,6 +84,15 @@
         host = hosts.dellaptop;
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
+      };
+
+      nixosConfigurations."${hosts.nixstation.hostname}-iso" = mkISOConfiguration {
+        host = hosts.nixstation;
+        nixpkgs = inputs.nixpkgs;
+      };
+      nixosConfigurations."${hosts.dellaptop.hostname}-iso" = mkISOConfiguration {
+        host = hosts.dellaptop;
+        nixpkgs = inputs.nixpkgs;
       };
 
       homeConfigurations."${hosts.nixstation.user}@${hosts.nixstation.hostname}" = mkHomeConfigurations {
