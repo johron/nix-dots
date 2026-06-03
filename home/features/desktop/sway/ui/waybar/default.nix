@@ -38,7 +38,7 @@
         "custom/clock" = {
           format = "{}";
           exec = ''
-            formatted_date=$(LC_TIME=nb_NO.UTF-8 date +"%H:%M %A, %d %b" | tr '[:upper:]' '[:lower:]' | sed 's/\.//g')
+            formatted_date=$(LC_TIME=nn_NO.UTF-8 date +"%H:%M %A, %d %b" | tr '[:upper:]' '[:lower:]' | sed 's/\.//g')
             printf '{"text": "%s"}\n' "$formatted_date"
           '';
           return-type = "json";
