@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = let
+    moose = inputs.moose.packages.${pkgs.system}.default;
+  in 
+  with pkgs; [
     lf
     jq
     gh
@@ -32,6 +35,8 @@
     discord
     proton-vpn
     wireguard-tools
+
+    moose
   ];
 
   services.flatpak = {

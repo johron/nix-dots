@@ -8,6 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    moose = {
+      url = "github:johron/moose";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -45,10 +49,13 @@
           nixpkgs,
           home-manager,
           modules ? [ ],
-          overlays ? [ ],
+          overlays ? [],
         }:
         nixpkgs.lib.nixosSystem {
           system = host.arch;
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
             ./hosts/${host.dir}/configuration.nix
