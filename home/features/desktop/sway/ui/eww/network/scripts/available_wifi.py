@@ -91,7 +91,7 @@ def yuck() -> str:
                     (label :class "network-icon" :text "{signal_icon}")
                     (box :orientation "v" :space-evenly false :spacing 2
                         (label :class "network-name" :text "{safe_name}" :xalign 0)
-                        (label :class "network-subtext" :text "Connected" :xalign 0)
+                        (label :class "network-subtext" :text "Tilkopla" :xalign 0)
                     )
                     (box :hexpand true)
                 )

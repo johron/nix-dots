@@ -79,7 +79,7 @@ def yuck() -> str:
             :text "{"airplanemode_inactive" if wifi_enabled() else "flight"}"
         )
         (box :orientation "v" :space-evenly true :spacing 2
-            (label :class "device-name" :text "Airplane mode" :xalign 0)
+            (label :class "device-name" :text "Flymodus" :xalign 0)
         )
         (box :hexpand true)
         (checkbox
@@ -100,7 +100,7 @@ def yuck() -> str:
                 (label :class "device-icon" :text "{signal_icon}")
                 (box :orientation "v" :space-evenly false :spacing 2
                     (label :class "device-name" :text "{safe_name}" :xalign 0)
-                    (label :class "device-subtext" :text "Active" :xalign 0)
+                    (label :class "device-subtext" :text "Aktiv" :xalign 0)
                 )
                 (box :hexpand true)
                 (checkbox
