@@ -10,7 +10,7 @@
         };
       };
       font = {
-        size = 10.0;
+        size = 10.5;
         normal = {
           family = "JetBrains Mono";
           style = "Regular";
