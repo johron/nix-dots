@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780937089,
-        "narHash": "sha256-pw6ezSBilMgQyOZbB2qwPg9E/PjEuEORLnb2cNQPUoM=",
+        "lastModified": 1781014746,
+        "narHash": "sha256-Fvk4kHgYNY7rZWrH3Kq8J15myb0uOC5pLbwthu4yLos=",
         "owner": "johron",
         "repo": "moose",
-        "rev": "f440e39de80b4f4d15d2be8519ac2bf8a1ad9569",
+        "rev": "e504289df0c1ba94e3486e6b84f42d9dd89e0dc1",
         "type": "github"
       },
       "original": {
