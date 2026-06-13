@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware.nix
 
+    ../../nixos/hardware/networking
     ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/sound
     ../../nixos/hardware/bluetooth
