@@ -189,7 +189,7 @@ in
       };
 
       window.commands = [
-        { command = "floating enable"; criteria.app_id = "spotify"; }
+        { command = "floating enable"; criteria.class = "Spotify"; }
         #{ command = "floating enable"; criteria.class = "steam"; }
       ];
 
