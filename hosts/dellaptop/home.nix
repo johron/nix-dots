@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   users = import ../../config/users.nix;
 in
@@ -17,4 +17,12 @@ in
     stateVersion = "26.05";
   };
 
+  custom.swayExtras = {
+    displays = ''
+      output eDP-1 pos 0 0 mode 1920x1080@59.999Hz
+      output * pos 1920 0 adaptive_sync off
+
+      workspace 1 output eDP-1
+    '';
+  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -15,22 +15,32 @@
     ./theming/breeze-dark.nix
   ];
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    
-    documents = "$HOME/Documents";
-    download = "$HOME/Downloads";
-    desktop = "$HOME/Desktop";
-    music = "$HOME/Music";
-    pictures = "$HOME/Pictures";
-    videos = "$HOME/Videos";
-    projects = "$HOME/Projects";
+  config = {
+    xdg.userDirs = {
+      enable = true;
+      createDirectories = true;
+      
+      documents = "$HOME/Documents";
+      download = "$HOME/Downloads";
+      desktop = "$HOME/Desktop";
+      music = "$HOME/Music";
+      pictures = "$HOME/Pictures";
+      videos = "$HOME/Videos";
+      projects = "$HOME/Projects";
+    };
+
+    home.packages = with pkgs; [
+      grim
+      slurp
+      swappy
+    ];
   };
 
-  home.packages = with pkgs; [
-    grim
-    slurp
-    swappy
-  ];
+  options.custom.swayExtras = {
+    displays = lib.mkOption {
+      type = lib.types.lines;
+      default = "";
+      description = "Host-specific display configuration for Sway";
+    };
+  };
 }

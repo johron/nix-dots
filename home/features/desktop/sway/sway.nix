@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   left = "j";
@@ -8,7 +8,7 @@ let
   mod = "Mod1";
   super = "Super";
 in
-{
+{ 
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = true;
@@ -229,20 +229,6 @@ in
       };
     };
     extraConfig = ''
-      output DP-2 pos 0 0 mode 1920x1080@143.981Hz
-      output HDMI-A-1 mode 1920x1080@143.981Hz
-
-      output * adaptive_sync off
-
-      workspace 1 output DP-2
-      workspace 2 output DP-2
-      workspace 3 output DP-2
-
-      workspace 11 output HDMI-A-1
-      workspace 12 output HDMI-A-1
-      workspace 13 output HDMI-A-1
-      workspace 14 output HDMI-A-1
-
       exec wl-paste --watch cliphist store
 
       seat seat0 xcursor_theme Notwaita-Black 20
@@ -265,6 +251,7 @@ in
           timeout 1200 'systemctl suspend' \
           before-sleep 'swaylock -f'
       }
-    '';
+    ''
+    + config.custom.swayExtras.displays;
   };
 }
