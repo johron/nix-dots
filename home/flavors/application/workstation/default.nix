@@ -14,7 +14,6 @@
     vlc
     inkscape
     f3d
-    geogebra6
     chromium
     mediawriter
     tailscale
