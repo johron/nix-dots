@@ -198,6 +198,10 @@ in
           xkb_layout = "no";
           #xkb_variant = "cole";
         };
+        "type:touchpad" = {
+          tap = "enabled";
+          click_method = "clickfinger";
+        };
       };
 
       colors = {

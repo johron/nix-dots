@@ -107,5 +107,10 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
+      homeConfigurations."${hosts.dellaptop.user}@${hosts.dellaptop.hostname}" = mkHomeConfigurations {
+        host = hosts.dellaptop;
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
+      };
     };
 }
