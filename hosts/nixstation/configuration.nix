@@ -11,8 +11,8 @@ in
     ../../nixos/hardware/networking/bcm4360.nix
     ../../nixos/hardware/sound
     ../../nixos/hardware/bluetooth
-    ../../nixos/flavors/desktop/sway
-    ../../nixos/flavors/desktop/sway/greeter-default.nix
+    ../../nixos/flavors/desktop/hyprland
+    ../../nixos/flavors/desktop/hyprland/greeter-default.nix
     ../../nixos/features/system/basic.nix
     ../../nixos/features/system/users.nix
     ../../nixos/features/system/gaming.nix
