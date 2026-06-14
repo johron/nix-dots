@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ../../home/flavors/desktop/sway
+    ../../home/flavors/desktop/hyprland
     ../../home/flavors/application/workstation
     ../../home/flavors/application/development
   ];
