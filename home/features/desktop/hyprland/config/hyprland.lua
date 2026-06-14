@@ -36,7 +36,7 @@ hl.config({
 -- Set programs that you use
 local terminal    = "alacritty"
 local fileManager = "dolphin"
-local menu        = "qs -c nandoroid-shell/dotfiles/.config/quickshell/nandoroid ipc call spotlight toggle"
+local menu        = "caelestia shell drawers toggle launcher"
 
 
 -------------------
@@ -55,7 +55,7 @@ local menu        = "qs -c nandoroid-shell/dotfiles/.config/quickshell/nandoroid
 -- end)
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("qs -c nandoroid-shell/dotfiles/.config/quickshell/nandoroid")
+  hl.exec_cmd("caelestia shell")
 end)
 
 -------------------------------
@@ -274,8 +274,13 @@ hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(secMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind("CONTROL + ALT + DELETE", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
+hl.bind(secMod .. " + V", hl.dsp.exec_cmd("caelestia clipboard"))
 
+hl.bind(secMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(secMod .. " + Q",  hl.dsp.exec_cmd("firefox"))
+hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("spotify"))
+hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

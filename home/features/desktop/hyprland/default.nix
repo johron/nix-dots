@@ -1,22 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
-let 
-  customQuickshell = pkgs.symlinkJoin {
-    name = "quickshell-wrapped";
-    paths = [ pkgs.quickshell ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/qs \
-        --prefix QML2_IMPORT_PATH : "${lib.makeSearchPath "lib/qt-6/qml" (with pkgs.kdePackages; [
-          qtdeclarative
-          qt5compat
-          qtsvg
-          qtimageformats
-          qtmultimedia
-        ])}"
-    '';
-  };
-in
 {
   imports = [
     ./bg
@@ -26,7 +9,8 @@ in
   ];
 
   home.packages = [
-    customQuickshell
+    inputs.caelestia-shell.packages.${pkgs.system}.default
+    inputs.caelestia-cli.packages.${pkgs.system}.default
   ];
 
   home.file.".config/hypr".source = ./config;

@@ -13,7 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    swayodroid.url = "github:johron/swayodroid-shell";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -65,6 +72,7 @@
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager
             {
+              home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.users."${host.user}" = import ./hosts/${host.dir}/home.nix;
             }
