@@ -10,7 +10,7 @@
     ./ui/wofi
     ./ui/waybar
     ./ui/mako.nix
-    
+
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];
