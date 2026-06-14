@@ -1,0 +1,3 @@
+[submodule "home/features/desktop/sway/swayodroid/swayodroid-shell"]
+	path = home/features/desktop/sway/swayodroid/swayodroid-shell
+	url = https://github.com/johron/swayodroid-shell

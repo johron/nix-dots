@@ -11,6 +11,8 @@
     ./ui/waybar
     ./ui/mako.nix
 
+    ./swayodroid
+
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];
