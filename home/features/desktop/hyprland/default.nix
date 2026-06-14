@@ -19,8 +19,6 @@ let
 in
 {
   imports = [
-    ./hyprland.nix
-
     ./bg
 
     ./theming/notwaita.nix
@@ -30,6 +28,8 @@ in
   home.packages = [
     customQuickshell
   ];
+
+  home.file.".config/hypr".source = ./config;
 
   xdg.userDirs = {
     enable = true;
