@@ -281,6 +281,7 @@ hl.bind(secMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(secMod .. " + Q",  hl.dsp.exec_cmd("firefox"))
 hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
+hl.bind(secMod .. " + L",  hl.dsp.exec_cmd("caelestia shell lock lock"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
