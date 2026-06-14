@@ -142,6 +142,8 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
 
+  qt.enable = true;
+
   systemd.user.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';

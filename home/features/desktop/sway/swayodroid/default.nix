@@ -1,18 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    qt6.qtwayland
-    #qt6.qtsvg
-    #qt6.qtimageformats
-    #qt6.qtmultimedia
-    #qt6.qt5compat
+  imports = [
+    #inputs.swayodroid.homeManagerModules.default
   ];
-
-  programs.quickshell = {
-    enable = true;
-
-    configs.swayodroid = ./swayodroid-shell;
-    activeConfig = "swayodroid";
-  };
 }

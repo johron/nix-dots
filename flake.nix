@@ -12,6 +12,8 @@
       url = "github:johron/moose";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    swayodroid.url = "github:johron/swayodroid-shell";
   };
 
   outputs =
@@ -38,6 +40,7 @@
               allowUnfree = true;
             };
           };
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             ./hosts/${host.dir}/home.nix
           ] ++ modules;
@@ -79,7 +82,6 @@
             { networking.hostName = "${host.hostname}-iso"; }
           ];
         };
-
     in
     {
       nixosConfigurations."${hosts.nixstation.hostname}" = mkNixOSConfigurations {
