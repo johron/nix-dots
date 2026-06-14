@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
-    #inputs.swayodroid.homeManagerModules.default
+    inputs.swayodroid.homeManagerModules.default
   ];
 }

@@ -138,11 +138,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1781436694,
-        "narHash": "sha256-GEaelUWqx1cwiXWsygsOFAuKGIsgXAwfu9ymoTNFMz8=",
+        "lastModified": 1781440097,
+        "narHash": "sha256-8kUbdvwDl1zosO6FdRAyCpPu90deZ2vxf9wlLROOfYg=",
         "owner": "johron",
         "repo": "swayodroid-shell",
-        "rev": "ebac313ebde2879e8d508b805be44b8891e183af",
+        "rev": "8d1523aeea833798035fc706a3a350c63386a341",
         "type": "github"
       },
       "original": {
