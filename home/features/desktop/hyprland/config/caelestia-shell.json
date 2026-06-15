@@ -224,13 +224,13 @@
         },
         "clock": {
             "background": false,
-            "showDate": false,
+            "showDate": true,
             "showIcon": true
         },
         "dragThreshold": 20,
         "entries": [
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "logo"
             },
             {
@@ -292,7 +292,7 @@
         },
         "tray": {
             "background": false,
-            "compact": false,
+            "compact": true,
             "hiddenIcons": [
             ],
             "iconSubs": [
@@ -418,7 +418,7 @@
         "showOverFullscreen": false
     },
     "launcher": {
-        "actionPrefix": ">",
+        "actionPrefix": "#",
         "actions": [
             {
                 "command": [
@@ -463,40 +463,6 @@
                 "enabled": true,
                 "icon": "colors",
                 "name": "Variant"
-            },
-            {
-                "command": [
-                    "caelestia",
-                    "wallpaper",
-                    "-r"
-                ],
-                "dangerous": false,
-                "description": "Switch to a random wallpaper",
-                "enabled": true,
-                "icon": "casino",
-                "name": "Random"
-            },
-            {
-                "command": [
-                    "setMode",
-                    "light"
-                ],
-                "dangerous": false,
-                "description": "Change the scheme to light mode",
-                "enabled": true,
-                "icon": "light_mode",
-                "name": "Light"
-            },
-            {
-                "command": [
-                    "setMode",
-                    "dark"
-                ],
-                "dangerous": false,
-                "description": "Change the scheme to dark mode",
-                "enabled": true,
-                "icon": "dark_mode",
-                "name": "Dark"
             },
             {
                 "command": [
@@ -569,7 +535,7 @@
             }
         ],
         "dragThreshold": 50,
-        "enableDangerousActions": false,
+        "enableDangerousActions": true,
         "enabled": true,
         "favouriteApps": [
         ],
@@ -706,7 +672,7 @@
                 "id": "dnd"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "vpn"
             }
         ],
@@ -726,7 +692,7 @@
             "vpnChanged": true
         },
         "vpn": {
-            "enabled": false,
+            "enabled": true,
             "provider": [
                 {
                     "displayName": "Wireguard (Your VPN)",

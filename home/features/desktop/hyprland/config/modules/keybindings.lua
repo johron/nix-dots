@@ -24,7 +24,24 @@ hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
 hl.bind(secMod .. " + L",  hl.dsp.exec_cmd("caelestia shell lock lock"))
 hl.bind(secMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --autocopy"))
-hl.bind(secMod .. " + SHIFT + S", hl.dsp.exec_cmd("caelestia shell picker openFreeze"))
+hl.bind(secMod .. " + SHIFT + S", hl.dsp.exec_cmd([[
+#!/bin/bash
+OLD=$(wl-paste)
+caelestia shell picker openFreezeClip
+
+for i in {1..20}; do
+  NEW=$(wl-paste)
+  
+  if [ "$NEW" != "$OLD" ]; then
+    wl-paste --type image/png > ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+    exit 0
+  fi
+
+  sleep 0.1
+done
+
+exit 1
+]]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -43,19 +60,19 @@ hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 for i = 1, 10 do
     local key = "F" .. i
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i + 10 }))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i + 10 }))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i + 10, follow = false }))
 end
 
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + BAR",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + BAR", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
