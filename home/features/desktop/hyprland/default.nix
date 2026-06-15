@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./theming/bg.nix
+    ./config/img
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];

@@ -584,9 +584,9 @@
     "paths": {
         "lockNoNotifsPic": "root:/assets/dino.png",
         "lyricsDir": "~/Music/lyrics/",
-        "mediaGif": "root:/assets/bongocat.gif",
+        "mediaGif": "~/.config/caelestia/img/tux-race.gif",
         "noNotifsPic": "root:/assets/dino.png",
-        "sessionGif": "root:/assets/kurukuru.gif",
+        "sessionGif": "~/.config/caelestia/img/tux-fly.gif",
         "wallpaperDir": "~/Pictures/Wallpapers"
     },
     "services": {
