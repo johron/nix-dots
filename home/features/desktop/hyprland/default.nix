@@ -1,12 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
 
-let
-  files = builtins.readDir ./config;
-in
 {
   imports = [
-    ./bg
-
+    ./theming/bg.nix
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];
@@ -16,6 +12,8 @@ in
       inputs.caelestia-shell.packages.${pkgs.system}.default
       inputs.caelestia-cli.packages.${pkgs.system}.default
     ];
+
+    home.file.".config/caelestia/shell.json".source = ./config/caelestia-shell.json;
 
     home.file.".config/hypr/hyprland.lua".source = ./config/hyprland.lua;
     home.file.".config/hypr/modules/autostart.lua".source = ./config/modules/autostart.lua; 
