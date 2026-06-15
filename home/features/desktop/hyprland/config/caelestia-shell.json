@@ -641,7 +641,7 @@
     },
     "sidebar": {
         "dragThreshold": 80,
-        "enabled": false
+        "enabled": true
     },
     "utilities": {
         "enabled": true,

@@ -15,6 +15,8 @@ hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 
+hl.bind(mainMod .. " + E",  hl.dsp.exec_cmd("caelestia shell drawers toggle sidebar"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
 hl.bind("CONTROL + ALT + DELETE", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
 hl.bind(secMod .. " + V", hl.dsp.exec_cmd("caelestia clipboard"))
 
