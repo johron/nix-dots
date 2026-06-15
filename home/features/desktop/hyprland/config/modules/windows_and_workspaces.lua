@@ -31,10 +31,20 @@ hl.window_rule({
 -- overlayLayerRule:set_enabled(false)
 
 -- Hyprland-run windowrule
-hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+-- hl.window_rule({
+--     name  = "move-hyprland-run",
+--     match = { class = "hyprland-run" },
+-- 
+--     move  = "20 monitor_h-120",
+--     float = true,
+-- })
 
-    move  = "20 monitor_h-120",
-    float = true,
+hl.window_rule({
+    match = { class = "discord" },
+    workspace = "11"
+})
+
+hl.window_rule({
+    match = { class = "Spotify" },
+    workspace = "12"
 })
