@@ -38,14 +38,23 @@
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 
+  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
 
     wlr.enable = true;
 
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-    ];
+    config = {
+      common = {
+        # Use hyprland portal for screen sharing (screencast)
+        "org.freedesktop.impl.portal.Screencast" = "hyprland";
+        "org.freedesktop.impl.portal.Screenshot" = "hyprland";
+      };
+    };
   };
 
   environment.sessionVariables = {

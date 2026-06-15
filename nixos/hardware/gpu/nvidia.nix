@@ -15,8 +15,8 @@
     open = false;
 
     powerManagement = {
-      enable = false;
-      finegrained = false;
+      enable = true;
+      finegrained = true;
     };
 
     modesetting = {

@@ -18,6 +18,10 @@ in
     ../../nixos/features/system/gaming.nix
   ];
 
+  boot.kernelParams = [
+    "resume=UUID=b0e53493-71b7-4adc-bc9a-37c16ed9672b"
+  ];
+
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
