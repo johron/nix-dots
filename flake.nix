@@ -14,8 +14,8 @@
     };
 
     caelestia-shell = {
-      #url = "github:anarion80/caelestia-shell/topbar";
-      url = "github:caelestia-dots/shell";
+      url = "github:anarion80/caelestia-shell/topbar";
+      #url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
