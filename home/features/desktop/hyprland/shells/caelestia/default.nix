@@ -7,4 +7,5 @@
   ];
 
   home.file.".config/caelestia/shell.json".source = ./shell.json;
+  home.file.".config/caelestia/shell-tokens.json".source = ./shell-tokens.json;
 }
