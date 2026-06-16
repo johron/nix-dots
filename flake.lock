@@ -81,16 +81,17 @@
         "quickshell": "quickshell_2"
       },
       "locked": {
-        "lastModified": 1781533143,
-        "narHash": "sha256-4rGV+2E/qeQ7eIhY5f/2+iPuf8n4SvsbvaN4pmgACXQ=",
-        "owner": "caelestia-dots",
-        "repo": "shell",
-        "rev": "067938d6ed7a3535c6ba96d4f44a9939fa6b822b",
+        "lastModified": 1781542336,
+        "narHash": "sha256-falLe6Kw806/u3YdOmlNBG2NZT+SH8su2kn4f4l2lQw=",
+        "owner": "anarion80",
+        "repo": "caelestia-shell",
+        "rev": "c2a906f38b27a2ab7718b1df8fbfc2abb795fa28",
         "type": "github"
       },
       "original": {
-        "owner": "caelestia-dots",
-        "repo": "shell",
+        "owner": "anarion80",
+        "ref": "topbar",
+        "repo": "caelestia-shell",
         "type": "github"
       }
     },
