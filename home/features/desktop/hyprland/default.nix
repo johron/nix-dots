@@ -2,27 +2,21 @@
 
 {
   imports = [
-    ./config/img
+    ./img
+    ./shells/caelestia
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];
 
   config = {
-    home.packages = [
-      inputs.caelestia-shell.packages.${pkgs.system}.default
-      inputs.caelestia-cli.packages.${pkgs.system}.default
-    ];
-
-    home.file.".config/caelestia/shell.json".source = ./config/caelestia-shell.json;
-
-    home.file.".config/hypr/hyprland.lua".source = ./config/hyprland.lua;
-    home.file.".config/hypr/modules/autostart.lua".source = ./config/modules/autostart.lua; 
-    home.file.".config/hypr/modules/environment.lua".source = ./config/modules/environment.lua; 
-    home.file.".config/hypr/modules/look_and_feel.lua".source = ./config/modules/look_and_feel.lua; 
-    home.file.".config/hypr/modules/misc.lua".source = ./config/modules/misc.lua; 
-    home.file.".config/hypr/modules/input.lua".source = ./config/modules/input.lua; 
-    home.file.".config/hypr/modules/keybindings.lua".source = ./config/modules/keybindings.lua; 
-    home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./config/modules/windows_and_workspaces.lua; 
+    home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
+    home.file.".config/hypr/modules/autostart.lua".source = ./hypr/modules/autostart.lua; 
+    home.file.".config/hypr/modules/environment.lua".source = ./hypr/modules/environment.lua; 
+    home.file.".config/hypr/modules/look_and_feel.lua".source = ./hypr/modules/look_and_feel.lua; 
+    home.file.".config/hypr/modules/misc.lua".source = ./hypr/modules/misc.lua; 
+    home.file.".config/hypr/modules/input.lua".source = ./hypr/modules/input.lua; 
+    home.file.".config/hypr/modules/keybindings.lua".source = ./hypr/modules/keybindings.lua; 
+    home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./hypr/modules/windows_and_workspaces.lua; 
     home.file.".config/hypr/modules/monitors.lua".text = config.custom.hyprExtras.monitors;
 
     xdg.userDirs = {
