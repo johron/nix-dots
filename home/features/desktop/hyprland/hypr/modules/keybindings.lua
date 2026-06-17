@@ -3,47 +3,21 @@ local secMod = "SUPER"
 
 local terminal    = "alacritty"
 local fileManager = "dolphin"
-local menu        = "caelestia shell drawers toggle launcher"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mainMod .. " + E",  hl.dsp.exec_cmd("caelestia shell drawers toggle sidebar"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
-hl.bind("CONTROL + ALT + DELETE", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
-hl.bind(secMod .. " + V", hl.dsp.exec_cmd("caelestia clipboard"))
-
 hl.bind(secMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(secMod .. " + Q",  hl.dsp.exec_cmd("firefox"))
 hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
-hl.bind(secMod .. " + L",  hl.dsp.exec_cmd("caelestia shell lock lock"))
 hl.bind(secMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --autocopy"))
-hl.bind(secMod .. " + SHIFT + S", hl.dsp.exec_cmd([[
-#!/bin/bash
-OLD=$(wl-paste)
-caelestia shell picker openFreezeClip
-
-for i in {1..20}; do
-  NEW=$(wl-paste)
-  
-  if [ "$NEW" != "$OLD" ]; then
-    wl-paste --type image/png > ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-    exit 0
-  fi
-
-  sleep 0.1
-done
-
-exit 1
-]]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

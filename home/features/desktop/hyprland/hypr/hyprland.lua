@@ -1,4 +1,6 @@
 require("modules.autostart")
+require("modules.shell")
+
 require("modules.environment")
 require("modules.look_and_feel")
 require("modules.misc")

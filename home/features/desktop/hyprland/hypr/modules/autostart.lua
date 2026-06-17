@@ -1,6 +1,3 @@
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("caelestia shell")
-  hl.exec_cmd("caelestia shell wallpaper set ~/.config/caelestia/img/bg.png")
-  hl.exec_cmd("caelestia scheme set --name dynamic --mode dark")
-  hl.exec_cmd("wl-paste --watch cliphist store")
+  
 end)

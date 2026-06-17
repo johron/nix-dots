@@ -3,7 +3,7 @@
 {
   imports = [
     ./img
-    ./shells/caelestia
+    ./shells/dankmaterialshell
     ./theming/notwaita.nix
     ./theming/breeze-dark.nix
   ];
@@ -18,6 +18,7 @@
     home.file.".config/hypr/modules/keybindings.lua".source = ./hypr/modules/keybindings.lua; 
     home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./hypr/modules/windows_and_workspaces.lua; 
     home.file.".config/hypr/modules/monitors.lua".text = config.custom.hyprExtras.monitors;
+    home.file.".config/hypr/modules/shell.lua".text = config.custom.hyprExtras.shell;
 
     xdg.userDirs = {
       enable = true;
@@ -40,6 +41,10 @@
         hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
       '';
       description = "Host-specific monitor configuration for Hyprland";
+    };
+    shell = lib.mkOption {
+      type = lib.types.lines;
+      default = '''';
     };
   };
 }

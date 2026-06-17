@@ -35,6 +35,9 @@
     discord
     proton-vpn
     wireguard-tools
+    cups-pk-helper
+    dgop
+    cava
 
     moose
   ];
@@ -108,6 +111,13 @@
 
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  services.accounts-daemon.enable = true;
+  
+  services.dbus = {
+    enable = true;
+    packages = with pkgs; [ cups-pk-helper ];
+  };
 
   #programs.appimage = {
   #  enable = true;

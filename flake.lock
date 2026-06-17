@@ -81,17 +81,16 @@
         "quickshell": "quickshell_2"
       },
       "locked": {
-        "lastModified": 1781542336,
-        "narHash": "sha256-falLe6Kw806/u3YdOmlNBG2NZT+SH8su2kn4f4l2lQw=",
-        "owner": "anarion80",
-        "repo": "caelestia-shell",
-        "rev": "c2a906f38b27a2ab7718b1df8fbfc2abb795fa28",
+        "lastModified": 1781682211,
+        "narHash": "sha256-ssOMe5pJaZo3LpHFKpKVs6QlTM5P90pScdSFyB/Oyr8=",
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "rev": "f4ec2283a53d0ae6b02938e9a42422195099eda4",
         "type": "github"
       },
       "original": {
-        "owner": "anarion80",
-        "ref": "topbar",
-        "repo": "caelestia-shell",
+        "owner": "caelestia-dots",
+        "repo": "shell",
         "type": "github"
       }
     },
@@ -107,6 +106,28 @@
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
+        "type": "github"
+      }
+    },
+    "dms": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell_3"
+      },
+      "locked": {
+        "lastModified": 1777431599,
+        "narHash": "sha256-g6r/Gx8PTDzO3jCNzzySA+Ff1lmLF9nDlMCNyyoQjoE=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "eb5afcdc40ea5446c27e18552ff4a19f9daf9484",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "ref": "stable",
+        "repo": "DankMaterialShell",
         "type": "github"
       }
     },
@@ -325,10 +346,33 @@
         "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       }
     },
+    "quickshell_3": {
+      "inputs": {
+        "nixpkgs": [
+          "dms",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776854048,
+        "narHash": "sha256-lLbV66V3RMNp1l8/UelmR4YzoJ5ONtgvEtiUMJATH/o=",
+        "ref": "refs/heads/master",
+        "rev": "783c953987dc56ff0601abe6845ed96f1d00495a",
+        "revCount": 806,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      },
+      "original": {
+        "rev": "783c953987dc56ff0601abe6845ed96f1d00495a",
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "caelestia-cli": "caelestia-cli",
         "caelestia-shell": "caelestia-shell_2",
+        "dms": "dms",
         "home-manager": "home-manager",
         "moose": "moose",
         "nix-flatpak": "nix-flatpak",

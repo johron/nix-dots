@@ -14,8 +14,8 @@
     };
 
     caelestia-shell = {
-      url = "github:anarion80/caelestia-shell/topbar";
-      #url = "github:caelestia-dots/shell";
+      #url = "github:anarion80/caelestia-shell/topbar";
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
@@ -25,6 +25,11 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

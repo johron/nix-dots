@@ -13,8 +13,8 @@
     gammastep
     geoclue2
     wtype
+    matugen
 
-    kitty
     alacritty
 
     hyprlauncher
@@ -38,7 +38,6 @@
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 
-  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
