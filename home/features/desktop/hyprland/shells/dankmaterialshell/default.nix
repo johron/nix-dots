@@ -24,9 +24,9 @@
       mainMod = "ALT"
       secMod = "SUPER"
 
-      hl.on("hyprland.start", function ()
-          hl.exec_cmd("dms run")
-      end)
+      --hl.on("hyprland.start", function ()
+      --    hl.exec_cmd("dms run")
+      --end)
 
       hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("dms ipc spotlight toggle"))
       hl.bind(secMod .. " + V", hl.dsp.exec_cmd("dms ipc clipboard open"))

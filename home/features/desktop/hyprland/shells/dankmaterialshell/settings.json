@@ -1,5 +1,5 @@
 {
-  "currentThemeName": "purple",
+  "currentThemeName": "blue",
   "currentThemeCategory": "generic",
   "customThemeFile": "",
   "registryThemeVariants": {},
@@ -48,7 +48,7 @@
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
   "showFocusedWindow": true,
-  "showWeather": true,
+  "showWeather": false,
   "showMusic": true,
   "showClipboard": true,
   "showCpuUsage": true,
@@ -195,7 +195,7 @@
   "dankLauncherV2ShowFooter": true,
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": false,
-  "weatherEnabled": true,
+  "weatherEnabled": false,
   "networkPreference": "auto",
   "iconTheme": "System Default",
   "cursorSettings": {
@@ -510,16 +510,6 @@
     "hslLightness": 1,
     "valid": true
   },
-  "desktopClockShowDate": true,
-  "desktopClockShowAnalogNumbers": false,
-  "desktopClockShowAnalogSeconds": true,
-  "desktopClockX": -1,
-  "desktopClockY": -1,
-  "desktopClockWidth": 280,
-  "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": [
-    "all"
-  ],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -562,40 +552,6 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
-  "desktopWidgetInstances": [
-    {
-      "id": "dw_1781690083889_l0n4z63m6",
-      "widgetType": "desktopClock",
-      "name": "Desktop Clock",
-      "enabled": true,
-      "config": {
-        "style": "analog",
-        "transparency": 0.8,
-        "colorMode": "primary",
-        "customColor": "#ffffff",
-        "showDate": true,
-        "showAnalogNumbers": false,
-        "showAnalogSeconds": true,
-        "displayPreferences": [
-          "all"
-        ]
-      },
-      "positions": {
-        "HDMI-A-1": {
-          "width": 200,
-          "height": 200,
-          "x": 860,
-          "y": 440
-        },
-        "DP-2": {
-          "width": 200,
-          "height": 200,
-          "x": 860,
-          "y": 440
-        }
-      }
-    }
-  ],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {
     "dms_settings_search": {

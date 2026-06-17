@@ -1,22 +1,31 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, ... }:
 
 let
   users = import ./../../../../config/users.nix;
 in
 {
+  imports = [
+    inputs.dms.nixosModules.greeter
+  ];
+
   environment.systemPackages = with pkgs; [
-    tuigreet
+    #tuigreet
   ];
 
   security.pam.services.greetd.enableGnomeKeyring = true;
-  services.greetd = {
+  services.displayManager.dms-greeter = {
     enable = true;
-    settings.default_session = {
-      command = ''
-        ${pkgs.tuigreet}/bin/tuigreet --time --cmd "start-hyprland"
-      '';
-      user = users.default;
-    };
+    compositor.name = "hyprland";
+    configHome = "/home/${users.default}";
   };
+
+  #services.greetd = {
+  #  enable = true;
+  #  settings.default_session = {
+  #    command = ''
+  #      ${pkgs.tuigreet}/bin/tuigreet --time --cmd "start-hyprland"
+  #    '';
+  #    user = users.default;
+  #  };
+  #};
 }
