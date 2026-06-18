@@ -174,7 +174,7 @@
   "greeterRememberLastUser": true,
   "greeterEnableFprint": false,
   "greeterEnableU2f": false,
-  "greeterWallpaperPath": "",
+  "greeterWallpaperPath": "/home/johron/Pictures/shell-imgs/bg.png",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
