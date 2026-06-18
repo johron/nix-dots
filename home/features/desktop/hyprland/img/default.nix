@@ -1,11 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   home = {
     file = {
-      ".config/caelestia/img/bg.png".source = ./reef.png;
-      ".config/caelestia/img/tux-fly.gif".source = ./tux-fly.gif;
-      ".config/caelestia/img/tux-race.gif".source = ./tux-race.gif;
+      "Pictures/shell-imgs/bg.png".source = ./reef.png;
+      "Pictures/shell-imgs/tux-fly.gif".source = ./tux-fly.gif;
+      "Pictures/shell-imgs/tux-race.gif".source = ./tux-race.gif;
     };
   };
 }
