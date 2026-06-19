@@ -19,8 +19,8 @@ nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
 ```
 
 ## Screenshots
-### Hyprland
+### Hyprland (Dank Material Shell)
 <img width="1921" height="1080" alt="image" src="https://github.com/user-attachments/assets/9993fce6-bd56-48ea-bdc7-da1bc880a664" />
 
-### Sway flavor
+### Sway flavor (Custom, basically just bar and launcher)
 <img width="1924" height="1080" alt="image" src="https://github.com/user-attachments/assets/acbdc8e4-487d-49c3-9370-25b71b4a2d92" />
