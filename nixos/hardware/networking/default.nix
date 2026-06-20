@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 {
-  networking.networkmanager.enable = true;
-  networking.firewall.checkReversePath = false;
-
-  # chromecast
-  networking.firewall.allowedUDPPortRanges = [ 
-    { from = 32768; to = 60999; } 
-  ];
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      checkReversePath = false;
+      allowedUDPPortRanges = [ 
+        { from = 32768; to = 60999; } 
+      ];
+      allowedUDPPorts = [ 5353 ];
+    };
+  };
 }

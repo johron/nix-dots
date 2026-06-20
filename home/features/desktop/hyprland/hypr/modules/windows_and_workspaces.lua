@@ -48,3 +48,8 @@ hl.window_rule({
     match = { class = "Spotify" },
     workspace = "12"
 })
+
+hl.window_rule({
+    match = { class = "feishin" },
+    workspace = "12"
+})

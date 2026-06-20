@@ -149,11 +149,21 @@
   services.seatd.enable = true;
   services.gvfs.enable = true;
 
-  virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        vhostUserPackages = [ pkgs.virtiofsd ];
+      };
+    };
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
+  };
 
   qt.enable = true;
 

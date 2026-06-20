@@ -18,6 +18,13 @@
     alacritty
 
     hyprlauncher
+
+    kdePackages.dolphin
+    kdePackages.qtsvg 
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    kdePackages.ksshaskpass
   ];
 
   programs.hyprland = {
@@ -66,6 +73,8 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
+
+  security.pam.services.login.enableKwallet = true;
 
   systemd.user.services.gnome-keyring = {
     wantedBy = [ "default.target" ];
