@@ -38,6 +38,7 @@
     cups-pk-helper
     dgop
     cava
+    powertop
 
     moose
   ];
