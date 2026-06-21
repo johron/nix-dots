@@ -29,6 +29,7 @@
     kdePackages.qt6ct
     lxqt.lxqt-policykit
     neovim
+    emacs
     google-fonts
     ffmpeg_7-full
     libGL
@@ -38,8 +39,6 @@
     cups-pk-helper
     dgop
     cava
-
-    moose
   ];
 
   services.flatpak = {
@@ -78,7 +77,7 @@
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
-    EDITOR = "moose";
+    EDITOR = "nvim";
   };
 
   services.xserver.xkb = {
