@@ -8,10 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
-    moose = {
-      url = "github:johron/moose";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #moose = {
+    #  url = "github:johron/moose";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     caelestia-shell = {
       #url = "github:anarion80/caelestia-shell/topbar";

@@ -14,10 +14,7 @@
     geoclue2
     wtype
     matugen
-
     alacritty
-
-    hyprlauncher
 
     kdePackages.dolphin
     kdePackages.qtsvg 

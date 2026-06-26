@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = let
-    moose = inputs.moose.packages.${pkgs.system}.default;
+    #moose = inputs.moose.packages.${pkgs.system}.default;
   in 
   with pkgs; [
     lf
@@ -29,6 +29,7 @@
     kdePackages.qt6ct
     lxqt.lxqt-policykit
     neovim
+    emacs
     google-fonts
     ffmpeg_7-full
     libGL
@@ -39,8 +40,9 @@
     dgop
     cava
     powertop
+    joplin-desktop
 
-    moose
+    #moose
   ];
 
   services.flatpak = {
@@ -79,7 +81,7 @@
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
-    EDITOR = "moose";
+    EDITOR = "nvim";
   };
 
   services.xserver.xkb = {
@@ -114,7 +116,7 @@
   services.power-profiles-daemon.enable = true;
 
   services.accounts-daemon.enable = true;
-  
+
   services.dbus = {
     enable = true;
     packages = with pkgs; [ cups-pk-helper ];
