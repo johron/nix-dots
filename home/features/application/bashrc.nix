@@ -26,7 +26,7 @@ home = {
             sudo flatpak update -y
             cd "$ORIG_CWD"
           }
-          jclone() {
+          jc() {
             git clone https://github.com/johron/$1
           }
         '';

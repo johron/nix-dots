@@ -72,7 +72,7 @@ in
         "${mod}+Shift+q" = "kill";
         "${mod}+d" = "exec wofi";
         "${mod}+Return" = "exec alacritty";
-        "${mod}+Shift+Return" = "exec alacritty -e bash -c 'moose; exec bash'";
+        #"${mod}+Shift+Return" = "exec alacritty -e bash -c 'moose; exec bash'";
         "${super}+l" = "exec swaylock";
         "${mod}+r" = "mode \"resize\"";
 

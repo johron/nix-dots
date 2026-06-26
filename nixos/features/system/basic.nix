@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = let
-    moose = inputs.moose.packages.${pkgs.system}.default;
+    #moose = inputs.moose.packages.${pkgs.system}.default;
   in 
   with pkgs; [
     lf
@@ -40,8 +40,9 @@
     dgop
     cava
     powertop
+    joplin-desktop
 
-    moose
+    #moose
   ];
 
   services.flatpak = {
@@ -115,7 +116,7 @@
   services.power-profiles-daemon.enable = true;
 
   services.accounts-daemon.enable = true;
-  
+
   services.dbus = {
     enable = true;
     packages = with pkgs; [ cups-pk-helper ];
