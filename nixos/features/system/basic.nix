@@ -40,7 +40,6 @@
     dgop
     cava
     powertop
-    joplin-desktop
 
     #moose
   ];
