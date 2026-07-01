@@ -17,14 +17,14 @@ home = {
             set -e
 
             ORIG_CWD="$(pwd)"
+            trap 'cd "$ORIG_CWD"' EXIT
 
-            sudo nix-channel --update
             cd "$HOME/nix-dots"
             nix flake update
+
             nh os switch
+
             flatpak update -y
-            sudo flatpak update -y
-            cd "$ORIG_CWD"
           }
           jc() {
             git clone https://github.com/johron/$1
