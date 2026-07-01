@@ -53,6 +53,8 @@
     ];
   };
 
+  programs.librepods.enable = true;
+
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [

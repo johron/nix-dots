@@ -12,6 +12,6 @@ in
 
   users.users.${users.default} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "input" "networkmanager" "seat" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "video" "audio" "input" "networkmanager" "seat" "libvirtd" "docker" "librepods" ];
   };
 }
