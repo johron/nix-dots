@@ -106,7 +106,10 @@
 
   security.polkit.enable = true;
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [];
+  };
 
   programs.firefox.enable = true;
   programs.noisetorch.enable = true;
