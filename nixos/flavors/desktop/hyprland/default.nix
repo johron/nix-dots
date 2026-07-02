@@ -7,15 +7,16 @@
   environment.systemPackages = with pkgs; [
     cliphist
     wl-clipboard
-    mission-center
     hyprpicker
-    nomacs
-    gammastep
-    geoclue2
     wtype
-    matugen
-    alacritty
 
+    mission-center
+    nomacs
+    alacritty
+    vlc
+
+    kdePackages.kdenlive
+    kdePackages.ark
     kdePackages.dolphin
     kdePackages.qtsvg 
     kdePackages.kio

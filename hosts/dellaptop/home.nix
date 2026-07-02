@@ -5,8 +5,6 @@ in
 {
   imports = [
     ../../home/flavors/desktop/hyprland
-    ../../home/flavors/application/workstation
-    ../../home/flavors/application/development
   ];
 
   news.display = "silent";

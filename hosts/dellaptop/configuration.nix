@@ -13,9 +13,10 @@ in
     ../../nixos/hardware/bluetooth
     ../../nixos/flavors/desktop/hyprland
     ../../nixos/flavors/desktop/hyprland/greeter-default.nix
-    ../../nixos/features/system/basic.nix
-    ../../nixos/features/system/users.nix
-    ../../nixos/features/system/gaming.nix
+    ../../nixos/flavors/application/workstation
+    ../../nixos/flavors/application/development
+    ../../nixos/flavors/application/gaming
+    ../../nixos/flavors/application/school
   ];
 
   boot.kernelParams = [
@@ -29,14 +30,21 @@ in
 
   networking.hostName = hosts.dellaptop.hostname;
 
-  hardware.nvidia.prime = {
-    offload = {
+  hardware.nvidia = {
+    powerManagement = {
       enable = true;
-      enableOffloadCmd = true;
+      finegrained = true;
     };
 
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:2:0:0";
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:2:0:0";
+    };
   };
 
   boot.loader.systemd-boot.enable = true;

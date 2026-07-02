@@ -1,10 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  environment.systemPackages = let
-    #moose = inputs.moose.packages.${pkgs.system}.default;
-  in 
-  with pkgs; [
+  environment.systemPackages = with pkgs; [
     lf
     jq
     gh
@@ -15,12 +12,9 @@
     htop
     unzip
     seatd
-    libgcc
-    gnumake
     gparted
     dnsmasq
     pciutils
-    onefetch
     python315
     playerctl
     p7zip-rar
@@ -28,20 +22,21 @@
     pkg-config
     kdePackages.qt6ct
     lxqt.lxqt-policykit
-    neovim
-    emacs
     google-fonts
     ffmpeg_7-full
-    libGL
     discord
     proton-vpn
-    wireguard-tools
     cups-pk-helper
     dgop
     cava
     powertop
-
-    #moose
+    spotify
+    feishin
+    obsidian
+    inkscape
+    f3d
+    chromium
+    mediawriter
   ];
 
   services.flatpak = {
@@ -49,7 +44,6 @@
     packages = [
       "com.github.tchx84.Flatseal"
       "com.dec05eba.gpu_screen_recorder"
-      "org.geogebra.GeoGebra"
     ];
   };
 
@@ -73,12 +67,6 @@
       };
     };
   };
-
-  #nix.gc = {
-  #  automatic = true;
-  #  dates = "weekly";
-  #  options = "--delete-older-than 7d";
-  #};
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -139,21 +127,6 @@
     enable = true;
     packages = with pkgs; [ cups-pk-helper ];
   };
-
-  #programs.appimage = {
-  #  enable = true;
-  #  binfmt = true;
-  #  package = pkgs.appimage-run.override {
-  #    extraPkgs = pkgs: 
-  #    [
-  #      pkgs.icu
-  #      pkgs.libxcrypt-legacy
-  #      pkgs.python312
-  #      pkgs.python312Packages.torch
-  #      pkgs.zstd
-  #    ]; 
-  #  };
-  #};
 
   programs.nh = {
     enable = true;

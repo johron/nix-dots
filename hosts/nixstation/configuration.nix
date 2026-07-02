@@ -13,9 +13,11 @@ in
     ../../nixos/hardware/bluetooth
     ../../nixos/flavors/desktop/hyprland
     ../../nixos/flavors/desktop/hyprland/greeter-default.nix
-    ../../nixos/features/system/basic.nix
+    ../../nixos/flavors/application/workstation
+    ../../nixos/flavors/application/development
+    ../../nixos/flavors/application/gaming
+    ../../nixos/flavors/application/school
     ../../nixos/features/system/users.nix
-    ../../nixos/features/system/gaming.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
