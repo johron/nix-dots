@@ -17,6 +17,7 @@ in
     ../../nixos/flavors/application/development
     ../../nixos/flavors/application/gaming
     ../../nixos/flavors/application/school
+    ../../nixos/features/system/users.nix
   ];
 
   boot.kernelParams = [
