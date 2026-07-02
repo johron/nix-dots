@@ -112,8 +112,22 @@
   programs.firefox.enable = true;
   programs.noisetorch.enable = true;
 
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
+  #services.upower.enable = true;
+  #services.power-profiles-daemon.enable = true;
+
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
+
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MAX_PERF_ON_BAT = 80;
+    };
+  };
 
   services.accounts-daemon.enable = true;
 
