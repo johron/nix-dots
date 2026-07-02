@@ -49,12 +49,7 @@ hl.window_rule({
     workspace = "12"
 })
 
---hl.window_rule({
---    match = { class = "feishin" },
---    workspace = "12"
---})
-
 hl.window_rule({
-    match = { class = "Aonsoku" },
+    match = { class = "feishin" },
     workspace = "12"
 })

@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
-    lutris
     prismlauncher
     nvidia-vaapi-driver
     SDL2
@@ -13,6 +12,7 @@
     packages = [
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
+      "com.github.gabutakut.gabutdm"
     ];
   };
 

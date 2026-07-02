@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     spotify
     feishin
-    aonsoku
     kdePackages.kdenlive
     kdePackages.ark
     kdePackages.dolphin
