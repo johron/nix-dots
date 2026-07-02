@@ -6,6 +6,8 @@ home = {
       bashrc = {
         target = ".bashrc";
         text = ''
+          eval "$(direnv hook bash)"
+
           current_git_branch() {
             git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
           }
@@ -17,14 +19,14 @@ home = {
             set -e
 
             ORIG_CWD="$(pwd)"
+            trap 'cd "$ORIG_CWD"' EXIT
 
-            sudo nix-channel --update
             cd "$HOME/nix-dots"
             nix flake update
+
             nh os switch
+
             flatpak update -y
-            sudo flatpak update -y
-            cd "$ORIG_CWD"
           }
           jc() {
             git clone https://github.com/johron/$1

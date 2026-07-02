@@ -40,7 +40,6 @@
     dgop
     cava
     powertop
-    joplin-desktop
 
     #moose
   ];
@@ -53,6 +52,8 @@
       "org.geogebra.GeoGebra"
     ];
   };
+
+  programs.librepods.enable = true;
 
   fonts = {
     enableDefaultPackages = true;
@@ -107,7 +108,10 @@
 
   security.polkit.enable = true;
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [];
+  };
 
   programs.firefox.enable = true;
   programs.noisetorch.enable = true;
