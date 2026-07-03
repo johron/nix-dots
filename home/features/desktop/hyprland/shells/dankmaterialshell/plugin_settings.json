@@ -1,0 +1,15 @@
+{
+  "dankKDEConnect": {
+    "enabled": true
+  },
+  "dankterminaltheme": {
+    "enabled": true
+  },
+  "usbManager": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  }
+}

@@ -9,6 +9,8 @@
   ];
 
   home.file.".config/DankMaterialShell/settings.json".source = ./settings.json;
+  home.file.".config/DankMaterialShell/clsettings.json".source = ./clsettings.json;
+  home.file.".config/DankMaterialShell/plugin_settings.json".source = ./plugin_settings.json;
 
   programs.dank-material-shell = {
     enable = true;

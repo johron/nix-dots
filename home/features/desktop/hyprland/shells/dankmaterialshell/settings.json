@@ -1,8 +1,15 @@
 {
-  "currentThemeName": "blue",
-  "currentThemeCategory": "generic",
-  "customThemeFile": "",
-  "registryThemeVariants": {},
+  "currentThemeName": "dynamic",
+  "currentThemeCategory": "dynamic",
+  "customThemeFile": "/home/johron/.config/DankMaterialShell/themes/gnomeAdwaita/theme.json",
+  "registryThemeVariants": {
+    "deepmono": {
+      "dark": {
+        "flavor": "mono",
+        "accent": "fog"
+      }
+    }
+  },
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
@@ -30,7 +37,7 @@
   "nightModeEnabled": false,
   "animationSpeed": 1,
   "customAnimationDuration": 500,
-  "syncComponentAnimationSpeeds": true,
+  "syncComponentAnimationSpeeds": false,
   "popoutAnimationSpeed": 1,
   "popoutCustomAnimationDuration": 150,
   "modalAnimationSpeed": 1,
@@ -168,7 +175,7 @@
   "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [],
   "centeringMode": "index",
-  "clockDateFormat": "",
+  "clockDateFormat": "dddd, d. MMM",
   "lockDateFormat": "",
   "greeterRememberLastSession": true,
   "greeterRememberLastUser": true,
@@ -236,9 +243,9 @@
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
-  "acMonitorTimeout": 0,
-  "acLockTimeout": 0,
-  "acSuspendTimeout": 0,
+  "acMonitorTimeout": 300,
+  "acLockTimeout": 600,
+  "acSuspendTimeout": 300,
   "acSuspendBehavior": 2,
   "acProfileName": "",
   "batteryMonitorTimeout": 0,
@@ -295,7 +302,7 @@
   "dockSmartAutoHide": false,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
-  "dockPosition": 1,
+  "dockPosition": 0,
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "dockMargin": 0,
@@ -344,9 +351,9 @@
   "notificationPopupPosition": 0,
   "notificationAnimationSpeed": 1,
   "notificationCustomAnimationDuration": 400,
-  "notificationHistoryEnabled": true,
+  "notificationHistoryEnabled": false,
   "notificationHistoryMaxCount": 50,
-  "notificationHistoryMaxAgeDays": 7,
+  "notificationHistoryMaxAgeDays": 1,
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
@@ -382,8 +389,8 @@
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
   "updaterHideWidget": false,
-  "updaterUseCustomCommand": false,
-  "updaterCustomCommand": "",
+  "updaterUseCustomCommand": true,
+  "updaterCustomCommand": "nix-update",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
   "screenPreferences": {
@@ -425,15 +432,23 @@
         }
       ],
       "centerWidgets": [
-        "clock"
+        {
+          "id": "clock",
+          "enabled": true,
+          "clockCompactMode": false
+        }
       ],
       "rightWidgets": [
+        {
+          "id": "notificationButton",
+          "enabled": true
+        },
         {
           "id": "systemTray",
           "enabled": true
         },
         {
-          "id": "notificationButton",
+          "id": "usbManager",
           "enabled": true
         },
         {
@@ -448,11 +463,12 @@
           "showBrightnessPercent": false,
           "showMicIcon": false,
           "showBatteryIcon": false,
+          "showPrinterIcon": false,
           "showScreenSharingIcon": true
         }
       ],
       "spacing": 0,
-      "innerPadding": -5,
+      "innerPadding": -4,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
@@ -510,6 +526,16 @@
     "hslLightness": 1,
     "valid": true
   },
+  "desktopClockShowDate": true,
+  "desktopClockShowAnalogNumbers": false,
+  "desktopClockShowAnalogSeconds": true,
+  "desktopClockX": -1,
+  "desktopClockY": -1,
+  "desktopClockWidth": 280,
+  "desktopClockHeight": 180,
+  "desktopClockDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -552,10 +578,14 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
+  "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
+    },
+    "dms_notepad": {
+      "enabled": false
     }
   },
   "clipboardEnterToPaste": false,
