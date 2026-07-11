@@ -23,6 +23,8 @@
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.ksshaskpass
+
+    pam_u2f
   ];
 
   programs.hyprland = {
