@@ -8,6 +8,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+
+    #mango = {
+    #  url = "github:mangowm/mango";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
     #moose = {
     #  url = "github:johron/moose";
     #  inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +38,7 @@
     {
       self,
       nix-flatpak,
+      #mango,
       ...
     }@inputs:
 
@@ -55,6 +62,7 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [
             ./hosts/${host.dir}/home.nix
+            #mango.homeManagerModules.mango
           ] ++ modules;
         };
 

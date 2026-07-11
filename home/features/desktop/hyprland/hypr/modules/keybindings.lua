@@ -19,7 +19,7 @@ hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("feishin"))
 hl.bind(secMod .. " + CONTROL + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
 hl.bind(secMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --autocopy"))
-hl.bind("CONTROL + SHIFT + ESCAPE", hl.dsp.exec_cmd("missioncenter"))
+
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

@@ -28,7 +28,7 @@ home = {
 
             flatpak update -y
           }
-          jc() {
+          jclone() {
             git clone https://github.com/johron/$1
           }
         '';
