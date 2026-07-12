@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
+
 {
   imports = [
-    
+    inputs.mango.nixosModules.mango
   ];
 
   environment.systemPackages = with pkgs; [
@@ -23,15 +24,7 @@
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.ksshaskpass
-
-    pam_u2f
   ];
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
 
   programs.kdeconnect.enable = true;
 
@@ -56,9 +49,8 @@
 
     config = {
       common = {
-        # Use hyprland portal for screen sharing (screencast)
-        "org.freedesktop.impl.portal.Screencast" = "hyprland";
-        "org.freedesktop.impl.portal.Screenshot" = "hyprland";
+        "org.freedesktop.impl.portal.Screencast" = "mango";
+        "org.freedesktop.impl.portal.Screenshot" = "mango";
       };
     };
   };
@@ -66,13 +58,13 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
-    XDG_CURRENT_DESKTOP = "hyprland";
+    XDG_CURRENT_DESKTOP = "mango";
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   security.pam.services.login.enableKwallet = true;
 
@@ -82,5 +74,9 @@
       ExecStart = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --foreground --components=pkcs11,secrets,ssh";
       Restart = "on-abort";
     };
+  };
+
+  programs.mango = {
+    enable = true;
   };
 }

@@ -7,7 +7,7 @@ local fileManager = "dolphin"
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+--hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
@@ -19,6 +19,7 @@ hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("feishin"))
 hl.bind(secMod .. " + CONTROL + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("discord"))
 hl.bind(secMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --autocopy"))
+
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
