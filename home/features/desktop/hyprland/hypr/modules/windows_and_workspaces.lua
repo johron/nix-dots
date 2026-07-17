@@ -45,11 +45,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "Spotify" },
+    match = { class = "spotify" },
     workspace = "12"
 })
 
-hl.window_rule({
-    match = { class = "feishin" },
-    workspace = "12"
-})
+--hl.window_rule({
+--    match = { class = "feishin" },
+--    workspace = "12"
+--})

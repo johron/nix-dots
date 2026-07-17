@@ -31,7 +31,7 @@
     cava
     powertop
     spotify
-    feishin
+    #feishin
     obsidian
     inkscape
     f3d
