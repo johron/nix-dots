@@ -177,7 +177,7 @@ in
         "${super}+q" = "exec firefox";
         "${super}+e" = "exec dolphin";
         "${super}+s" = "exec spotify";
-        "${super}+d" = "exec discord";
+        "${super}+d" = "exec vesktop";
 
         "${super}+v" = "exec cliphist list | wofi --dmenu | cliphist decode | wl-copy";
         "${super}+Shift+s" = ''exec $HOME/Scripts/ss.sh'';

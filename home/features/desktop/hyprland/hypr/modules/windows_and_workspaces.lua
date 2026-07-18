@@ -40,7 +40,7 @@ hl.window_rule({
 -- })
 
 hl.window_rule({
-    match = { class = "discord" },
+    match = { class = "vesktop" },
     workspace = "11"
 })
 

@@ -24,7 +24,7 @@
     lxqt.lxqt-policykit
     google-fonts
     ffmpeg_7-full
-    discord
+    vesktop
     proton-vpn
     cups-pk-helper
     dgop
