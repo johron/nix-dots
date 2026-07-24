@@ -19,6 +19,8 @@ hl.bind(secMod .. " + S",  hl.dsp.exec_cmd("spotify"))
 hl.bind(secMod .. " + D",  hl.dsp.exec_cmd("vesktop"))
 hl.bind(secMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --autocopy"))
 
+hl.bind(mainMod .. " + CONTROL + A", hl.dsp.exec_cmd("amixer set Capture toggle"))
+hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd("amixer set Master toggle"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

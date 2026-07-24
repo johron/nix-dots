@@ -8,26 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
-
-    #mango = {
-    #  url = "github:mangowm/mango";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-
-    #moose = {
-    #  url = "github:johron/moose";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-
-    caelestia-shell = {
-      #url = "github:anarion80/caelestia-shell/topbar";
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +18,6 @@
     {
       self,
       nix-flatpak,
-      #mango,
       ...
     }@inputs:
 
