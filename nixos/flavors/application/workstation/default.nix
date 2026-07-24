@@ -44,6 +44,7 @@
     packages = [
       "com.github.tchx84.Flatseal"
       "com.dec05eba.gpu_screen_recorder"
+      "com.ultimaker.cura"
     ];
   };
 
