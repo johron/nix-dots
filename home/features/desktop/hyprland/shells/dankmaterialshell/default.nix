@@ -38,6 +38,7 @@
       hl.bind(secMod .. " + SHIFT + S", hl.dsp.exec_cmd("dms screenshot"))
 
       hl.bind("CONTROL + SHIFT + ESCAPE", hl.dsp.exec_cmd("dms ipc call processlist open"))
+      hl.bind(secMod .. " + CONTROL + SHIFT + C", hl.dsp.exec_cmd("dms ipc color-picker toggle"))
     '';
   };
 }

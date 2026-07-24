@@ -37,6 +37,7 @@
     f3d
     chromium
     mediawriter
+    translate-shell
   ];
 
   services.flatpak = {

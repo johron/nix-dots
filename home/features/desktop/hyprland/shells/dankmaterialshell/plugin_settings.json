@@ -11,5 +11,8 @@
   "calculator": {
     "enabled": true,
     "trigger": "="
+  },
+  "dankTranslate": {
+    "enabled": true
   }
 }
