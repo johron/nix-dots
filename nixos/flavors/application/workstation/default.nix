@@ -1,6 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
+  #imports = [
+  #  ./inputs.nix
+  #];
+
   environment.systemPackages = with pkgs; [
     lf
     jq

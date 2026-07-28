@@ -12,7 +12,7 @@
     packages = [
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
-      "com.github.gabutakut.gabutdm"
+      "io.github.C_Yassin.FlameGet"
     ];
   };
 
