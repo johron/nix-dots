@@ -42,6 +42,7 @@
     chromium
     mediawriter
     translate-shell
+    floorp-bin
   ];
 
   services.flatpak = {
@@ -107,7 +108,7 @@
     libraries = with pkgs; [];
   };
 
-  programs.firefox.enable = true;
+  #programs.firefox.enable = true;
   programs.noisetorch.enable = true;
 
   services.upower.enable = true;
