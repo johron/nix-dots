@@ -5,6 +5,7 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems.zfs = false;
 
   environment.systemPackages = with pkgs; [
     nh
