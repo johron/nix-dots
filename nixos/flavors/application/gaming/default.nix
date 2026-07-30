@@ -13,6 +13,7 @@
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
       "io.github.C_Yassin.FlameGet"
+      "com.lunarclient.LunarClient"
     ];
   };
 

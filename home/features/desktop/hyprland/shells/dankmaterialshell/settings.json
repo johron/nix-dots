@@ -360,8 +360,8 @@
   "muteSoundsWhenMediaPlaying": true,
   "acMonitorTimeout": 300,
   "acLockTimeout": 300,
-  "acSuspendTimeout": 300,
-  "acSuspendBehavior": 2,
+  "acSuspendTimeout": 600,
+  "acSuspendBehavior": 0,
   "acProfileName": "",
   "acPostLockMonitorTimeout": 0,
   "batteryMonitorTimeout": 0,
@@ -387,11 +387,6 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
-  "wifiNetworkPins": {},
-  "bluetoothDevicePins": {},
-  "audioInputDevicePins": {},
-  "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -407,6 +402,7 @@
   "matugenTemplateMangowc": true,
   "matugenTemplateQt5ct": true,
   "matugenTemplateQt6ct": true,
+  "matugenTemplateFirefox": true,
   "matugenTemplatePywalfox": true,
   "matugenTemplateZenBrowser": true,
   "matugenTemplateVesktop": true,
@@ -784,5 +780,5 @@
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
   "frameBarInsetPadding": -1,
-  "configVersion": 12
+  "configVersion": 13
 }
