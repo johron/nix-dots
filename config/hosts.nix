@@ -14,4 +14,10 @@ in
     arch = "x86_64-linux";
     user = users.default;  
   };
+  ideapad = {
+    hostname = "ideapad";
+    dir = "ideapad";
+    arch = "x86_64-linux";
+    user = users.default;  
+  };
 }

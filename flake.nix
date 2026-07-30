@@ -96,6 +96,11 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
+      nixosConfigurations."${hosts.ideapad.hostname}" = mkNixOSConfigurations {
+        host = hosts.ideapad;
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
+      };
 
       nixosConfigurations."${hosts.nixstation.hostname}-iso" = mkISOConfiguration {
         host = hosts.nixstation;
@@ -103,6 +108,10 @@
       };
       nixosConfigurations."${hosts.dellaptop.hostname}-iso" = mkISOConfiguration {
         host = hosts.dellaptop;
+        nixpkgs = inputs.nixpkgs;
+      };
+      nixosConfigurations."${hosts.ideapad.hostname}-iso" = mkISOConfiguration {
+        host = hosts.ideapad;
         nixpkgs = inputs.nixpkgs;
       };
 
