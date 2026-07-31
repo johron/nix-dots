@@ -8,7 +8,6 @@ in
     ./hardware.nix
 
     ../../nixos/hardware/networking
-    ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/sound
     ../../nixos/hardware/bluetooth
     ../../nixos/hardware/biometric/elan-fingerprint.nix
