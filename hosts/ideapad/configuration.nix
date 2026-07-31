@@ -11,6 +11,7 @@ in
     ../../nixos/hardware/gpu/nvidia.nix
     ../../nixos/hardware/sound
     ../../nixos/hardware/bluetooth
+    ../../nixos/hardware/biometric/elan-fingerprint.nix
     ../../nixos/flavors/desktop/hyprland
     ../../nixos/flavors/desktop/hyprland/greeter-default.nix
     ../../nixos/flavors/application/workstation
