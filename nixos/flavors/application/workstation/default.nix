@@ -60,6 +60,7 @@
   };
 
   programs.librepods.enable = true;
+  programs.fish.enable = true;
 
   fonts = {
     enableDefaultPackages = true;

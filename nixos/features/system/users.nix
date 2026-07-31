@@ -14,4 +14,6 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "input" "networkmanager" "seat" "libvirtd" "docker" "librepods" ];
   };
+
+  users.defaultUserShell = pkgs.fish;
 }
