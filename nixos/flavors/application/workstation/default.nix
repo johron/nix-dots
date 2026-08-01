@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-  #imports = [
-  #  ./inputs.nix
-  #];
+  imports = [
+    ./boot-splash.nix
+    #./inputs.nix
+  ];
 
   environment.systemPackages = with pkgs; [
     lf
