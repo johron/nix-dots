@@ -68,6 +68,8 @@
             {
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users."${host.user}" = import ./hosts/${host.dir}/home.nix;
             }
           ] ++ modules;
