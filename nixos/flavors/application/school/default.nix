@@ -1,6 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    ./ntnu-vpn.nix
+  ];
+
   environment.systemPackages = with pkgs; [];
 
   services.flatpak = {
