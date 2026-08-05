@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -155,7 +155,7 @@
     };
     docker = {
       enable = true;
-      storageDriver = "btrfs";
+      storageDriver = lib.mkDefault "btrfs";
     };
   };
 
