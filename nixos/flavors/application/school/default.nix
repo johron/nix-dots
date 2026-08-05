@@ -10,6 +10,7 @@
   services.flatpak = {
     packages = [
       "org.geogebra.GeoGebra"
+      "org.remmina.Remmina"
     ];
   };
 }
