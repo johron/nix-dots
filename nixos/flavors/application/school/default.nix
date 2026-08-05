@@ -5,7 +5,9 @@
     ./ntnu-vpn.nix
   ];
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    geteduroam
+  ];
 
   services.flatpak = {
     packages = [
