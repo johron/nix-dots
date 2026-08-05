@@ -21,7 +21,7 @@ in
   ];
 
   boot.kernelParams = [
-    "resume=UUID=79e1dbf5-5469-466b-bf3f-7de192644f09"
+    "resume=UUID=3f914128-2e08-4080-b1bb-d7ddf9ef647a"
   ];
 
   nixpkgs.config.allowUnfree = true;
