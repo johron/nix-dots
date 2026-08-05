@@ -31,6 +31,12 @@ in
 
   networking.hostName = hosts.ideapad.hostname;
 
+  virtualisation = {
+    docker = {
+      storageDriver = "overlay2";
+    };
+  };
+
   hardware.nvidia = {
     powerManagement = {
       enable = true;
