@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./boot-splash.nix
+    #./boot-splash.nix
     #./inputs.nix
   ];
 
