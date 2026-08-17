@@ -3,6 +3,7 @@
 {
   imports = [
     ./ntnu-vpn.nix
+    ./smb4k.nix
   ];
 
   environment.systemPackages = with pkgs; [
