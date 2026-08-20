@@ -17,7 +17,7 @@ in
 
   custom.hyprExtras = {
     monitors = ''
-      hl.monitor({ output = "DP-2", mode = "1920x1080@143.98", position = "0x0", scale = 1 })
+      hl.monitor({ output = "DP-1", mode = "1920x1080@143.98", position = "0x0", scale = 1 })
       hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@143.98", position = "1920x0", scale = 1 })
 
       -- fallback:
@@ -25,7 +25,7 @@ in
 
       -- rules
       for i = 1, 10 do
-        hl.workspace_rule({ workspace = i % 10, monitor = "DP-2", default = true })
+        hl.workspace_rule({ workspace = i % 10, monitor = "DP-1", default = true })
       end
 
       for i = 11, 20 do
