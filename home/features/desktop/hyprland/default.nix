@@ -40,11 +40,11 @@
         defaultApplications = {
           "inode/directory" = [ "org.kde.dolphin.desktop" ];
 
-          "x-scheme-handler/http" = "floorp.desktop";
-          "x-scheme-handler/https" = "floorp.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
           "text/plain" = "code.desktop";
           "text/csv" = "code.desktop";
-          "application/pdf" = "floorp.desktop";
+          "application/pdf" = "firefox.desktop";
           "image/jpeg" = "org.nomacs.ImageLounge.desktop";
           "image/png" = "org.nomacs.ImageLounge.desktop";
           "image/gif" = "org.nomacs.ImageLounge.desktop";

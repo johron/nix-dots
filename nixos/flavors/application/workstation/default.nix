@@ -43,7 +43,7 @@
     chromium
     mediawriter
     translate-shell
-    floorp-bin
+    firefox
   ];
 
   programs.appimage = {

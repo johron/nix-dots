@@ -174,7 +174,7 @@ in
         XF86AudioLowerVolume = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
 
         # Applications
-        "${super}+q" = "exec floorp";
+        "${super}+q" = "exec firefox";
         "${super}+e" = "exec dolphin";
         "${super}+s" = "exec spotify";
         "${super}+d" = "exec vesktop";
