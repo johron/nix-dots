@@ -20,7 +20,6 @@
     gparted
     dnsmasq
     pciutils
-    python315
     playerctl
     p7zip-rar
     fastfetch
@@ -144,6 +143,14 @@
   services.gvfs.enable = true;
 
   programs.virt-manager.enable = true;
+
+  services.udev.extraHwdb = ''
+    evdev:name:AT Translated Set 2 keyboard:*
+      KEYBOARD_KEY_3a=f12
+
+    evdev:input:b*v*p*e*
+      KEYBOARD_KEY_3a=f12
+  '';
 
   virtualisation = {
     libvirtd = {
