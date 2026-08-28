@@ -43,6 +43,7 @@
     mediawriter
     translate-shell
     firefox
+    bitwarden-desktop
   ];
 
   programs.appimage = {
