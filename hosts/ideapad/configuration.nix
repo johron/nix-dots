@@ -37,23 +37,6 @@ in
     };
   };
 
-  hardware.nvidia = {
-    powerManagement = {
-      enable = true;
-      finegrained = true;
-    };
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:2:0:0";
-    };
-  };
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   system.stateVersion = "26.05";
