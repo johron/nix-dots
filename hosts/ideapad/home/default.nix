@@ -1,20 +1,13 @@
 { config, pkgs, lib, ... }:
-let
-  users = import ../../../config/users.nix;
-in
+
 {
   imports = [
     ../../../home/modules/system/home-base.nix
 
     ../../../home/modules/desktop/hyprland
     ../../../home/modules/shells/dms-shell
+
+    ../../../home/modules/configs/alacritty.nix
+    ../../../home/modules/configs/fish.nix
   ];
-
-  news.display = "silent";
-
-  home = {
-    username = users.default;
-    homeDirectory = "/home/${users.default}";
-    stateVersion = "26.05";
-  };
 }
