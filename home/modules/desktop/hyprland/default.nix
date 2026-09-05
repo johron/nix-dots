@@ -1,5 +1,8 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, host, ... }:
 
+let
+  hostname = host.hostname;
+in 
 {
   config = {
     home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
@@ -10,8 +13,8 @@
     home.file.".config/hypr/modules/input.lua".source = ./hypr/modules/input.lua; 
     home.file.".config/hypr/modules/keybindings.lua".source = ./hypr/modules/keybindings.lua; 
     home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./hypr/modules/windows_and_workspaces.lua; 
-    home.file.".config/hypr/modules/monitors.lua".text = config.custom.hyprExtras.monitors;
-    home.file.".config/hypr/modules/shell.lua".text = config.custom.hyprExtras.shell;
+    home.file.".config/hypr/modules/monitors.lua".source = (./. + "/../../../../hosts/${hostname}/home/modules/desktop/hyprland/hypr/modules/monitors.lua");
+    home.file.".config/hypr/modules/shell.lua".source = (./. + "/../../../../hosts/${hostname}/home/modules/desktop/hyprland/hypr/modules/shell.lua");
 
     xdg = {
       userDirs = {
@@ -54,20 +57,6 @@
           "x-scheme-handler/unknown" = "dms-open.desktop";
         };
       };
-    };
-  };
-
-  options.custom.hyprExtras = {
-    monitors = lib.mkOption {
-      type = lib.types.lines;
-      default = ''
-        hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
-      '';
-      description = "Host-specific monitor configuration for Hyprland";
-    };
-    shell = lib.mkOption {
-      type = lib.types.lines;
-      default = '''';
     };
   };
 }

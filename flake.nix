@@ -40,10 +40,9 @@
               allowUnfree = true;
             };
           };
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs host; };
           modules = [
             ./hosts/${host.dir}/home.nix
-            #mango.homeManagerModules.mango
           ] ++ modules;
         };
 
@@ -58,7 +57,7 @@
         nixpkgs.lib.nixosSystem {
           system = host.arch;
           specialArgs = {
-            inherit inputs;
+            inherit inputs host;
           };
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
@@ -66,7 +65,7 @@
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.extraSpecialArgs = { inherit inputs host; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
