@@ -62,7 +62,7 @@
           };
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
-            ./hosts/${host.dir}/configuration.nix
+            ./hosts/${host.dir}/nixos
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager
             {
@@ -70,7 +70,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users."${host.user}" = import ./hosts/${host.dir}/home.nix;
+              home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
             }
           ] ++ modules;
         };
@@ -93,11 +93,6 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
-      nixosConfigurations."${hosts.dellaptop.hostname}" = mkNixOSConfigurations {
-        host = hosts.dellaptop;
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-      };
       nixosConfigurations."${hosts.ideapad.hostname}" = mkNixOSConfigurations {
         host = hosts.ideapad;
         nixpkgs = inputs.nixpkgs;
@@ -106,10 +101,6 @@
 
       nixosConfigurations."${hosts.nixstation.hostname}-iso" = mkISOConfiguration {
         host = hosts.nixstation;
-        nixpkgs = inputs.nixpkgs;
-      };
-      nixosConfigurations."${hosts.dellaptop.hostname}-iso" = mkISOConfiguration {
-        host = hosts.dellaptop;
         nixpkgs = inputs.nixpkgs;
       };
       nixosConfigurations."${hosts.ideapad.hostname}-iso" = mkISOConfiguration {
@@ -122,8 +113,8 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };
-      homeConfigurations."${hosts.dellaptop.user}@${hosts.dellaptop.hostname}" = mkHomeConfigurations {
-        host = hosts.dellaptop;
+      homeConfigurations."${hosts.ideapad.user}@${hosts.ideapad.hostname}" = mkHomeConfigurations {
+        host = hosts.ideapad;
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
       };

@@ -8,12 +8,6 @@ in
     arch = "x86_64-linux";
     user = users.default;
   };
-  dellaptop = {
-    hostname = "dellaptop";
-    dir = "dellaptop";
-    arch = "x86_64-linux";
-    user = users.default;  
-  };
   ideapad = {
     hostname = "ideapad";
     dir = "ideapad";

@@ -7,17 +7,18 @@ in
   imports = [
     ./hardware.nix
 
-    ../../nixos/hardware/networking
-    ../../nixos/hardware/sound
-    ../../nixos/hardware/bluetooth
-    ../../nixos/hardware/biometric/elan-fingerprint.nix
-    ../../nixos/flavors/desktop/hyprland
-    ../../nixos/flavors/desktop/hyprland/greeter-default.nix
-    ../../nixos/flavors/application/workstation
-    ../../nixos/flavors/application/development
-    ../../nixos/flavors/application/gaming
-    ../../nixos/flavors/application/school
-    ../../nixos/features/system/users.nix
+    ../../../nixos/modules/system/nixos-base.nix
+    ../../../nixos/modules/system/users.nix
+    ../../../nixos/modules/hardware/networking
+    ../../../nixos/modules/hardware/sound
+    ../../../nixos/modules/hardware/bluetooth
+    ../../../nixos/modules/hardware/biometric/elan-fingerprint.nix
+    ../../../nixos/modules/desktop/hyprland
+    ../../../nixos/modules/desktop/hyprland/greeter-default.nix
+    ../../../nixos/modules/application/workstation
+    ../../../nixos/modules/application/development
+    ../../../nixos/modules/application/gaming
+    ../../../nixos/modules/application/school
   ];
 
   boot.kernelParams = [
