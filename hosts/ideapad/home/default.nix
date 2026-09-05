@@ -1,10 +1,12 @@
 { config, pkgs, lib, ... }:
 let
-  users = import ../../config/users.nix;
+  users = import ../../../config/users.nix;
 in
 {
   imports = [
-    ../../home/flavors/desktop/hyprland
+    ../../../home/modules/system/home-base.nix
+
+    ../../../home/modules/desktop/hyprland
   ];
 
   news.display = "silent";

@@ -1,12 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
+
 let
-  users = import ../../config/users.nix;
+  users = import ../../../config/users.nix;
 in
 {
-  imports = [
-    ../../home/flavors/desktop/hyprland
-  ];
-
   news.display = "silent";
 
   home = {
