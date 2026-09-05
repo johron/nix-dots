@@ -44,6 +44,8 @@
     translate-shell
     firefox
     bitwarden-desktop
+    slacky
+    figma-linux
   ];
 
   programs.appimage = {
