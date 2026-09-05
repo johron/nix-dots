@@ -1,13 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports = [
-    ./img
-    ./shells/dankmaterialshell
-    ./theming/notwaita.nix
-    ./theming/breeze-dark.nix
-  ];
-
   config = {
     home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
     home.file.".config/hypr/modules/autostart.lua".source = ./hypr/modules/autostart.lua; 

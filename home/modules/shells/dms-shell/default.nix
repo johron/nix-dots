@@ -3,13 +3,15 @@
 {
   imports = [
     inputs.dms.homeModules.dank-material-shell
+
+    ./settings.nix
+    ./clipboard-settings.nix
+
+    ../../appearance/images
+    ../../appearance/theme/breeze-dark.nix
+    ../../appearance/theme/notwaita.nix
   ];
 
-  home.packages = with pkgs; [
-  ];
-
-  home.file.".config/DankMaterialShell/settings.json".source = ./settings.json;
-  home.file.".config/DankMaterialShell/clsettings.json".source = ./clsettings.json;
   home.file.".config/DankMaterialShell/plugin_settings.json".source = ./plugin_settings.json;
 
   programs.dank-material-shell = {
@@ -25,6 +27,10 @@
     enableDynamicTheming = true;
     enableAudioWavelength = true;
     enableCalendarEvents = true;
+
+    session = {
+      isLightMode = false;
+    };
   };
 
   custom.hyprExtras = {

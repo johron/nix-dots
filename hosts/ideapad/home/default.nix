@@ -7,6 +7,7 @@ in
     ../../../home/modules/system/home-base.nix
 
     ../../../home/modules/desktop/hyprland
+    ../../../home/modules/shells/dms-shell
   ];
 
   news.display = "silent";
