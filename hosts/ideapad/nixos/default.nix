@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let 
-  hosts = import ../../config/hosts.nix;
+  hosts = import ../../../config/hosts.nix;
 in
 {
   imports = [
@@ -15,10 +15,10 @@ in
     ../../../nixos/modules/hardware/biometric/elan-fingerprint.nix
     ../../../nixos/modules/desktop/hyprland
     ../../../nixos/modules/desktop/hyprland/greeter-default.nix
-    ../../../nixos/modules/application/workstation
-    ../../../nixos/modules/application/development
-    ../../../nixos/modules/application/gaming
-    ../../../nixos/modules/application/school
+    ../../../nixos/profiles/workstation
+    ../../../nixos/profiles/development
+    ../../../nixos/profiles/gaming
+    ../../../nixos/profiles/school
   ];
 
   boot.kernelParams = [
