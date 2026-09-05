@@ -20,7 +20,7 @@
       '';
 
       jclone = ''
-        git clone https://github.com/johron/$argv[1]
+        git clone git@github.com:johron/$argv[1]
       '';
 
       nix-update = ''
