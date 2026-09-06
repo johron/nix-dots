@@ -5,7 +5,6 @@
   boot.kernelParams = [
     "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     "nvidia.NVreg_TemporaryFilePath=/var/tmp"
-    "mem_sleep_default=deep"
     "nvidia_drm.modeset=1"
   ];
 

@@ -46,6 +46,7 @@
     bitwarden-desktop
     slacky
     figma-linux
+    brightnessctl
   ];
 
   programs.appimage = {
