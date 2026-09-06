@@ -18,6 +18,11 @@
       enable = true;
     };
 
+    powerManagement = {
+      enable = true;
+      finegrained = false;
+    };
+
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };

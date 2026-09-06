@@ -15,7 +15,7 @@ in
     ../../../nixos/profiles/gaming
     ../../../nixos/profiles/school
 
-    ../../../nixos/modules/hardware/gpu/nvidia.nix
+    ../../../nixos/modules/hardware/graphics/nvidia.nix
     ../../../nixos/modules/hardware/networking/bcm4360.nix
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
@@ -24,5 +24,9 @@ in
     ../../../nixos/modules/desktop/hyprland/greeter-default.nix
   ];
   
+  boot.kernelParams = [
+    "resume=UUID=ba1f1991-b3cf-4bb3-8558-da54c9afa148"
+  ];
+
   networking.hostName = hosts.nixstation.hostname;
 }
