@@ -1,11 +1,14 @@
 { config, pkgs, lib, inputs, ... }:
 
+let
+  users = import ./../../../../config/users.nix;
+in
 {
   programs.dank-material-shell = {
     settings = {
       currentThemeName = "dynamic";
       currentThemeCategory = "dynamic";
-      customThemeFile = "/home/johron/.config/DankMaterialShell/themes/gnomeAdwaita/theme.json";
+      customThemeFile = "/home/${users.default}/.config/DankMaterialShell/themes/gnomeAdwaita/theme.json";
       registryThemeVariants = {
         deepmono = {
           dark = {
@@ -68,7 +71,7 @@
       clockDateFormat = "dddd, d. MMM";
       greeterEnableFprint = true;
       greeterEnableU2f = true;
-      greeterWallpaperPath = "/home/johron/Pictures/shell-imgs/bg.png";
+      greeterWallpaperPath = "/home/${users.default}/Pictures/shell-imgs/bg.png";
       weatherEnabled = false;
       networkPreference = "wifi";
       cursorSettings = {

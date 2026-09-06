@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    
-  ];
-
   environment.systemPackages = with pkgs; [
     cliphist
     wl-clipboard

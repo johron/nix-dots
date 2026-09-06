@@ -12,14 +12,16 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vm-curator.url = "github:mroboff/vm-curator";
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nix-flatpak,
-      vm-curator,
       ...
     }@inputs:
 

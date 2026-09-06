@@ -1,5 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
 
+let
+  users = import ./../../../../config/users.nix;
+in
 {
   imports = [
     inputs.dms.homeModules.dank-material-shell
@@ -30,7 +33,7 @@
 
     session = {
       isLightMode = false;
-      wallpaperPath = "/home/johron/Pictures/shell-imgs/bg.png";
+      wallpaperPath = "/home/${users.default}/Pictures/shell-imgs/bg.png";
       wallpaperFillMode = "PreserveAspectCrop";
     };
   };
