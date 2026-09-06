@@ -30,6 +30,8 @@
 
     session = {
       isLightMode = false;
+      wallpaperPath = "/home/johron/Pictures/shell-imgs/bg.png";
+      wallpaperFillMode = "PreserveAspectCrop";
     };
   };
 }

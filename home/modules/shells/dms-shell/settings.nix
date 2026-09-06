@@ -14,7 +14,6 @@
           };
         };
       };
-      wallpaperPath = "/home/johron/Pictures/shell-imgs/bg.png";
       cornerRadius = 12;
       clockFormat = "24h";
       syncComponentAnimationSpeeds = false;
