@@ -14,4 +14,10 @@ in
     arch = "x86_64-linux";
     user = users.default;  
   };
+  moholt = {
+    hostname = "moholt";
+    dir = "moholt";
+    arch = "x86_64-linux";
+    user = users.default; 
+  };
 }

@@ -26,6 +26,7 @@
     }@inputs:
 
     let
+      lib = inputs.nixpkgs.lib;
       hosts = import ./config/hosts.nix;
 
       mkHomeConfigurations =
@@ -44,7 +45,7 @@
           };
           extraSpecialArgs = { inherit inputs host; };
           modules = [
-            ./hosts/${host.dir}/home.nix
+            ./hosts/${host.dir}/home
           ] ++ modules;
         };
 
@@ -89,35 +90,37 @@
         };
     in
     {
-      nixosConfigurations."${hosts.nixstation.hostname}" = mkNixOSConfigurations {
-        host = hosts.nixstation;
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-      };
-      nixosConfigurations."${hosts.ideapad.hostname}" = mkNixOSConfigurations {
-        host = hosts.ideapad;
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-      };
+      nixosConfigurations =
+        lib.mapAttrs
+          (name: host:
+            mkNixOSConfigurations {
+              inherit host;
+              nixpkgs = inputs.nixpkgs;
+              home-manager = inputs.home-manager;
+            }
+          )
+          hosts
+        // lib.mapAttrs'
+          (name: host:
+            lib.nameValuePair
+              "${host.hostname}-iso"
+              (mkISOConfiguration {
+                inherit host;
+                nixpkgs = inputs.nixpkgs;
+              })
+          )
+          hosts;
 
-      nixosConfigurations."${hosts.nixstation.hostname}-iso" = mkISOConfiguration {
-        host = hosts.nixstation;
-        nixpkgs = inputs.nixpkgs;
-      };
-      nixosConfigurations."${hosts.ideapad.hostname}-iso" = mkISOConfiguration {
-        host = hosts.ideapad;
-        nixpkgs = inputs.nixpkgs;
-      };
-
-      homeConfigurations."${hosts.nixstation.user}@${hosts.nixstation.hostname}" = mkHomeConfigurations {
-        host = hosts.nixstation;
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-      };
-      homeConfigurations."${hosts.ideapad.user}@${hosts.ideapad.hostname}" = mkHomeConfigurations {
-        host = hosts.ideapad;
-        nixpkgs = inputs.nixpkgs;
-        home-manager = inputs.home-manager;
-      };
+      homeConfigurations = lib.mapAttrs'
+        (name: host:
+          lib.nameValuePair
+            "${host.user}@${host.hostname}"
+            (mkHomeConfigurations {
+              inherit host;
+              nixpkgs = inputs.nixpkgs;
+              home-manager = inputs.home-manager;
+            })
+        )
+        hosts;
     };
 }
