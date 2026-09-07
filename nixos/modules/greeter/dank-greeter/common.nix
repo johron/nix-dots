@@ -4,6 +4,10 @@ let
   users = import ./../../../../config/users.nix;
 in
 {
+  imports = [
+    inputs.dms.nixosModules.greeter
+  ];
+
   services.displayManager.dms-greeter = {
     enable = true;
 
@@ -22,4 +26,6 @@ in
     fprintAuth = true;
     u2fAuth = true;
   };
+
+  package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
 }
