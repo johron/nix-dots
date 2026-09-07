@@ -20,6 +20,8 @@ in
       save = true; 
       path = "/tmp/dms-greeter.log";
     };
+
+    package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   security.pam.services.greetd = {
@@ -27,5 +29,4 @@ in
     u2fAuth = true;
   };
 
-  package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
 }
