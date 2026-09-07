@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./fileme.nix
-  ];
-
   programs.fish = {
     enable = true;
 
@@ -13,6 +9,8 @@
     '';
 
     functions = {
+      fme = builtins.readFile ./fileme/function.fish;
+
       current_git_branch = ''
         git symbolic-ref --quiet --short HEAD 2>/dev/null | read -l branch
         and printf '(%s)' $branch
@@ -101,6 +99,9 @@
         set_color normal
         printf '$ '
       '';
+    };
+    completions = {
+      fme = builtins.readFile ./fileme/completions.fish;
     };
   };
 }
