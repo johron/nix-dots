@@ -21,8 +21,8 @@ in
     ../../../nixos/modules/hardware/biometric/elan-fingerprint.nix
 
     ../../../nixos/modules/desktop/hyprland
-    ../../../nixos/modules/greeter/dank-greeter/hyprland.nix
-
+    #../../../nixos/modules/greeter/dank-greeter/hyprland.nix
+    ../../../nixos/modules/greeter/tuigreet
   ];
 
   boot.kernelParams = [
