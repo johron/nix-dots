@@ -15,4 +15,9 @@ in
       path = "/tmp/dms-greeter.log";
     };
   };
+
+  security.pam.services.greetd = {
+    fprintAuth = true;
+    u2fAuth = true;
+  };
 }
