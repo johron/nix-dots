@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./dev-flakes.nix
+    ./fileme.nix
   ];
 
   programs.fish = {
