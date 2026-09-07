@@ -45,6 +45,7 @@
     firefox
     bitwarden-desktop
     brightnessctl
+    samba
   ];
 
   programs.appimage = {

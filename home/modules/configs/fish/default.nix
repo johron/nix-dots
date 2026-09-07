@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
+  imports = [
+    ./dev-flakes.nix
+  ];
+
   programs.fish = {
     enable = true;
 
