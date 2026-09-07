@@ -2,11 +2,10 @@
 
 {
   imports = [
-    inputs.dank-greeter.nixosModules.default
     ./common.nix
   ];
   
-  programs.dms-greeter = {
+  services.displayManager.dms-greeter = {
     compositor.name = "hyprland";
   };
 }
