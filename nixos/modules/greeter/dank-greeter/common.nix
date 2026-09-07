@@ -5,6 +5,8 @@ let
 in
 {
   services.displayManager.dms-greeter = {
+    enable = true;
+
     configHome = "/home/${users.default}";
     configFiles = [
       "/home/${users.default}/.config/DankMaterialShell/settings.json"
