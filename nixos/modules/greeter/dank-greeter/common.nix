@@ -14,4 +14,11 @@ in
     enable = true;
     configHome = "/home/${users.default}";
   };
+
+  systemd.services.greetd = {
+    serviceConfig = {
+      StateDirectory = "dms-greeter";
+      CacheDirectory = "dms-greeter";
+    };
+};
 }

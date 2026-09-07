@@ -8,6 +8,6 @@
     ../../../home/modules/shells/dms-shell
 
     ../../../home/modules/configs/alacritty.nix
-    ../../../home/modules/configs/fish.nix
+    ../../../home/modules/configs/fish
   ];
 }
