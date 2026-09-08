@@ -69,7 +69,7 @@
   virtualisation.oci-containers.containers."gogs" = {
     image = "gogs/gogs:latest";
     volumes = [
-      "/home/johron/Downloads/tmp/gogs-data:/data:rw"
+      "/opt/docker/gogs/data:/data:rw"
     ];
     ports = [
       "3000:3000/tcp"
