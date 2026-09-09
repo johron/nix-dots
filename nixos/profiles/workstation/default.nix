@@ -45,8 +45,16 @@
     firefox
     bitwarden-desktop
     brightnessctl
-    samba
+    kdePackages.kio-extras
+    cifs-utils
   ];
+
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  services.samba-wsdd.enable = true;
 
   programs.appimage = {
     enable = true;
