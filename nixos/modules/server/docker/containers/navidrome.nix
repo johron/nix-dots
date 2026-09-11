@@ -18,7 +18,7 @@
   };
 
   virtualisation.oci-containers.backend = "podman";
-
+ø
   # Containers
   virtualisation.oci-containers.containers."navidrome-navidrome" = {
     image = "deluan/navidrome:latest";
