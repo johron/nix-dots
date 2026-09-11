@@ -18,6 +18,6 @@ in
     hostname = "moholt";
     dir = "moholt";
     arch = "x86_64-linux";
-    user = users.vaktmester; 
+    user = users.server; 
   };
 }

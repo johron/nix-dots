@@ -20,6 +20,8 @@
             doppler
             docker
             docker-compose
+            prisma-engines
+            prisma
           ];
         };
       });

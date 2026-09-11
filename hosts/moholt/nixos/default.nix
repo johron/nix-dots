@@ -10,11 +10,10 @@ in
     ../../../nixos/modules/system/nixos-base.nix
     ../../../nixos/profiles/server
 
-    ../../../nixos/modules/hardware/networking/server.nix
-
-    ../../../nixos/modules/server/docker
-    ../../../nixos/modules/server/docker/containers/navidrome.nix
-    ../../../nixos/modules/server/docker/containers/gogs.nix
+    ../../../nixos/server-modules/hardware/networking
+    ../../../nixos/server-modules/docker
+    ../../../nixos/server-modules/docker/containers/navidrome.nix
+    ../../../nixos/server-modules/docker/containers/gogs.nix
   ];
 
   interfaces.eth0.ipv4.addresses = [{
