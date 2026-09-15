@@ -32,7 +32,7 @@
       bind = [
         "SUPER,r,reload_config"
         "Alt,space,spawn,rofi -show drun"
-        "Alt,Return,spawn,foot"
+        "Alt,Return,spawn,alacritty"
         "ALT,R,setkeymode,resize"
       ];
 
