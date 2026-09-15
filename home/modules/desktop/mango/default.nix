@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.mango.hmModules.mango
     #./bind.nix
   ];
 
