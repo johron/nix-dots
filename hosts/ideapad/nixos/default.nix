@@ -21,7 +21,7 @@ in
     ../../../nixos/modules/hardware/biometric/elan-fingerprint.nix
 
     ../../../nixos/modules/desktop/mango
-    ../../../nixos/modules/greeter/tuigreet/mango
+    ../../../nixos/modules/greeter/tuigreet/mango.nix
   ];
 
   boot.kernelParams = [

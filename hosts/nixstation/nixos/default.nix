@@ -21,7 +21,7 @@ in
     ../../../nixos/modules/hardware/bluetooth
 
     ../../../nixos/modules/desktop/hyprland
-    ../../../nixos/modules/greeter/tuigreet/hyprland
+    ../../../nixos/modules/greeter/tuigreet/hyprland.nix
   ];
   
   boot.kernelParams = [
