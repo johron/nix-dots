@@ -4,7 +4,8 @@
   imports = [
     ../../../home/modules/system/home-base.nix
 
-    ../../../home/modules/desktop/mango
+    #../../../home/modules/desktop/mango
+    ../../../home/modules/desktop/hyprland
     ../../../home/modules/shells/dms-shell
 
     ../../../home/modules/configs/alacritty.nix
