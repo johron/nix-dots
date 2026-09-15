@@ -20,9 +20,8 @@ in
     ../../../nixos/modules/hardware/bluetooth
     ../../../nixos/modules/hardware/biometric/elan-fingerprint.nix
 
-    ../../../nixos/modules/desktop/hyprland
-    #../../../nixos/modules/greeter/dank-greeter/hyprland.nix
-    ../../../nixos/modules/greeter/tuigreet
+    ../../../nixos/modules/desktop/mango
+    ../../../nixos/modules/greeter/tuigreet/mango
   ];
 
   boot.kernelParams = [

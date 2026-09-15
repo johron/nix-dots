@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 
-
 let
   users = import ./../../../../config/users.nix;
 in
