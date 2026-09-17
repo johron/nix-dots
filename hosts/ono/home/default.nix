@@ -4,7 +4,6 @@
   imports = [
     ../../../home/modules/system/home-base.nix
 
-    #../../../home/modules/desktop/mango
     ../../../home/modules/desktop/hyprland
     ./hyprland.nix
 

@@ -18,23 +18,15 @@ in
     ../../../nixos/modules/hardware/networking
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
-    ../../../nixos/modules/hardware/biometric/fingerprint/elan.nix
+    ../../../nixos/modules/hardware/biometric/fingerprint
 
-    #../../../nixos/modules/desktop/mango
-    #../../../nixos/modules/greeter/tuigreet/mango.nix
     ../../../nixos/modules/desktop/hyprland
     ../../../nixos/modules/greeter/tuigreet/hyprland.nix
   ];
 
-  boot.kernelParams = [
-    "resume=UUID=3f914128-2e08-4080-b1bb-d7ddf9ef647a"
-  ];
+  #boot.kernelParams = [
+  #  "resume=UUID=3f914128-2e08-4080-b1bb-d7ddf9ef647a"
+  #];
 
-  networking.hostName = hosts.ideapad.hostname;
-
-  virtualisation = {
-    docker = {
-      storageDriver = "overlay2";
-    };
-  };
+  networking.hostName = hosts.ono.hostname;
 }

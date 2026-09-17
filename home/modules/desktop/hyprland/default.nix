@@ -5,16 +5,14 @@ let
 in 
 {
   config = {
-    home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
-    home.file.".config/hypr/modules/autostart.lua".source = ./hypr/modules/autostart.lua; 
-    home.file.".config/hypr/modules/environment.lua".source = ./hypr/modules/environment.lua; 
-    home.file.".config/hypr/modules/look_and_feel.lua".source = ./hypr/modules/look_and_feel.lua; 
-    home.file.".config/hypr/modules/misc.lua".source = ./hypr/modules/misc.lua; 
-    home.file.".config/hypr/modules/input.lua".source = ./hypr/modules/input.lua; 
-    home.file.".config/hypr/modules/keybindings.lua".source = ./hypr/modules/keybindings.lua; 
-    home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./hypr/modules/windows_and_workspaces.lua; 
-    home.file.".config/hypr/modules/monitors.lua".source = (./. + "/../../../../hosts/${hostname}/home/modules/desktop/hyprland/hypr/modules/monitors.lua");
-    home.file.".config/hypr/modules/shell.lua".source = (./. + "/../../../../hosts/${hostname}/home/modules/desktop/hyprland/hypr/modules/shell.lua");
+    home.file.".config/hypr/hyprland.lua".source = ./lua/hyprland.lua;
+    home.file.".config/hypr/modules/autostart.lua".source = ./lua/modules/autostart.lua; 
+    home.file.".config/hypr/modules/environment.lua".source = ./lua/modules/environment.lua; 
+    home.file.".config/hypr/modules/look_and_feel.lua".source = ./lua/modules/look_and_feel.lua; 
+    home.file.".config/hypr/modules/misc.lua".source = ./lua/modules/misc.lua; 
+    home.file.".config/hypr/modules/input.lua".source = ./lua/modules/input.lua; 
+    home.file.".config/hypr/modules/keybindings.lua".source = ./lua/modules/keybindings.lua; 
+    home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./lua/modules/windows_and_workspaces.lua; 
 
     xdg = {
       userDirs = {

@@ -100,8 +100,30 @@
   services.xserver.xkb = {
     layout = "no";
     variant = "winkeys";
+    options = "compose:rctrl";
   };
+
   console.keyMap = "no";
+
+  services.udev.extraHwdb = ''
+    evdev:name:AT Translated Set 2 keyboard:*
+      KEYBOARD_KEY_3a=f12
+
+    evdev:input:b*v*p*e*
+      KEYBOARD_KEY_3a=f12
+  '';
+
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      naturalScrolling = false;
+      tapping = true;
+      clickMethod = "clickfinger";
+    };
+    mouse = {
+      accelProfile = "flat";
+    };
+  };
 
   time.timeZone = "Europe/Oslo";
 
@@ -154,14 +176,6 @@
   services.gvfs.enable = true;
 
   programs.virt-manager.enable = true;
-
-  services.udev.extraHwdb = ''
-    evdev:name:AT Translated Set 2 keyboard:*
-      KEYBOARD_KEY_3a=f12
-
-    evdev:input:b*v*p*e*
-      KEYBOARD_KEY_3a=f12
-  '';
 
   virtualisation = {
     libvirtd = {

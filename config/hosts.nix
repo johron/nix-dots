@@ -20,4 +20,10 @@ in
     arch = "x86_64-linux";
     user = users.server; 
   };
+  ono = {
+    hostname = "ono";
+    dir = "ono";
+    arch = "x86_64-linux";
+    user = users.server; 
+  };
 }

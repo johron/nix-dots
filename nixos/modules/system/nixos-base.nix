@@ -3,6 +3,7 @@
 {
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
+  services.fwupd.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
