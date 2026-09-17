@@ -14,6 +14,12 @@ in
     arch = "x86_64-linux";
     user = users.default;  
   };
+  lyderhorn = {
+    hostname = "lyderhorn";
+    dir = "lyderhorn";
+    arch = "x86_64-linux";
+    user = users.default;  
+  };
   moholt = {
     hostname = "moholt";
     dir = "moholt";
