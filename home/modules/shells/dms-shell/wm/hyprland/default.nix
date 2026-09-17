@@ -2,7 +2,7 @@
   imports = [ ../../../../../../home/modules/desktop/hyprland/modules/config-builder.nix ];
 
   programs.hyprlandLua = {
-    shellCommand = "dms-run";
+    shellCommand = "dms run";
 
     bindings = [
       { key = "ALT + D"; action = ''hl.dsp.exec_cmd("dms ipc spotlight toggle")''; }
