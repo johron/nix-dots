@@ -62,7 +62,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
-    XDG_CURRENT_DESKTOP = "hyprland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
