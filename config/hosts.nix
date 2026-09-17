@@ -1,35 +1,22 @@
 let
   users = import ./users.nix;
-in
-{
-  nixstation = {
-    hostname = "nixstation";
-    dir = "nixstation";
+
+  defaultHost = {
     arch = "x86_64-linux";
     user = users.default;
   };
-  ideapad = {
-    hostname = "ideapad";
-    dir = "ideapad";
-    arch = "x86_64-linux";
-    user = users.default;  
+
+  hosts = {
+    nixstation = {};
+    ideapad = {};
+    lyderhorn = {};
+    moholt = { user = users.server; };
+    ono = {};
   };
-  lyderhorn = {
-    hostname = "lyderhorn";
-    dir = "lyderhorn";
-    arch = "x86_64-linux";
-    user = users.default;  
-  };
-  moholt = {
-    hostname = "moholt";
-    dir = "moholt";
-    arch = "x86_64-linux";
-    user = users.server; 
-  };
-  ono = {
-    hostname = "ono";
-    dir = "ono";
-    arch = "x86_64-linux";
-    user = users.server; 
-  };
-}
+in
+builtins.mapAttrs (name: cfg: 
+  defaultHost // cfg // {
+    hostname = name;
+    dir = name;
+  }
+) hosts
