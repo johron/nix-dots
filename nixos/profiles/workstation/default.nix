@@ -33,7 +33,6 @@
     cups-pk-helper
     dgop
     cava
-    powertop
     spotify
     #feishin
     obsidian
@@ -151,7 +150,7 @@
   programs.noisetorch.enable = true;
 
   services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
+  powerManagement.powertop.enable = true;
 
   services.accounts-daemon.enable = true;
 
