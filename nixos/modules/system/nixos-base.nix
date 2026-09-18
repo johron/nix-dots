@@ -1,8 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
   services.fwupd.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
