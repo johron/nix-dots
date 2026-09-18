@@ -58,7 +58,7 @@
             case 'nixstation'
                 set primary_color "brblue"
                 set pwd_color "blue"
-            case 'ideapad'
+            case 'ono'
                 set primary_color "cyan"
                 set pwd_color "brcyan"
             case 'moholt'
