@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ../../nixos/features/system/iso-base.nix
+    ../../nixos/modules/system/iso-base.nix
   ];
 }
