@@ -19,7 +19,7 @@ in
     ../../../nixos/modules/hardware/networking
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
-    # ../../../nixos/modules/hardware/biometric/fingerprint
+    ../../../nixos/modules/hardware/biometric/fingerprint
     ../../../nixos/modules/hardware/battery
 
     ../../../nixos/modules/desktop/hyprland
