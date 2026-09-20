@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "ticklabvn";
     repo = "biopass";
     rev = "${version}";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-JNX2L4IDU5XxfgjhbuivhiYKp7GdLWLogrBgdFgODsg=";
   };
 
   nativeBuildInputs = [ cmake pkg-config ];
