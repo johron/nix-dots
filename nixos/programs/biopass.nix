@@ -80,7 +80,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Modern Multi-Modal Biometric Login for Linux";
+    description = "An alternative to Windows Hello/Howdy";
     homepage = "https://github.com/TickLabVN/biopass";
     license = licenses.mit;
     platforms = platforms.linux;
