@@ -8,7 +8,7 @@
 , glib
 , gtk3
 , libcamera
-, libpam
+, pam
 , cli11
 , libjpeg
 , rustPlatform
@@ -16,7 +16,7 @@
 , cargo
 , rustc
 , webkitgtk_4_1
-, libxdo
+, xdotool
 , libayatana-appindicator
 , librsvg
 , wrapGAppsHook4
@@ -53,13 +53,13 @@ stdenv.mkDerivation rec {
     onnxruntime
     glib
     gtk3
-    libpam
+    pam
     cli11
     libjpeg
     libcamera
 
     webkitgtk_4_1
-    libxdo
+    xdotool
     libayatana-appindicator
     librsvg
   ];

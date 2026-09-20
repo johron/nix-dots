@@ -36,13 +36,13 @@ in
 
   networking.hostName = hosts.ono.hostname;
 
-  environment.systemPackages = [ biopass ];
+  # environment.systemPackages = [ biopass ];
 
-  security.pam.services.sudo.text = lib.mkBefore ''
-    auth sufficient ${biopass}/lib/security/pam_biopass.so
-  '';
+  # security.pam.services.sudo.text = lib.mkBefore ''
+  #   auth sufficient ${biopass}/lib/security/pam_biopass.so
+  # '';
   
-  security.pam.services.login.text = lib.mkBefore ''
-    auth sufficient ${biopass}/lib/security/pam_biopass.so
-  '';
+  # security.pam.services.login.text = lib.mkBefore ''
+  #   auth sufficient ${biopass}/lib/security/pam_biopass.so
+  # '';
 }
