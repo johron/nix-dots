@@ -2,6 +2,7 @@
 
 let 
   hosts = import ../../../config/hosts.nix;
+  biopass = pkgs.callPackage ../../../nixos/programs/biopass.nix {};
 in
 {
   imports = [
@@ -18,7 +19,6 @@ in
     ../../../nixos/modules/hardware/networking
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
-    ../../../nixos/modules/hardware/biometric/biopass.nix
     # ../../../nixos/modules/hardware/biometric/fingerprint
     ../../../nixos/modules/hardware/battery
 
@@ -35,4 +35,14 @@ in
   ];
 
   networking.hostName = hosts.ono.hostname;
+
+  environment.systemPackages = [ biopass ];
+
+  security.pam.services.sudo.text = lib.mkBefore ''
+    auth sufficient ${biopass}/lib/security/pam_biopass.so
+  '';
+  
+  security.pam.services.login.text = lib.mkBefore ''
+    auth sufficient ${biopass}/lib/security/pam_biopass.so
+  '';
 }
