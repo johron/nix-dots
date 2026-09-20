@@ -46,6 +46,7 @@
     brightnessctl
     kdePackages.kio-extras
     cifs-utils
+    webcamoid
   ];
 
   services.samba = {
