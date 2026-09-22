@@ -16,11 +16,11 @@ in
     ../../../nixos/profiles/gaming
     ../../../nixos/profiles/school
 
-    ../../../nixos/modules/hardware/networking
+    ../../../nixos/modules/hardware/networking/bcm4360.nix
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
     ../../../nixos/modules/hardware/biometric/fingerprint
-    ../../../nixos/modules/hardware/battery
+    ../../../nixos/modules/hardware/power/battery.nix
 
     ../../../nixos/modules/desktop/hyprland
     ../../../nixos/modules/greeter/tuigreet/hyprland.nix

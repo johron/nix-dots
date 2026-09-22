@@ -19,7 +19,7 @@ in
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
     ../../../nixos/modules/hardware/biometric/fingerprint/elan.nix
-    ../../../nixos/modules/hardware/battery
+    ../../../nixos/modules/hardware/power/battery.nix
 
     #../../../nixos/modules/desktop/mango
     #../../../nixos/modules/greeter/tuigreet/mango.nix

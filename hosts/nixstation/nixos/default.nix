@@ -19,6 +19,7 @@ in
     ../../../nixos/modules/hardware/networking/bcm4360.nix
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
+    ../../../nixos/modules/hardware/power
 
     ../../../nixos/modules/desktop/hyprland
     ../../../nixos/modules/greeter/tuigreet/hyprland.nix
