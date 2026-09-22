@@ -47,6 +47,7 @@
     kdePackages.kio-extras
     cifs-utils
     webcamoid
+    slack
   ];
 
   services.samba = {
