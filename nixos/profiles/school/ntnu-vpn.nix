@@ -1,8 +1,28 @@
 { pkgs, ... }:
 
 {
+  networking = {
+    networkmanager = {
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    openconnect
+    networkmanagerapplet
+  ];
+
+  environment.etc."gnutls/config".text = ''
+    [overrides]
+    disabled-version = tls1.0
+    disabled-version = tls1.1
+    disabled-version = tls1.3
+  '';
+
   system.activationScripts.networkmanager-ntnu = ''
-  FILE="/etc/NetworkManager/system-connections/NTNU-VPN.nmconnection"
+  FILE="/etc/NetworkManager/system-connections/NTgNU-VPN.nmconnection"
   
   if [ ! -f "$FILE" ]; then
     mkdir -p /etc/NetworkManager/system-connections
@@ -43,7 +63,6 @@ method=auto
 EOF
     chmod 0600 "$FILE"
     
-    # Last inn nye tilkoplingar i NetworkManager med ein gong
     ${pkgs.networkmanager}/bin/nmcli connection reload
   fi
   '';

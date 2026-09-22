@@ -6,9 +6,6 @@
     networkmanager = {
       enable = true;
       dns = "none";
-      plugins = with pkgs; [
-        networkmanager-openconnect
-      ];
     };
     firewall = {
       checkReversePath = false;
@@ -20,14 +17,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    openconnect
     networkmanagerapplet
   ];
-
-  environment.etc."gnutls/config".text = ''
-    [overrides]
-    disabled-version = tls1.0
-    disabled-version = tls1.1
-    disabled-version = tls1.3
-  '';
 }
