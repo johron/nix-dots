@@ -7,7 +7,7 @@
 
   services.greetd = {
     settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --cmd mango";
+      command = "${pkgs.tuigreet}/bin/tuigreet --remember --user ${users.default} --cmd mango";
     };
   };
 }
