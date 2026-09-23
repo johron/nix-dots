@@ -5,6 +5,7 @@
     #jetbrains.rust-rover
     #jetbrains.rider
     vscode
+    zed-editor
     gdb
     onefetch
   ];

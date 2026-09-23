@@ -16,7 +16,7 @@ in
     ../../../nixos/profiles/gaming
     ../../../nixos/profiles/school
 
-    ../../../nixos/modules/hardware/networking/bcm4360.nix
+    ../../../nixos/modules/hardware/networking
     ../../../nixos/modules/hardware/sound
     ../../../nixos/modules/hardware/bluetooth
     ../../../nixos/modules/hardware/biometric/fingerprint
