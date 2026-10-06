@@ -6,7 +6,6 @@
     gdb
     onefetch
     graphite-cli
-    emacs
   ];
 
   programs.direnv = {

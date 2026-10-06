@@ -7,7 +7,7 @@
     ../../../home/modules/desktop/hyprland
     ./hyprland.nix
 
-    ../../../home/modules/configs/alacritty.nix
-    ../../../home/modules/configs/fish
+    ../../../home/modules/apps/alacritty.nix
+    ../../../home/modules/apps/fish
   ];
 }
