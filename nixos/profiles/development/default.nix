@@ -1,9 +1,6 @@
 { pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
-    #jetbrains.idea
-    #jetbrains.rust-rover
-    #jetbrains.rider
     vscode
     zed-editor
     gdb
