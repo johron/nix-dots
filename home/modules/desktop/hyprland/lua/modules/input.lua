@@ -12,6 +12,9 @@ hl.config({
             clickfinger_behavior = true,
         },
     },
+    misc = {
+        middle_click_paste = false,
+    },
 })
 
 hl.gesture({
