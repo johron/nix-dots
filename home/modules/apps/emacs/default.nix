@@ -2,18 +2,19 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
     
-    extraPackages = epkgs: [
+    extraPackages = epkgs: with epkgs; [
+      all-the-icons-dired
+      dired-open
+      multiple-cursors
     ];
 
-    extraConfig = builtins.readFile ./config/emacs.el;
+    extraConfig = builtins.readFile (./. + "/config/emacs.el");
   };
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs;
-    socketActivation.enable = true; # Starts Emacs on demand when emacsclient is called
-    startWithUserSession = "graphical"; # Launch with graphical session or true for default.target
+    socketActivation.enable = true; 
+    startWithUserSession = "graphical";
   };
 }

@@ -10,5 +10,6 @@
     ../../../home/modules/apps/alacritty.nix
     ../../../home/modules/apps/fish
     ../../../home/modules/apps/emacs
+    ../../../home/modules/apps/neovim
   ];
 }
