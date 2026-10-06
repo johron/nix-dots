@@ -8,6 +8,7 @@
     zed-editor
     gdb
     onefetch
+    graphite-cli
   ];
 
   programs.direnv = {
