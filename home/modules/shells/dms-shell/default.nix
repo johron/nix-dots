@@ -15,6 +15,10 @@ in
     ../../appearance/theme/notwaita.nix
   ];
 
+  home.packages = with pkgs; [
+    dsearch
+  ];
+
   home.file.".config/DankMaterialShell/plugin_settings.json".source = ./plugin_settings.json;
 
   programs.dank-material-shell = {
