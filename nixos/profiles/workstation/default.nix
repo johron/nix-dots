@@ -94,7 +94,6 @@
 
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
-    EDITOR = "nano";
   };
 
   services.xserver.xkb = {

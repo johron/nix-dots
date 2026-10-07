@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     vscode
-    zed-editor
     gdb
     onefetch
     graphite-cli

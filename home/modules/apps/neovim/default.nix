@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   dired-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -13,26 +13,80 @@ let
   };
 in
 {
-  xdg.configFile."nvim/lua".source = ./. + "/lua";
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+  ];
 
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    withNodeJs = true;
-    withPython3 = true;
-    
-    plugins = with pkgs.vimPlugins; [
-      vim-visual-multi
-      nui-nvim
-      dired-nvim
-      barbar-nvim
-      nvim-web-devicons
+
+    nixpkgs.config.allowUnfree = true; 
+
+    opts = {
+      number = true;
+      relativenumber = true;
+
+      shiftwidth = 4;
+    };
+
+    keymaps = [
+      {
+        mode = [ "i" "v" "c" ];
+        key = "<F12>";
+        action = "<C-c>";
+      }
+      {
+        mode = [ "i" "v" "c" ];
+        key = "<Esc>";
+        action = "<Nop>";
+      }
+      {
+        mode = [ "n" "v" ];
+        key = "ø";
+        action = ":";
+      }
+      {
+        mode = [ "n" "v" ];
+        key = ":";
+        action = "<Nop>";
+      }
     ];
 
-    extraLuaConfig = ''
-      require("neovim")
+    colorscheme = "retrobox";
+
+    plugins = {
+      visual-multi.enable = true;
+      barbar = {
+        enable = true;
+        settings = {
+          pinned = {
+            button = false;
+          };
+          icons = {
+            button = false;
+            modified.button = false;
+            buffer_index = false;
+            filetype = {
+              custom_colors = false;
+              enabled = true;
+            };
+          };
+        };
+      };
+      web-devicons.enable = true;
+    };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      nui-nvim
+      dired-nvim
+    ];
+
+    extraConfigLua = ''
+      require("dired").setup({
+        path_separator = "/",
+        show_hidden = true,
+        show_icons = true,
+      })
     '';
   };
 }

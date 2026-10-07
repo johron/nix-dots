@@ -6,6 +6,8 @@ in
 {
   news.display = "silent";
 
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     username = users.default;
     homeDirectory = "/home/${users.default}";
