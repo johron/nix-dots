@@ -29,5 +29,12 @@ in
     "resume=UUID=ba1f1991-b3cf-4bb3-8558-da54c9afa148"
   ];
 
+  systemd.sleep.settings.Sleep = {
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspend = "no";
+    AllowSuspendThenHibernate = "no";
+  };
+
   networking.hostName = hosts.nixstation.hostname;
 }
