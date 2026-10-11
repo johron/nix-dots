@@ -20,8 +20,6 @@ in
   programs.nixvim = {
     enable = true;
 
-    nixpkgs.config.allowUnfree = true; 
-
     opts = {
       number = true;
       relativenumber = true;
@@ -56,23 +54,23 @@ in
 
     plugins = {
       visual-multi.enable = true;
-      barbar = {
-        enable = true;
-        settings = {
-          pinned = {
-            button = false;
-          };
-          icons = {
-            button = false;
-            modified.button = false;
-            buffer_index = false;
-            filetype = {
-              custom_colors = false;
-              enabled = true;
-            };
-          };
-        };
-      };
+      # barbar = {
+      #   enable = true;
+      #   settings = {
+      #     pinned = {
+      #       button = false;
+      #     };
+      #     icons = {
+      #       button = false;
+      #       modified.button = false;
+      #       buffer_index = false;
+      #       filetype = {
+      #         custom_colors = false;
+      #         enabled = true;
+      #       };
+      #     };
+      #   };
+      # };
       web-devicons.enable = true;
     };
 
