@@ -20,5 +20,12 @@
     ];
 
     defaultCursorMonitor = "DP-2";
+
+    extraLua = ''
+      hl.device({
+        name = "tpps/2-elan-trackpoint",
+        sensitivity = -1,
+    })
+    ''
   };
 }
