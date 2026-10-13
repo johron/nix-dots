@@ -1,5 +1,5 @@
 {
-  description = "Node.js and JavaScript development environment";
+  description = "Modern Node.js and JavaScript development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -15,9 +15,8 @@
   {
     devShells = forEachSupportedSystem ({ pkgs }: {
       default = pkgs.mkShell {
-        packages = with pkgs; [
-          nodejs
-          nodePackages.npm
+        packages = [
+          pkgs.nodejs_22 
         ];
       };
     });
