@@ -26,6 +26,6 @@
         name = "tpps/2-elan-trackpoint",
         sensitivity = -1,
     })
-    ''
+    '';
   };
 }

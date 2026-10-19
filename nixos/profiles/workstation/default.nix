@@ -47,6 +47,8 @@
     cifs-utils
     webcamoid
     slack
+
+    inputs.something-x.packages.${pkgs.system}.something-x
   ];
 
   services.samba = {
