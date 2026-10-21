@@ -341,15 +341,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1789970657,
-        "narHash": "sha256-2u2wu4/t3Uh7qjfug+itY9Z0KvQvU3FTFud0d+y+yjg=",
-        "owner": "SoaOaoS",
+        "lastModified": 1792489712,
+        "narHash": "sha256-389T1dZhlwgdfpDxE3ERUsUwKhDlomwofplPGT3ABTI=",
+        "owner": "johron",
         "repo": "something-x",
-        "rev": "fec9aa2dd69d00de567082f2a957b0e9cbf77692",
+        "rev": "fb46d9b09e304a1baea151acb0d471c41bbbf833",
         "type": "github"
       },
       "original": {
-        "owner": "SoaOaoS",
+        "owner": "johron",
         "repo": "something-x",
         "type": "github"
       }

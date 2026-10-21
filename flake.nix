@@ -24,8 +24,8 @@
       url = "github:nix-community/nixvim";
     };
     something-x = {
-      url = "github:SoaOaoS/something-x";
-      inputs.nixpkgs.follows = "nixpkgs";   # optional but recommended
+      url = "github:SoaOaoS//something-x";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
