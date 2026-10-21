@@ -47,7 +47,6 @@
     cifs-utils
     webcamoid
     slack
-    figma-linux
 
     inputs.something-x.packages.${pkgs.system}.something-x
   ];
