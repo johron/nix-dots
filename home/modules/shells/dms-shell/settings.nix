@@ -12,96 +12,18 @@ in
       registryThemeVariants = {
         deepmono = {
           dark = {
-            flavor = "mono";
             accent = "fog";
+            flavor = "mono";
           };
         };
       };
-      cornerRadius = 12;
+      radiusStrength = 38;
       clockFormat = "24h";
-      syncComponentAnimationSpeeds = false;
-      barElevationEnabled = false;
-      showWeather = false;
-      controlCenterShowMicPercent = true;
-      controlCenterWidgets = [
-        {
-          id = "volumeSlider";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "brightnessSlider";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "wifi";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "bluetooth";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "audioOutput";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "audioInput";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "nightMode";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "idleInhibitor";
-          enabled = true;
-          width = 50;
-        }
-      ];
-      showWorkspaceIndex = true;
-      showWorkspaceApps = true;
-      appIdSubstitutions = [];
-      clockDateFormat = "dddd, d. MMM";
       greeterEnableFprint = true;
       greeterEnableU2f = true;
-      greeterWallpaperPath = "/home/${users.default}/Pictures/shell-imgs/bg.png";
       weatherEnabled = false;
-      networkPreference = "wifi";
-      cursorSettings = {
-        theme = "System Default";
-        size = 24;
-        niri = {
-          hideWhenTyping = false;
-          hideAfterInactiveMs = 0;
-        };
-        hyprland = {
-          hideOnKeyPress = false;
-          hideOnTouch = false;
-          inactiveTimeout = 0;
-        };
-        dwl = {
-          cursorHideTimeout = 0;
-        };
-      };
       fontFamily = "Adwaita Sans";
       monoFontFamily = "Adwaita Mono";
-      acMonitorTimeout = 300;
-      acLockTimeout = 300;
-      acSuspendTimeout = 600;
-      lockBeforeSuspend = true;
-      dockPosition = 0;
-      enableFprint = true;
-      enableU2f = true;
-      notificationHistoryEnabled = false;
-      notificationHistoryMaxAgeDays = 1;
-      osdPowerProfileEnabled = true;
       powerMenuActions = [
         "reboot"
         "logout"
@@ -112,157 +34,368 @@ in
         "hibernate"
       ];
       powerMenuDefaultAction = "poweroff";
+      dockConfigs = [
+        {
+          id = "dock";
+          name = "Dock";
+          enabled = false;
+          screenPreferences = [
+            "all"
+          ];
+          showOnLastDisplay = false;
+          position = 0;
+          mode = "compact";
+          taskbarAlign = "center";
+          widgetExpansion = "popout";
+          iconSize = 40;
+          spacing = 4;
+          itemSpacing = 4;
+          margin = 0;
+          bottomGap = 0;
+          transparency = 1;
+          followInterfaceStyle = true;
+          autoHide = false;
+          smartAutoHide = false;
+          useOverlayLayer = false;
+          editOnRightClick = false;
+          showOnFullscreen = false;
+          openOnOverview = false;
+          groupByApp = false;
+          separatePinnedAndRunningApps = false;
+          restoreSpecialWorkspaceOnClick = false;
+          isolateDisplays = false;
+          indicatorStyle = "circle";
+          borderEnabled = false;
+          borderColor = "surfaceText";
+          borderOpacity = 1;
+          borderThickness = 1;
+          launcherEnabled = false;
+          launcherLogoMode = "apps";
+          launcherLogoCustomPath = "";
+          launcherLogoColorOverride = "";
+          launcherLogoSizeOffset = 0;
+          launcherLogoBrightness = 0.5;
+          launcherLogoContrast = 1;
+          maxVisibleApps = 0;
+          maxVisibleRunningApps = 0;
+          showOverflowBadge = true;
+          showTrash = false;
+          trashFileManager = "default";
+          trashCustomCommand = "";
+          magnification = false;
+          magnificationScale = 130;
+          magnificationProfile = "parabolic";
+          magnificationExpand = false;
+          order = [];
+          widgets = [
+            {
+              id = "dock_launcher";
+              widgetId = "dockLauncher";
+              enabled = true;
+            }
+            {
+              id = "dock_apps";
+              widgetId = "appsDock";
+              enabled = true;
+            }
+            {
+              id = "dock_trash";
+              widgetId = "dockTrash";
+              enabled = true;
+            }
+          ];
+        }
+      ];
+      matugenSpec = "2021";
+      dmsWindowsFloatingSeeded = [
+        "hyprland"
+      ];
+      syncComponentAnimationSpeeds = false;
+      barElevationEnabled = false;
+      controlCenterWidgets = [
+        {
+          id = "user";
+          enabled = true;
+          w = 5;
+          h = 1;
+          col = 0;
+          row = 0;
+        }
+        {
+          id = "settings";
+          enabled = true;
+          w = 1;
+          h = 1;
+          small = true;
+          col = 5;
+          row = 0;
+        }
+        {
+          id = "lock";
+          enabled = true;
+          w = 1;
+          h = 1;
+          small = true;
+          col = 6;
+          row = 0;
+        }
+        {
+          id = "power";
+          enabled = true;
+          w = 1;
+          h = 1;
+          small = true;
+          col = 7;
+          row = 0;
+        }
+        {
+          enabled = true;
+          id = "volumeSlider";
+          w = 4;
+          h = 1;
+          col = 0;
+          row = 1;
+        }
+        {
+          enabled = true;
+          id = "brightnessSlider";
+          w = 4;
+          h = 1;
+          col = 4;
+          row = 1;
+        }
+        {
+          enabled = true;
+          id = "wifi";
+          w = 4;
+          h = 1;
+          col = 0;
+          row = 2;
+        }
+        {
+          enabled = true;
+          id = "bluetooth";
+          w = 4;
+          h = 1;
+          col = 4;
+          row = 2;
+        }
+        {
+          enabled = true;
+          id = "audioOutput";
+          w = 4;
+          h = 1;
+          col = 0;
+          row = 3;
+        }
+        {
+          enabled = true;
+          id = "audioInput";
+          w = 4;
+          h = 1;
+          col = 4;
+          row = 3;
+        }
+        {
+          enabled = true;
+          id = "nightMode";
+          w = 4;
+          h = 1;
+          col = 0;
+          row = 4;
+        }
+        {
+          enabled = true;
+          id = "idleInhibitor";
+          w = 4;
+          h = 1;
+          col = 4;
+          row = 4;
+        }
+        {
+          id = "edit";
+          enabled = true;
+          w = 1;
+          h = 1;
+          small = true;
+          col = 0;
+          row = 5;
+        }
+        {
+          id = "runningApps";
+          enabled = true;
+          w = 3;
+          h = 1;
+          small = true;
+          col = 1;
+          row = 5;
+        }
+        {
+          id = "builtin_vpn";
+          enabled = true;
+          w = 4;
+          h = 1;
+          col = 4;
+          row = 5;
+        }
+      ];
+      appIdSubstitutions = [];
+      clockDateFormat = "dddd, d. MMM";
+      networkPreference = "wifi";
+      cursorSettings = {
+        dwl = {
+          cursorHideTimeout = 0;
+        };
+        hyprland = {
+          hideOnKeyPress = false;
+          hideOnTouch = false;
+          inactiveTimeout = 0;
+        };
+        niri = {
+          hideAfterInactiveMs = 0;
+          hideWhenTyping = false;
+        };
+        size = 24;
+        theme = "System Default";
+      };
+      acMonitorTimeout = 300;
+      acLockTimeout = 300;
+      acSuspendTimeout = 600;
+      lockBeforeSuspend = true;
+      enableFprint = true;
+      enableU2f = true;
+      notificationHistoryEnabled = false;
+      notificationHistoryMaxAgeDays = 1;
+      osdPowerProfileEnabled = true;
       updaterUseCustomCommand = true;
       updaterCustomCommand = "nix-update";
       screenPreferences = {
-        dock = [];
+        notepad = [];
         notifications = [
           "all"
         ];
         wallpaper = [
           "all"
         ];
-        notepad = [];
       };
       showOnLastDisplay = {
-        dock = false;
         notifications = true;
       };
       barConfigs = [
         {
-          id = "default";
-          name = "Main Bar";
-          enabled = true;
-          position = 1;
-          screenPreferences = [
-            "all"
-          ];
-          showOnLastDisplay = true;
-          leftWidgets = [
-            "workspaceSwitcher"
-            {
-              id = "music";
-              enabled = true;
-            }
-          ];
+          attachToScreenEdge = false;
+          autoHide = false;
+          autoHideDelay = 250;
+          borderColor = "surfaceText";
+          borderEnabled = false;
+          borderOpacity = 1;
+          borderThickness = 1;
+          bottomGap = 0;
           centerWidgets = [
             {
-              id = "clock";
-              enabled = true;
               clockCompactMode = false;
+              enabled = true;
+              id = "clock";
             }
           ];
+          clickThrough = false;
+          enabled = true;
+          fontScale = 1;
+          gothCornerRadiusOverride = false;
+          gothCornerRadiusValue = 12;
+          gothCornersEnabled = false;
+          iconScale = 1;
+          id = "default";
+          innerPadding = -4;
+          leftWidgets = [
+            {
+              id = "workspaceSwitcher";
+              enabled = true;
+              showWorkspaceIndex = true;
+              showWorkspaceApps = true;
+            }
+            {
+              enabled = true;
+              id = "music";
+            }
+          ];
+          maximizeDetection = true;
+          maximizeWidgetIcons = false;
+          maximizeWidgetText = false;
+          name = "Main Bar";
+          noBackground = false;
+          openOnOverview = false;
+          popupGapsAuto = true;
+          popupGapsManual = 0;
+          position = 1;
           rightWidgets = [
             {
+              enabled = true;
               id = "notificationButton";
-              enabled = true;
             }
             {
+              enabled = true;
               id = "systemTray";
-              enabled = true;
             }
             {
+              enabled = true;
               id = "usbManager";
-              enabled = true;
             }
             {
+              enabled = true;
               id = "battery";
-              enabled = true;
             }
             {
-              id = "controlCenterButton";
               enabled = true;
+              id = "controlCenterButton";
               showAudioPercent = false;
+              showBatteryIcon = false;
               showBrightnessIcon = true;
               showBrightnessPercent = false;
               showMicIcon = true;
               showMicPercent = false;
-              showBatteryIcon = false;
               showPrinterIcon = false;
               showScreenSharingIcon = true;
             }
           ];
-          spacing = 0;
-          innerPadding = -4;
-          bottomGap = 0;
-          transparency = 1;
-          widgetTransparency = 1;
-          squareCorners = true;
-          noBackground = false;
-          maximizeWidgetIcons = false;
-          maximizeWidgetText = false;
-          removeWidgetPadding = false;
-          widgetPadding = 8;
-          gothCornersEnabled = false;
-          gothCornerRadiusOverride = false;
-          gothCornerRadiusValue = 12;
-          borderEnabled = false;
-          borderColor = "surfaceText";
-          borderOpacity = 1;
-          borderThickness = 1;
-          widgetOutlineEnabled = false;
-          widgetOutlineColor = "primary";
-          widgetOutlineOpacity = 1;
-          widgetOutlineThickness = 1;
-          fontScale = 1;
-          iconScale = 1;
-          autoHide = false;
-          autoHideDelay = 250;
-          showOnWindowsOpen = false;
-          openOnOverview = false;
-          visible = true;
-          popupGapsAuto = true;
-          popupGapsManual = 0;
-          maximizeDetection = true;
+          screenPreferences = [
+            "all"
+          ];
           scrollEnabled = true;
-          scrollXBehavior = "column";
+          scrollXBehavior = "focusWindow";
           scrollYBehavior = "workspace";
-          shadowIntensity = 0;
-          shadowOpacity = 60;
           shadowColorMode = "text";
           shadowCustomColor = "#000000";
-          clickThrough = false;
-          attachToScreenEdge = false;
+          shadowIntensity = 0;
+          shadowOpacity = 60;
+          showOnLastDisplay = true;
+          showOnWindowsOpen = false;
+          spacing = 0;
+          squareCorners = true;
+          transparency = 1;
+          visible = true;
+          widgetOutlineColor = "primary";
+          widgetOutlineEnabled = false;
+          widgetOutlineOpacity = 1;
+          widgetOutlineThickness = 1;
+          widgetPadding = 8;
+          widgetTransparency = 1;
+          followInterfaceStyle = true;
+          widgetFollowInterfaceStyle = true;
         }
       ];
-      desktopClockCustomColor = {
-        r = 1;
-        g = 1;
-        b = 1;
-        a = 1;
-        hsvHue = -1;
-        hsvSaturation = 0;
-        hsvValue = 1;
-        hslHue = -1;
-        hslSaturation = 0;
-        hslLightness = 1;
-        valid = true;
-      };
-      systemMonitorCustomColor = {
-        r = 1;
-        g = 1;
-        b = 1;
-        a = 1;
-        hsvHue = -1;
-        hsvSaturation = 0;
-        hsvValue = 1;
-        hslHue = -1;
-        hslSaturation = 0;
-        hslLightness = 1;
-        valid = true;
-      };
       builtInPluginSettings = {
-        dms_settings_search = {
-          trigger = "?";
+        dms_clipboard_search = {
+          trigger = "cb";
         };
         dms_notepad = {
           enabled = false;
         };
-        dms_clipboard_search = {
-          trigger = "cb";
+        dms_settings_search = {
+          trigger = "?";
         };
       };
-      configVersion = 17;
+      configVersion = 42;
     };
   };
 }

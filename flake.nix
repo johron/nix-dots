@@ -25,7 +25,7 @@
     };
     something-x = {
       url = "github:SoaOaoS/something-x";
-      inputs.nixpkgs.follows = "nixpkgs";   # optional but recommended
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
