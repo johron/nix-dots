@@ -31,7 +31,7 @@ in
       enable = true;
 
       defaultApplications = {
-        "inode/directory" = [ "org.kde.dolphin.desktop" ];
+        # "inode/directory" = [ "org.kde.dolphin.desktop" ];
 
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";

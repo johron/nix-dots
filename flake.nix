@@ -8,14 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
-    dux = {
-      url = "github:duxlabs-dev/dux-shell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dank-greeter = {
-      url = "github:AvengeMedia/dank-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     mangowm = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +17,19 @@
     };
     something-x = {
       url = "github:SoaOaoS/something-x";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dux = {
+      url = "github:duxlabs-dev/dux-shell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dux-greeter = {
+      url = "github:duxlabs-dev/dux-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dux-files = {
+      url = "github:duxlabs-dev/dux-files";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

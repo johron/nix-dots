@@ -16,7 +16,7 @@
 
     kdePackages.kdenlive
     kdePackages.ark
-    kdePackages.dolphin
+    # kdePackages.dolphin
     kdePackages.qtsvg 
     kdePackages.kio
     kdePackages.kio-fuse

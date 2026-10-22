@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    inputs.dms.nixosModules.greeter
+    inputs.dux-greeter.nixosModules.default
   ];
 
   services.displayManager.dms-greeter = {

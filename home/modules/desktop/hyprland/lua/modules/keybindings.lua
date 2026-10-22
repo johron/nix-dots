@@ -2,7 +2,7 @@ local mainMod = "ALT"
 local secMod = "SUPER"
 
 local terminal    = "alacritty"
-local fileManager = "dolphin"
+local fileManager = "dfiles"
 local editor = "nvim"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more

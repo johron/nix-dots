@@ -28,7 +28,7 @@
         "ALT,P,pseudo"
         "ALT,F,fullscreen"
         "ALT,SHIFT,SPACE,float"
-        "SUPER,E,spawn,dolphin"
+        "SUPER,E,spawn,dfiles"
         "SUPER,Q,spawn,firefox"
         "SUPER,S,spawn,spotify"
         "SUPER,D,spawn,vesktop"
