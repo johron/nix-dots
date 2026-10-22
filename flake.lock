@@ -53,7 +53,7 @@
         "type": "github"
       }
     },
-    "dms": {
+    "dux": {
       "inputs": {
         "dank-qml-common": "dank-qml-common_2",
         "flake-compat": "flake-compat",
@@ -64,15 +64,15 @@
       "locked": {
         "lastModified": 1792523829,
         "narHash": "sha256-hyWdbsyOGXsJxvXG4Tqg0uRI1s3JwPi8DKyWips3Ta8=",
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
+        "owner": "duxlabs-dev",
+        "repo": "dux-shell",
         "rev": "9b413296b16721f7679fb62e624cb1ed2433fa58",
         "type": "github"
       },
       "original": {
-        "owner": "AvengeMedia",
+        "owner": "duxlabs-dev",
         "ref": "stable",
-        "repo": "DankMaterialShell",
+        "repo": "dux-shell",
         "type": "github"
       }
     },
@@ -300,7 +300,7 @@
     "root": {
       "inputs": {
         "dank-greeter": "dank-greeter",
-        "dms": "dms",
+        "dux": "dux",
         "home-manager": "home-manager",
         "mangowm": "mangowm",
         "nix-flatpak": "nix-flatpak",

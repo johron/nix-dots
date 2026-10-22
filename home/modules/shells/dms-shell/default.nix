@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    inputs.dms.homeModules.dank-material-shell
+    inputs.dux.homeModules.dank-material-shell
 
     ./settings.nix
     ./clipboard-settings.nix
