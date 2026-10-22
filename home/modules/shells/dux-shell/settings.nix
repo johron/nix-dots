@@ -89,19 +89,19 @@ in
           order = [];
           widgets = [
             {
+              enabled = true;
               id = "dock_launcher";
               widgetId = "dockLauncher";
-              enabled = true;
             }
             {
+              enabled = true;
               id = "dock_apps";
               widgetId = "appsDock";
-              enabled = true;
             }
             {
+              enabled = true;
               id = "dock_trash";
               widgetId = "dockTrash";
-              enabled = true;
             }
           ];
         }
@@ -114,133 +114,167 @@ in
       barElevationEnabled = false;
       controlCenterWidgets = [
         {
+          col = 0;
+          enabled = true;
+          h = 1;
           id = "user";
-          enabled = true;
+          row = 0;
           w = 5;
-          h = 1;
-          col = 0;
-          row = 0;
         }
         {
-          id = "settings";
-          enabled = true;
-          w = 1;
-          h = 1;
-          small = true;
           col = 5;
+          enabled = true;
+          h = 1;
+          id = "settings";
           row = 0;
+          small = true;
+          w = 1;
         }
         {
-          id = "lock";
-          enabled = true;
-          w = 1;
-          h = 1;
-          small = true;
           col = 6;
+          enabled = true;
+          h = 1;
+          id = "lock";
           row = 0;
+          small = true;
+          w = 1;
         }
         {
-          id = "power";
-          enabled = true;
-          w = 1;
-          h = 1;
-          small = true;
           col = 7;
+          enabled = true;
+          h = 1;
+          id = "power";
           row = 0;
-        }
-        {
-          enabled = true;
-          id = "volumeSlider";
-          w = 4;
-          h = 1;
-          col = 0;
-          row = 1;
-        }
-        {
-          enabled = true;
-          id = "brightnessSlider";
-          w = 4;
-          h = 1;
-          col = 4;
-          row = 1;
-        }
-        {
-          enabled = true;
-          id = "wifi";
-          w = 4;
-          h = 1;
-          col = 0;
-          row = 2;
-        }
-        {
-          enabled = true;
-          id = "bluetooth";
-          w = 4;
-          h = 1;
-          col = 4;
-          row = 2;
-        }
-        {
-          enabled = true;
-          id = "audioOutput";
-          w = 4;
-          h = 1;
-          col = 0;
-          row = 3;
-        }
-        {
-          enabled = true;
-          id = "audioInput";
-          w = 4;
-          h = 1;
-          col = 4;
-          row = 3;
-        }
-        {
-          enabled = true;
-          id = "nightMode";
-          w = 4;
-          h = 1;
-          col = 0;
-          row = 4;
-        }
-        {
-          enabled = true;
-          id = "idleInhibitor";
-          w = 4;
-          h = 1;
-          col = 4;
-          row = 4;
-        }
-        {
-          id = "edit";
-          enabled = true;
+          small = true;
           w = 1;
-          h = 1;
-          small = true;
+        }
+        {
           col = 0;
-          row = 5;
-        }
-        {
-          id = "runningApps";
           enabled = true;
-          w = 3;
           h = 1;
-          small = true;
-          col = 1;
-          row = 5;
-        }
-        {
-          id = "builtin_vpn";
-          enabled = true;
+          id = "volumeSlider";
+          row = 1;
           w = 4;
-          h = 1;
+        }
+        {
           col = 4;
+          enabled = true;
+          h = 1;
+          id = "brightnessSlider";
+          row = 1;
+          w = 4;
+        }
+        {
+          col = 0;
+          enabled = true;
+          h = 1;
+          id = "wifi";
+          row = 2;
+          w = 4;
+        }
+        {
+          col = 4;
+          enabled = true;
+          h = 1;
+          id = "bluetooth";
+          row = 2;
+          w = 4;
+        }
+        {
+          col = 0;
+          enabled = true;
+          h = 1;
+          id = "audioOutput";
+          row = 3;
+          w = 4;
+        }
+        {
+          col = 4;
+          enabled = true;
+          h = 1;
+          id = "audioInput";
+          row = 3;
+          w = 4;
+        }
+        {
+          col = 0;
+          enabled = true;
+          h = 1;
+          id = "nightMode";
+          row = 4;
+          w = 4;
+        }
+        {
+          col = 4;
+          enabled = true;
+          h = 1;
+          id = "idleInhibitor";
+          row = 4;
+          w = 4;
+        }
+        {
+          col = 0;
+          enabled = true;
+          h = 1;
+          id = "edit";
           row = 5;
+          small = true;
+          w = 1;
+        }
+        {
+          col = 1;
+          enabled = true;
+          h = 1;
+          id = "runningApps";
+          row = 5;
+          small = true;
+          w = 3;
+        }
+        {
+          col = 4;
+          enabled = true;
+          h = 1;
+          id = "builtin_vpn";
+          row = 5;
+          w = 4;
         }
       ];
       appIdSubstitutions = [];
       clockDateFormat = "dddd, d. MMM";
+      dashCards = [
+        {
+          id = "clock";
+          w = 2;
+          h = 1;
+          col = 3;
+          row = 0;
+        }
+        {
+          id = "weather";
+          w = 1;
+          h = 1;
+        }
+        {
+          id = "calendar";
+          w = 5;
+          h = 3;
+          col = 0;
+          row = 1;
+        }
+        {
+          id = "media";
+          w = 3;
+          h = 1;
+          col = 0;
+          row = 0;
+        }
+      ];
+      dashOptions = {
+        overview = {
+          panelColumns = 5;
+          panelRows = 4;
+        };
+      };
       networkPreference = "wifi";
       cursorSettings = {
         dwl = {
@@ -296,10 +330,12 @@ in
               clockCompactMode = false;
               enabled = true;
               id = "clock";
+              clockNotificationBadge = false;
             }
           ];
           clickThrough = false;
           enabled = true;
+          followInterfaceStyle = true;
           fontScale = 1;
           gothCornerRadiusOverride = false;
           gothCornerRadiusValue = 12;
@@ -309,10 +345,10 @@ in
           innerPadding = -4;
           leftWidgets = [
             {
-              id = "workspaceSwitcher";
               enabled = true;
-              showWorkspaceIndex = true;
+              id = "workspaceSwitcher";
               showWorkspaceApps = true;
+              showWorkspaceIndex = true;
             }
             {
               enabled = true;
@@ -374,14 +410,13 @@ in
           squareCorners = true;
           transparency = 1;
           visible = true;
+          widgetFollowInterfaceStyle = true;
           widgetOutlineColor = "primary";
           widgetOutlineEnabled = false;
           widgetOutlineOpacity = 1;
           widgetOutlineThickness = 1;
           widgetPadding = 8;
           widgetTransparency = 1;
-          followInterfaceStyle = true;
-          widgetFollowInterfaceStyle = true;
         }
       ];
       builtInPluginSettings = {
@@ -393,6 +428,12 @@ in
         };
         dms_settings_search = {
           trigger = "?";
+        };
+        dms_qr_generator = {
+          trigger = "qrg";
+        };
+        dms_power = {
+          trigger = "pw";
         };
       };
       configVersion = 42;

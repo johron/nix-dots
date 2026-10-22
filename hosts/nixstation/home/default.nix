@@ -8,7 +8,6 @@
     ./hyprland.nix
 
     ../../../home/modules/apps/alacritty.nix
-    ../../../home/modules/apps/dux-files.nix
     ../../../home/modules/apps/firefox.nix
     ../../../home/modules/apps/fish
     ../../../home/modules/apps/emacs

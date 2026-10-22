@@ -1,0 +1,26 @@
+[
+  {
+    "uri": "sftp://moholt/",
+    "name": "moholt",
+    "scheme": "sftp",
+    "lastUsedMs": 1792667054783
+  },
+  {
+    "uri": "sftp://moholt-pub/",
+    "name": "moholt-pub",
+    "scheme": "sftp",
+    "lastUsedMs": 1792667054783
+  },
+  {
+    "uri": "smb://johanhr@sambaad.stud.ntnu.no/johanhr",
+    "name": "sambaad.stud.ntnu.no/johanhr",
+    "scheme": "smb",
+    "lastUsedMs": 1792667001251
+  },
+  {
+    "uri": "smb://johanhr@webedit.ntnu.no/johanhr",
+    "name": "webedit.ntnu.no/johanhr",
+    "scheme": "smb",
+    "lastUsedMs": 1792666964418
+  }
+]

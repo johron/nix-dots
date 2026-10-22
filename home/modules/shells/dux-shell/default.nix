@@ -10,6 +10,8 @@ in
     ./settings.nix
     ./clipboard-settings.nix
 
+    ./apps/dux-files
+
     ../../appearance/images
     ../../appearance/theme/breeze-dark.nix
     ../../appearance/theme/notwaita.nix

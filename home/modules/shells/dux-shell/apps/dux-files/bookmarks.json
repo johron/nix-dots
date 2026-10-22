@@ -1,0 +1,50 @@
+{
+ "version": 2,
+ "bookmarks": [
+  {
+   "path": "recent:///",
+   "label": "recent",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron",
+   "label": "johron",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Projects",
+   "label": "Projects",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Documents",
+   "label": "Documents",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Downloads",
+   "label": "Downloads",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Pictures",
+   "label": "Pictures",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Videos",
+   "label": "Videos",
+   "icon": ""
+  },
+  {
+   "path": "/home/johron/Music",
+   "label": "Music",
+   "icon": ""
+  },
+  {
+   "path": "trash:///",
+   "label": "trash",
+   "icon": ""
+  }
+ ]
+}

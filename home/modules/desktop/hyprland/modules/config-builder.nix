@@ -58,7 +58,7 @@ in {
       type = types.str;
       default = "";
       example = "dms run";
-      description = "Command executed on hyprland start (e.g. dms-shell, waybar, etc.)";
+      description = "Command executed on hyprland start (e.g. dux-shell, waybar, etc.)";
     };
 
     mainMod = mkOption { type = types.str; default = "ALT"; };

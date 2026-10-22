@@ -1,8 +1,8 @@
 { config, pkgs, ... }: {
   imports = [
     ../../../home/modules/desktop/hyprland/modules/config-builder.nix
-    ../../../home/modules/shells/dms-shell
-    ../../../home/modules/shells/dms-shell/wm/hyprland
+    ../../../home/modules/shells/dux-shell
+    ../../../home/modules/shells/dux-shell/wm/hyprland
   ];
 
   programs.hyprlandLua = {
