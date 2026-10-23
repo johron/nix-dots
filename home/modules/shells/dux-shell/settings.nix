@@ -275,6 +275,7 @@ in
           panelRows = 4;
         };
       };
+      welbeingEnabled = false;
       networkPreference = "wifi";
       cursorSettings = {
         dwl = {
