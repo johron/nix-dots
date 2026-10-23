@@ -229,26 +229,6 @@
         "type": "github"
       }
     },
-    "hypryou": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1792774484,
-        "narHash": "sha256-HBqMNpmzzjfpaibSyqKhIcWqSJp6PkT/bRDfY78bDm8=",
-        "owner": "johron",
-        "repo": "hyprland-material-you",
-        "rev": "4eca269c3072f8ddbd0c51a51621d29cfc41ce88",
-        "type": "github"
-      },
-      "original": {
-        "owner": "johron",
-        "repo": "hyprland-material-you",
-        "type": "github"
-      }
-    },
     "mangowm": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -360,7 +340,6 @@
         "dux-files": "dux-files",
         "dux-greeter": "dux-greeter",
         "home-manager": "home-manager",
-        "hypryou": "hypryou",
         "mangowm": "mangowm",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
