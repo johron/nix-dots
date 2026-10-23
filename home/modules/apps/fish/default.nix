@@ -55,7 +55,7 @@
         set -l pwd_color "blue"
 
         switch (prompt_hostname)
-            case 'nixstation'
+            case 'straume'
                 set primary_color "brblue"
                 set pwd_color "blue"
             case 'ono'

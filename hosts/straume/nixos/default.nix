@@ -36,5 +36,5 @@ in
     AllowSuspendThenHibernate = "no";
   };
 
-  networking.hostName = hosts.nixstation.hostname;
+  networking.hostName = hosts.straume.hostname;
 }

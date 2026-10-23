@@ -7,7 +7,7 @@ let
   };
 
   hosts = {
-    nixstation = {};
+    straume = {};
     ideapad = {};
     lyderhorn = {};
     moholt = { user = users.server; };
