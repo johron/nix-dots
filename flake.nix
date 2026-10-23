@@ -32,6 +32,11 @@
       url = "github:duxlabs-dev/dux-files";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hypryou = {
+      url = "github:johron/hyprland-material-you";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

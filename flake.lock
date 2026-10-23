@@ -19,11 +19,11 @@
     "dank-qml-common_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1792597131,
-        "narHash": "sha256-2t9btOQ2owoRv/fgeonlr8cHVt2NUvUu9iXdZd9+QFc=",
+        "lastModified": 1792768249,
+        "narHash": "sha256-ST868TtggCJDEMkWTTOj2oG4F2s+SiAjwjs3kYbJltI=",
         "owner": "duxlabs-dev",
         "repo": "dux-qml-common",
-        "rev": "5715e8ea868f3a131a0f54c7a5875e9a95f2f253",
+        "rev": "c392faee932369df77fa6aee466752a4580e9b9b",
         "type": "github"
       },
       "original": {
@@ -79,11 +79,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792610641,
-        "narHash": "sha256-UD6rFz2L3K0Ju6KabPAP1Vu0vxFd/xq13ekkl494Ohc=",
+        "lastModified": 1792770166,
+        "narHash": "sha256-OX++NJ3tbZxCD+luFROZey1xFGI7mnoou/4yp9qplRg=",
         "owner": "duxlabs-dev",
         "repo": "dux-files",
-        "rev": "240d78ed175eb20fd9e7f86becec75c06f1c0407",
+        "rev": "7816966ad330772ad574560dfdac75886a739bfa",
         "type": "github"
       },
       "original": {
@@ -100,11 +100,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792609211,
-        "narHash": "sha256-ZHbhVOg0p2PpxrynYaEFafGgnuR43e4DXEIEusw3b/Q=",
+        "lastModified": 1792683863,
+        "narHash": "sha256-S+1g1tKn2QorHHjJA0lMYZUYPWlQkeQ93dLxiafeW8E=",
         "owner": "duxlabs-dev",
         "repo": "dux-greeter",
-        "rev": "d85f83edd799bcf58841bbd2b536e04058918319",
+        "rev": "4034ba1f5035ce384b322e8b2865495dad3cbb93",
         "type": "github"
       },
       "original": {
@@ -229,6 +229,26 @@
         "type": "github"
       }
     },
+    "hypryou": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792774484,
+        "narHash": "sha256-HBqMNpmzzjfpaibSyqKhIcWqSJp6PkT/bRDfY78bDm8=",
+        "owner": "johron",
+        "repo": "hyprland-material-you",
+        "rev": "4eca269c3072f8ddbd0c51a51621d29cfc41ce88",
+        "type": "github"
+      },
+      "original": {
+        "owner": "johron",
+        "repo": "hyprland-material-you",
+        "type": "github"
+      }
+    },
     "mangowm": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -238,11 +258,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1792656482,
-        "narHash": "sha256-B2yYMXj1rqanf1mW9Nn3plVuOqvMijy8B+8FZk9v5z4=",
+        "lastModified": 1792753812,
+        "narHash": "sha256-yqtyYZQaJ6owTvRtgcv3rtIEngjzkalJ80eknjmJXwQ=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "1df1e13f71d229dacc19cf955a55c9839606c275",
+        "rev": "a3990ecfd4ad14650712a599cd9010fcb72419bf",
         "type": "github"
       },
       "original": {
@@ -340,6 +360,7 @@
         "dux-files": "dux-files",
         "dux-greeter": "dux-greeter",
         "home-manager": "home-manager",
+        "hypryou": "hypryou",
         "mangowm": "mangowm",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
