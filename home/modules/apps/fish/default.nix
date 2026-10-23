@@ -5,6 +5,7 @@
 
     interactiveShellInit = ''
       set -g fish_greeting ""
+      source ${./project_cd.fish}
       direnv hook fish | source
     '';
 
