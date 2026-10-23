@@ -22,9 +22,9 @@
             docker-compose
             prisma-engines
             openssl
-	    prisma
-	    awscli2
-	    python3
+            prisma
+            awscli2
+            python3
           ];
 
           shellHook = ''
