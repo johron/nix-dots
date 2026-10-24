@@ -49,6 +49,7 @@
     slack
 
     inputs.something-x.packages.${pkgs.system}.something-x
+    inputs.onthespot.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.samba = {
