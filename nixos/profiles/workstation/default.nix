@@ -70,6 +70,7 @@
       "com.github.tchx84.Flatseal"
       "com.dec05eba.gpu_screen_recorder"
       "com.ultimaker.cura"
+      { flatpakref = "https://popovpsk.github.io/pawse/pawse.flatpakref"; sha256="1vrx7pbvrk713msarhvc6r1pkn8bcblhwflfmxawqvmjw50x6xp0"; }
     ];
   };
 
