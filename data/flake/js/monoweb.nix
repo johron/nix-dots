@@ -21,8 +21,19 @@
             docker
             docker-compose
             prisma-engines
+            openssl
             prisma
+            awscli2
+            python3
           ];
+
+          shellHook = ''
+            export PRISMA_SCHEMA_ENGINE_BINARY="${pkgs.prisma-engines}/bin/schema-engine"
+            export PRISMA_QUERY_ENGINE_BINARY="${pkgs.prisma-engines}/bin/query-engine"
+            export PRISMA_QUERY_ENGINE_LIBRARY="${pkgs.prisma-engines}/lib/libquery_engine.so"
+            export PRISMA_FMT_BINARY="${pkgs.prisma-engines}/bin/prisma-fmt"
+            export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [ pkgs.openssl ]}:$LD_LIBRARY_PATH"
+          '';
         };
       });
 }
