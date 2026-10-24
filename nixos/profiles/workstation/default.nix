@@ -3,7 +3,6 @@
 {
   imports = [
     ./boot-splash.nix
-    #./inputs.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -51,7 +50,7 @@
     inputs.something-x.packages.${pkgs.system}.something-x
     inputs.onthespot.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-
+  
   services.samba = {
     enable = true;
     openFirewall = true;
@@ -70,7 +69,7 @@
       "com.github.tchx84.Flatseal"
       "com.dec05eba.gpu_screen_recorder"
       "com.ultimaker.cura"
-      { flatpakref = "https://popovpsk.github.io/pawse/pawse.flatpakref"; sha256="1vrx7pbvrk713msarhvc6r1pkn8bcblhwflfmxawqvmjw50x6xp0"; }
+      # { flatpakref = "https://popovpsk.github.io/pawse/pawse.flatpakref"; sha256="1vrx7pbvrk713msarhvc6r1pkn8bcblhwflfmxawqvmjw50x6xp0"; }
     ];
   };
 

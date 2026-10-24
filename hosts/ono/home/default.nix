@@ -9,6 +9,7 @@
 
     ../../../home/modules/apps/alacritty.nix
     ../../../home/modules/apps/firefox.nix
+    ../../../home/modules/apps/sonora.nix
     ../../../home/modules/apps/fish
     ../../../home/modules/apps/emacs
     ../../../home/modules/apps/neovim

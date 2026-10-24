@@ -19,9 +19,8 @@
       url = "github:SoaOaoS/something-x";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    onthespot = {
-      url = "github:johron/onthespot";
-    };
+    onthespot.url = "github:johron/onthespot";
+    sonora.url = "github:sonorahq/sonora";
 
     dux = {
       url = "github:duxlabs-dev/dux-shell/stable";
