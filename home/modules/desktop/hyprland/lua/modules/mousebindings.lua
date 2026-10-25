@@ -1,9 +1,10 @@
-hl.bind("mouse:274", function()
+hl.bind("mouse:275", function()
     hl.exec_cmd("playerctl play-pause")
 end)
 
+
 hl.gesture({
-    fingers = 3,
+    fingers = 4,
     direction = "up",
     action = function()
         hl.exec_cmd("playerctl previous")
@@ -11,7 +12,7 @@ hl.gesture({
 })
 
 hl.gesture({
-    fingers = 3,
+    fingers = 4,
     direction = "down",
     action = function()
         hl.exec_cmd("playerctl next")
