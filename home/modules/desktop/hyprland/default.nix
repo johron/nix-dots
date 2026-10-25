@@ -11,6 +11,7 @@ in
   home.file.".config/hypr/modules/misc.lua".source = ./lua/modules/misc.lua; 
   home.file.".config/hypr/modules/input.lua".source = ./lua/modules/input.lua; 
   home.file.".config/hypr/modules/keybindings.lua".source = ./lua/modules/keybindings.lua; 
+  home.file.".config/hypr/modules/mousebindings.lua".source = ./lua/modules/mousebindings.lua; 
   home.file.".config/hypr/modules/windows_and_workspaces.lua".source = ./lua/modules/windows_and_workspaces.lua; 
 
   xdg = {
