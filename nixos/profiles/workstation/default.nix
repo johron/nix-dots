@@ -10,6 +10,7 @@
     jq
     gh
     git
+    git-lfs
     wget
     wine
     curl
