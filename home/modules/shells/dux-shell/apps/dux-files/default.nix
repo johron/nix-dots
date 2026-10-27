@@ -26,7 +26,7 @@
       customThemeFile = "";
       defaultSort = "name";
       defaultSortDescending = false;
-      defaultView = "list";
+      defaultView = "grid";
       displayFontFamily = "";
       dragAction = "auto";
       enableRippleEffects = true;

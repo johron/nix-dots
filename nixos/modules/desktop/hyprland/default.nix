@@ -29,7 +29,7 @@
     xwayland.enable = true;
   };
 
-  programs.kdeconnect.enable = true;
+  programs.localsend.enable = true;
 
   environment.variables = {
     GDK_BACKEND = "wayland";
