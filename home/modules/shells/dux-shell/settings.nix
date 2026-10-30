@@ -106,6 +106,7 @@ in
           ];
         }
       ];
+      matugenScheme = "scheme-tonal-spot";
       matugenSpec = "2021";
       dmsWindowsFloatingSeeded = [
         "hyprland"
@@ -275,7 +276,6 @@ in
           panelRows = 4;
         };
       };
-      welbeingEnabled = false;
       networkPreference = "wifi";
       cursorSettings = {
         dwl = {
@@ -316,6 +316,7 @@ in
       showOnLastDisplay = {
         notifications = true;
       };
+      connectedFrameBarStyleBackups = {};
       barConfigs = [
         {
           attachToScreenEdge = false;
@@ -329,9 +330,9 @@ in
           centerWidgets = [
             {
               clockCompactMode = false;
+              clockNotificationBadge = false;
               enabled = true;
               id = "clock";
-              clockNotificationBadge = false;
             }
           ];
           clickThrough = false;
@@ -399,6 +400,113 @@ in
             "all"
           ];
           scrollEnabled = true;
+          scrollXBehavior = "none";
+          scrollYBehavior = "none";
+          shadowColorMode = "text";
+          shadowCustomColor = "#000000";
+          shadowIntensity = 0;
+          shadowOpacity = 60;
+          showOnLastDisplay = false;
+          showOnWindowsOpen = false;
+          spacing = 0;
+          squareCorners = true;
+          transparency = 1;
+          visible = true;
+          widgetFollowInterfaceStyle = true;
+          widgetOutlineColor = "primary";
+          widgetOutlineEnabled = false;
+          widgetOutlineOpacity = 1;
+          widgetOutlineThickness = 1;
+          widgetPadding = 8;
+          widgetTransparency = 1;
+          dot = false;
+          hideOnLastDisplay = false;
+          hoverPopouts = false;
+          barLengthMode = "full";
+          widgetStyle = "segments";
+        }
+        {
+          attachToScreenEdge = false;
+          autoHide = false;
+          autoHideDelay = 250;
+          borderColor = "surfaceText";
+          borderEnabled = false;
+          borderOpacity = 1;
+          borderThickness = 1;
+          bottomGap = 0;
+          centerWidgets = [
+            {
+              clockCompactMode = false;
+              clockNotificationBadge = false;
+              enabled = true;
+              id = "clock";
+            }
+          ];
+          clickThrough = false;
+          enabled = false;
+          followInterfaceStyle = false;
+          fontScale = 1;
+          gothCornerRadiusOverride = false;
+          gothCornerRadiusValue = 12;
+          gothCornersEnabled = false;
+          iconScale = 1;
+          id = "dot1793364076951";
+          innerPadding = -4;
+          leftWidgets = [
+            {
+              enabled = true;
+              id = "workspaceSwitcher";
+              showWorkspaceApps = true;
+              showWorkspaceIndex = true;
+            }
+            {
+              enabled = true;
+              id = "music";
+            }
+          ];
+          maximizeDetection = true;
+          maximizeWidgetIcons = false;
+          maximizeWidgetText = false;
+          name = "Dot";
+          noBackground = false;
+          openOnOverview = false;
+          popupGapsAuto = true;
+          popupGapsManual = 0;
+          position = 1;
+          rightWidgets = [
+            {
+              enabled = true;
+              id = "notificationButton";
+            }
+            {
+              enabled = true;
+              id = "systemTray";
+            }
+            {
+              enabled = true;
+              id = "usbManager";
+            }
+            {
+              enabled = true;
+              id = "battery";
+            }
+            {
+              enabled = true;
+              id = "controlCenterButton";
+              showAudioPercent = false;
+              showBatteryIcon = false;
+              showBrightnessIcon = true;
+              showBrightnessPercent = false;
+              showMicIcon = true;
+              showMicPercent = false;
+              showPrinterIcon = false;
+              showScreenSharingIcon = true;
+            }
+          ];
+          screenPreferences = [
+            "all"
+          ];
+          scrollEnabled = true;
           scrollXBehavior = "focusWindow";
           scrollYBehavior = "workspace";
           shadowColorMode = "text";
@@ -418,6 +526,8 @@ in
           widgetOutlineThickness = 1;
           widgetPadding = 8;
           widgetTransparency = 1;
+          dot = true;
+          island = false;
         }
       ];
       builtInPluginSettings = {
@@ -437,6 +547,7 @@ in
           trigger = "pw";
         };
       };
+      frameEnabled = false;
       configVersion = 42;
     };
   };
