@@ -19,8 +19,12 @@
 
   virtualisation.oci-containers.backend = "podman";
 
+  systemd.tmpfiles.rules = [
+    "d /opt/docker-containers/snapotter/data 0755 root root -"
+  ];
+
   # Containers
-  virtualisation.oci-containers.containers."SnapOtter" = {
+  virtualisation.oci-containers.containers."snapotter" = {
     image = "snapotter/snapotter:latest";
     volumes = [
       "/opt/docker-containers/snapotter/data:/data:rw"
@@ -34,10 +38,13 @@
       "--network=snapotter_default"
     ];
   };
-  systemd.services."podman-SnapOtter" = {
+  systemd.services."podman-snapotter" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
     };
+    preStart = ''
+      install -d -o 1000 -g 1000 -m 0755 /opt/docker-containers/snapotter/data
+    '';
     after = [
       "podman-network-snapotter_default.service"
     ];

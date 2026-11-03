@@ -26,7 +26,7 @@
       "ND_AUTOIMPORTPLAYLISTS" = "true";
     };
     volumes = [
-      "/opt/doccker-containers/navidrome/data:/data:rw"
+      "/opt/docker-containers/navidrome/data:/data:rw"
       "/opt/docker-containers/navidrome/music:/music:ro"
     ];
     ports = [
@@ -43,6 +43,10 @@
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
     };
+    preStart = ''
+      install -d -o 1000 -g 1000 /opt/docker-containers/navidrome/data
+      install -d -o 1000 -g 1000 /opt/docker-containers/navidrome/music
+    '';
     after = [
       "podman-network-navidrome_default.service"
     ];
