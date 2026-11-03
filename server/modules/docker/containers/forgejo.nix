@@ -31,7 +31,7 @@
       "FORGEJO__server__DOMAIN" = "git.johron.no";
       "FORGEJO__server__ROOT_URL" = "https://git.johron.no/";
       "FORGEJO__server__SSH_DOMAIN" = "git.johron.no";
-      "FORGEJO__server__SSH_PORT" = "2244";
+      "FORGEJO__server__SSH_PORT" = "22";
       "FORGEJO__server__HTTP_PORT" = "3000";
       "USER_GID" = "1000";
       "USER_UID" = "1000";
