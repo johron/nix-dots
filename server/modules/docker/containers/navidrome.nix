@@ -18,13 +18,16 @@
   };
 
   virtualisation.oci-containers.backend = "podman";
-ø
+
   # Containers
   virtualisation.oci-containers.containers."navidrome-navidrome" = {
     image = "deluan/navidrome:latest";
+    environment = {
+      "ND_AUTOIMPORTPLAYLISTS" = "true";
+    };
     volumes = [
-      "/opt/docker-containers/navidrome/data:/data:rw"
-      "/opt/docker-containers/navidrome/music:/music:ro"
+      "/home/johron/docker/navidrome/data:/data:rw"
+      "/home/johron/docker/navidrome/music:/music:ro"
     ];
     ports = [
       "4533:4533/tcp"

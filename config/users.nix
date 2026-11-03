@@ -1,4 +1,4 @@
 {
   default = "johron";
-  server = "vaktmester";
+  server = "janitor";
 }

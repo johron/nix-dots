@@ -7,13 +7,15 @@ in
   imports = [
     ./hardware.nix
 
-    ../../../nixos/modules/system/nixos-base.nix
-    ../../../nixos/profiles/server
-
-    ../../../nixos/server-modules/hardware/networking
-    ../../../nixos/server-modules/docker
-    ../../../nixos/server-modules/docker/containers/navidrome.nix
-    ../../../nixos/server-modules/docker/containers/gogs.nix
+    ../../../server/modules/system/server-base.nix
+    ../../../server/modules/hardware/networking
+    ../../../server/modules/hardware/quiet
+    ../../../server/modules/hardware/power
+    ../../../server/modules/hardware/dell.nix
+    ../../../server/modules/docker/containers/navidrome.nix
+    ../../../server/modules/docker/containers/snapotter.nix
+    # ../../../server/modules/docker/containers/forgejo.nix
+    # ../../../server/modules/docker/containers/johron-no.nix
   ];
 
   interfaces.eth0.ipv4.addresses = [{

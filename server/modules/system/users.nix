@@ -10,7 +10,7 @@ in
     };
   };
 
-  users.users.${users.vaktmester} = {
+  users.users.${users.server} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "docker" ];
   };
