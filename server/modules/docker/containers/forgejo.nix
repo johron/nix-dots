@@ -56,6 +56,7 @@
       Restart = lib.mkOverride 90 "always";
     };
     preStart = ''
+      install -d -o 1000 -g 1000 /opt/docker-containers/forgejo
       install -d -o 1000 -g 1000 /opt/docker-containers/forgejo/data
     '';
     after = [
