@@ -34,8 +34,10 @@
       "USER_UID" = "1000";
     };
     volumes = [
+      # /etc/timezone is not guaranteed to exist on NixOS hosts (and may be a
+      # symlink or absent entirely), so skip the bind mount to avoid startup
+      # failures while still keeping the container clock aligned via localtime.
       "/etc/localtime:/etc/localtime:ro"
-      "/etc/timezone:/etc/timezone:ro"
       "/opt/docker-containers/forgejo/data:/data:rw"
     ];
     ports = [
