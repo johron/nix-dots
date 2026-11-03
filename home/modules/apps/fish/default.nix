@@ -6,6 +6,7 @@
     interactiveShellInit = ''
       set -g fish_greeting ""
       source ${./project_cd.fish}
+      source ${./nix_tools.fish}
       direnv hook fish | source
     '';
 
@@ -25,28 +26,6 @@
 
       jclone = ''
         git clone git@github.com:johron/$argv[1]
-      '';
-
-      nix-update = ''
-        set -l orig_cwd (pwd)
-
-        cd ~/nix-dots || return
-
-        nix flake update
-        or begin
-            cd $orig_cwd
-            return 1
-        end
-
-        nh os switch
-        or begin
-            cd $orig_cwd
-            return 1
-        end
-
-        flatpak update -y
-
-        cd $orig_cwd
       '';
 
       fish_prompt = ''
