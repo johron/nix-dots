@@ -7,6 +7,8 @@ in
   imports = [
     ./hardware.nix
 
+    ../../../server/profiles/server
+
     ../../../server/modules/system/server-base.nix
     ../../../server/modules/hardware/networking
     ../../../server/modules/hardware/quiet
