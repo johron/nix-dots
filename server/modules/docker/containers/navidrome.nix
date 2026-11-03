@@ -26,8 +26,8 @@
       "ND_AUTOIMPORTPLAYLISTS" = "true";
     };
     volumes = [
-      "/home/johron/docker/navidrome/data:/data:rw"
-      "/home/johron/docker/navidrome/music:/music:ro"
+      "/opt/doccker-containers/navidrome/data:/data:rw"
+      "/opt/docker-containers/navidrome/music:/music:ro"
     ];
     ports = [
       "4533:4533/tcp"

@@ -23,7 +23,7 @@
   virtualisation.oci-containers.containers."SnapOtter" = {
     image = "snapotter/snapotter:latest";
     volumes = [
-      "/home/johron/Downloads/navidrome/data:/data:rw"
+      "/opt/docker-containers/snapotter/data:/data:rw"
     ];
     ports = [
       "1349:1349/tcp"
