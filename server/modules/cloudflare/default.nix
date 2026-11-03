@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    cloudflared
-  ];
+  services.cloudflared = {
+    enable = true;
+    tokenFile = "/var/lib/cloudflared/tunnel-token";
+  };
 }
