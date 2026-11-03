@@ -73,26 +73,33 @@
           nixpkgs,
           home-manager,
           modules ? [ ],
-          overlays ? [],
+          overlays ? [ ],
         }:
+        let
+          isServer = host.kind == "server";
+        in
         nixpkgs.lib.nixosSystem {
           system = host.arch;
           specialArgs = {
             inherit inputs host;
           };
-          modules = [
-            nix-flatpak.nixosModules.nix-flatpak
-            ./hosts/${host.dir}/nixos
-            { nixpkgs.overlays = overlays; }
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = { inherit inputs host; };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
-            }
-          ] ++ modules;
+          modules =
+            [
+              ./hosts/${host.dir}/${host.systemPath}
+              { nixpkgs.overlays = overlays; }
+            ]
+            ++ lib.optionals (!isServer) [
+              nix-flatpak.nixosModules.nix-flatpak
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = { inherit inputs host; };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.backupFileExtension = "backup";
+                home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
+              }
+            ]
+            ++ modules;
         };
       mkISOConfiguration = # Build with: nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
         {
@@ -107,6 +114,17 @@
           ];
         };
     in
+    let
+      systemHosts = lib.filterAttrs (
+        name: host: builtins.pathExists (./hosts/${host.dir}/${host.systemPath})
+      ) hosts;
+      
+      isoHosts = lib.filterAttrs (name: host: builtins.pathExists (./hosts/${host.dir}/iso.nix)) hosts;
+
+      homeHosts = lib.filterAttrs (
+        name: host: host.kind != "server" && builtins.pathExists (./hosts/${host.dir}/home)
+      ) hosts;
+    in
     {
       nixosConfigurations =
         lib.mapAttrs
@@ -117,7 +135,7 @@
               home-manager = inputs.home-manager;
             }
           )
-          hosts
+          systemHosts
         // lib.mapAttrs'
           (name: host:
             lib.nameValuePair
@@ -127,7 +145,7 @@
                 nixpkgs = inputs.nixpkgs;
               })
           )
-          hosts;
+          isoHosts;
 
       homeConfigurations = lib.mapAttrs'
         (name: host:
@@ -139,6 +157,6 @@
               home-manager = inputs.home-manager;
             })
         )
-        hosts;
+        homeHosts;
     };
 }
