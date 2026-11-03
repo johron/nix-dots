@@ -9,7 +9,7 @@
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      EnvironmentFile = "/var/lib/cloudflared/tunnel.env";
+      EnvironmentFile = "/var/lib/cloudflare/tunnel.env";
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token \"$TUNNEL_TOKEN\"'";
       StandardOutput = "journal";
       StandardError = "journal";
