@@ -8,6 +8,16 @@
   hardware.enableRedistributableFirmware = true;
   services.fwupd.enable = true;
 
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+
   services.logind.settings.Login = {
     LidSwitchIgnoreInhibit = "no";
     HandleLidSwitch = "ignore";
