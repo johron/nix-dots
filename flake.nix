@@ -67,9 +67,6 @@
           ] ++ modules;
         };
 
-      # A host is either kind = "nixos" (desktop/workstation: nixos/ + home-manager)
-      # or kind = "server" (server/ modules only, no desktop, no home-manager).
-      # See config/hosts.nix.
       mkNixOSConfigurations =
         {
           host,
@@ -118,12 +115,12 @@
         };
     in
     let
-      # Only expose what actually exists on disk for each host.
       systemHosts = lib.filterAttrs (
         name: host: builtins.pathExists (./hosts/${host.dir}/${host.systemPath})
       ) hosts;
+      
       isoHosts = lib.filterAttrs (name: host: builtins.pathExists (./hosts/${host.dir}/iso.nix)) hosts;
-      # Standalone home-manager is only for non-server hosts.
+
       homeHosts = lib.filterAttrs (
         name: host: host.kind != "server" && builtins.pathExists (./hosts/${host.dir}/home)
       ) hosts;
