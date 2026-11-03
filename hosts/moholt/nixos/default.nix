@@ -13,7 +13,7 @@ in
     ../../../server/modules/hardware/networking
     ../../../server/modules/hardware/quiet
     ../../../server/modules/hardware/power
-    ../../../server/modules/hardware/dell.nix
+    ../../../server/modules/hardware/power/dell.nix
     ../../../server/modules/docker/containers/navidrome.nix
     ../../../server/modules/docker/containers/snapotter.nix
     # ../../../server/modules/docker/containers/forgejo.nix
