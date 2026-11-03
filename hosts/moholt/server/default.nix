@@ -22,8 +22,9 @@ in
     ../../../server/modules/cloudflare
   ];
 
-  interfaces.eth0.ipv4.addresses = [{
+  networking.interfaces.eth0.ipv4.addresses = [{
     address = "192.168.1.150";
+    prefixLength = 24;
   }];
 
   networking.hostName = hosts.moholt.hostname;

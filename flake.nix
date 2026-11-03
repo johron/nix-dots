@@ -82,7 +82,7 @@
           };
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
-            ./hosts/${host.dir}/nixos
+            ./hosts/${host.dir}/${host.systemPath}
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager
             {
@@ -107,6 +107,9 @@
           ];
         };
     in
+    let
+      isoHosts = lib.filterAttrs (name: host: builtins.pathExists (./hosts/${host.dir}/iso.nix)) hosts;
+    in
     {
       nixosConfigurations =
         lib.mapAttrs
@@ -127,7 +130,7 @@
                 nixpkgs = inputs.nixpkgs;
               })
           )
-          hosts;
+          isoHosts;
 
       homeConfigurations = lib.mapAttrs'
         (name: host:
