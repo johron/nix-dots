@@ -10,6 +10,7 @@ in
     ../../../server/profiles/server
 
     ../../../server/modules/system/server-base.nix
+    ../../../server/modules/system/users.nix
     ../../../server/modules/hardware/networking
     ../../../server/modules/hardware/quiet
     ../../../server/modules/hardware/quiet/dell.nix

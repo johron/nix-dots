@@ -8,12 +8,12 @@
   hardware.enableRedistributableFirmware = true;
   services.fwupd.enable = true;
 
-  services.logind.extraConfig = ''
-    LidSwitchIgnoreInhibit=no
-    HandleLidSwitch=ignore
-    HandleLidSwitchExternalPower=ignore
-    HandleLidSwitchDocked=ignore
-  '';
+  services.logind.settings.Login = {
+    LidSwitchIgnoreInhibit = "no";
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;

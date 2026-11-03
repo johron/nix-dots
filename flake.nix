@@ -67,32 +67,42 @@
           ] ++ modules;
         };
 
+      # A host is either kind = "nixos" (desktop/workstation: nixos/ + home-manager)
+      # or kind = "server" (server/ modules only, no desktop, no home-manager).
+      # See config/hosts.nix.
       mkNixOSConfigurations =
         {
           host,
           nixpkgs,
           home-manager,
           modules ? [ ],
-          overlays ? [],
+          overlays ? [ ],
         }:
+        let
+          isServer = host.kind == "server";
+        in
         nixpkgs.lib.nixosSystem {
           system = host.arch;
           specialArgs = {
             inherit inputs host;
           };
-          modules = [
-            nix-flatpak.nixosModules.nix-flatpak
-            ./hosts/${host.dir}/${host.systemPath}
-            { nixpkgs.overlays = overlays; }
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = { inherit inputs host; };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
-            }
-          ] ++ modules;
+          modules =
+            [
+              ./hosts/${host.dir}/${host.systemPath}
+              { nixpkgs.overlays = overlays; }
+            ]
+            ++ lib.optionals (!isServer) [
+              nix-flatpak.nixosModules.nix-flatpak
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = { inherit inputs host; };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.backupFileExtension = "backup";
+                home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
+              }
+            ]
+            ++ modules;
         };
       mkISOConfiguration = # Build with: nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
         {
@@ -108,7 +118,15 @@
         };
     in
     let
+      # Only expose what actually exists on disk for each host.
+      systemHosts = lib.filterAttrs (
+        name: host: builtins.pathExists (./hosts/${host.dir}/${host.systemPath})
+      ) hosts;
       isoHosts = lib.filterAttrs (name: host: builtins.pathExists (./hosts/${host.dir}/iso.nix)) hosts;
+      # Standalone home-manager is only for non-server hosts.
+      homeHosts = lib.filterAttrs (
+        name: host: host.kind != "server" && builtins.pathExists (./hosts/${host.dir}/home)
+      ) hosts;
     in
     {
       nixosConfigurations =
@@ -120,7 +138,7 @@
               home-manager = inputs.home-manager;
             }
           )
-          hosts
+          systemHosts
         // lib.mapAttrs'
           (name: host:
             lib.nameValuePair
@@ -142,6 +160,6 @@
               home-manager = inputs.home-manager;
             })
         )
-        hosts;
+        homeHosts;
     };
 }

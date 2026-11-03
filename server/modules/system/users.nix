@@ -12,7 +12,7 @@ in
 
   users.users.${users.server} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   users.defaultUserShell = pkgs.fish;
