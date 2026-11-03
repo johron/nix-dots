@@ -46,4 +46,9 @@
     enableFishIntegration = true;
     nix-direnv.enable = true; 
   };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [];
+  };
 }
