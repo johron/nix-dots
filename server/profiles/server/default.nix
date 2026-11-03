@@ -39,4 +39,11 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "$HOME/nix-dots/";
   };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true; 
+    enableFishIntegration = true;
+    nix-direnv.enable = true; 
+  };
 }
