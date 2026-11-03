@@ -17,7 +17,7 @@ in
     ../../../server/modules/hardware/power
     ../../../server/modules/docker/containers/navidrome.nix
     ../../../server/modules/docker/containers/snapotter.nix
-    # ../../../server/modules/docker/containers/forgejo.nix
+    ../../../server/modules/docker/containers/forgejo.nix
     # ../../../server/modules/docker/containers/johron-no.nix
 
     ../../../server/modules/cloudflare
