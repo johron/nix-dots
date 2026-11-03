@@ -92,6 +92,10 @@
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
     };
+    preStart = ''
+      install -d -m 0755 /opt/docker-containers/forgejo
+      install -d -m 0755 /opt/docker-containers/forgejo/postgres
+    '';
     after = [
       "podman-network-forgejo_forgejo.service"
     ];
