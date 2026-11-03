@@ -16,6 +16,8 @@ in
     ../../../server/modules/docker/containers/snapotter.nix
     # ../../../server/modules/docker/containers/forgejo.nix
     # ../../../server/modules/docker/containers/johron-no.nix
+
+    ../../../server/modules/cloudflare
   ];
 
   interfaces.eth0.ipv4.addresses = [{
