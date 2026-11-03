@@ -12,8 +12,8 @@ in
     ../../../server/modules/system/server-base.nix
     ../../../server/modules/hardware/networking
     ../../../server/modules/hardware/quiet
+    ../../../server/modules/hardware/quiet/dell.nix
     ../../../server/modules/hardware/power
-    ../../../server/modules/hardware/power/dell.nix
     ../../../server/modules/docker/containers/navidrome.nix
     ../../../server/modules/docker/containers/snapotter.nix
     # ../../../server/modules/docker/containers/forgejo.nix
