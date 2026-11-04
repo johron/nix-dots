@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../home/modules/system/home-base.nix
+    ../../../home/modules/system/base.nix
 
     ../../../home/modules/desktop/hyprland
     ./hyprland.nix
