@@ -7,8 +7,8 @@ in
   news.display = "silent";
 
   home = {
-    username = users.janitor;
-    homeDirectory = "/home/${users.janitor}";
+    username = users.server;
+    homeDirectory = "/home/${users.server}";
     stateVersion = "26.05";
   };
 }
