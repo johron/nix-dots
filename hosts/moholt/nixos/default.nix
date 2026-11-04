@@ -9,15 +9,15 @@ in
 
     ../../../nixos/profiles/server
 
-    ../../..nixos//server-modules/system/server-base.nix
-    ../../..nixos//server-modules/system/users.nix
-    ../../..nixos//server-modules/hardware/networking
-    ../../..nixos//server-modules/hardware/quiet
-    ../../..nixos//server-modules/hardware/quiet/dell.nix
-    ../../..nixos//server-modules/hardware/power
-    ../../..nixos//server-modules/docker/containers/navidrome.nix
-    ../../..nixos//server-modules/docker/containers/snapotter.nix
-    ../../..nixos//server-modules/docker/containers/forgejo.nix
+    ../../../nixos/server-modules/system/server-base.nix
+    ../../../nixos/server-modules/system/users.nix
+    ../../../nixos/server-modules/hardware/networking
+    ../../../nixos/server-modules/hardware/quiet
+    ../../../nixos/server-modules/hardware/quiet/dell.nix
+    ../../../nixos/server-modules/hardware/power
+    ../../../nixos/server-modules/docker/containers/navidrome.nix
+    ../../../nixos/server-modules/docker/containers/snapotter.nix
+    ../../../nixos/server-modules/docker/containers/forgejo.nix
     # ../../../nixos/server-modules/docker/containers/johron-no.nix
 
     ../../../nixos/server-modules/cloudflare
