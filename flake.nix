@@ -122,7 +122,7 @@
       isoHosts = lib.filterAttrs (name: host: builtins.pathExists (./hosts/${host.dir}/iso.nix)) hosts;
 
       homeHosts = lib.filterAttrs (
-        name: host: host.kind != "server" && builtins.pathExists (./hosts/${host.dir}/home)
+        name: host: builtins.pathExists (./hosts/${host.dir}/home)
       ) hosts;
     in
     {
