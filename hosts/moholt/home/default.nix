@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../home/modules/system/home-base.nix
+    ../../../home/modules/system/server-base.nix
     ../../../home/modules/apps/fish
   ];
 }
