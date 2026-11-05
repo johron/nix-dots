@@ -13,7 +13,7 @@
         job_name = "nixos-server";
         static_configs = [
           {
-            targets = [ "127.0.0.1:9000" ];
+            targets = [ "127.0.0.1:9090" ];
           }
         ];
       }
