@@ -15,6 +15,7 @@ in
     ../../../nixos/server-modules/hardware/quiet
     ../../../nixos/server-modules/hardware/quiet/dell.nix
     ../../../nixos/server-modules/hardware/power
+    ../../../nixos/server-modules/hardware/temperature
     ../../../nixos/server-modules/docker/containers/navidrome.nix
     ../../../nixos/server-modules/docker/containers/snapotter.nix
     ../../../nixos/server-modules/docker/containers/forgejo.nix
