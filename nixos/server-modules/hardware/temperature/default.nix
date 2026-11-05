@@ -26,5 +26,7 @@
       http_addr = "0.0.0.0";
       http_port = 3232;
     };
+    settings.security.secret_key = "SW2YcwTIb9zpOOhoPsMm";
   };
+
 }
