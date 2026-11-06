@@ -18,6 +18,7 @@
   };
 
   systemd.tmpfiles.rules = [
+    "d /opt/docker-containers 0755 root root -"
     "d /opt/docker-containers/beszel 0755 root root -"
     "d /opt/docker-containers/beszel/data 0755 root root -"
     "d /opt/docker-containers/beszel/socket 0755 root root -"
@@ -48,6 +49,10 @@
   systemd.services."podman-beszel" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
+      ExecStartPre = [
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/data"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/socket"
+      ];
     };
     wants = [
       "systemd-tmpfiles-setup.service"
