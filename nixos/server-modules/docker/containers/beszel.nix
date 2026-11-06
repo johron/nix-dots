@@ -49,7 +49,12 @@
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
     };
+    wants = [
+      "systemd-tmpfiles-setup.service"
+    ];
     after = [
+      "local-fs.target"
+      "systemd-tmpfiles-setup.service"
       "podman-network-beszel_default.service"
     ];
     requires = [
