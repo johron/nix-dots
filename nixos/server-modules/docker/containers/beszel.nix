@@ -93,8 +93,20 @@
   systemd.services."podman-beszel-agent" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
+      ExecStartPre = [
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/agent_data"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/socket"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/data"
+      ];
     };
+    wants = [
+      "systemd-tmpfiles-setup.service"
+    ];
     after = [
+      "local-fs.target"
+      "systemd-tmpfiles-setup.service"
       "podman.socket"
       "podman-beszel.service"
     ];
