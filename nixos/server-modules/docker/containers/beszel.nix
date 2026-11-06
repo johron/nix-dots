@@ -71,8 +71,8 @@
       "TOKEN" = "<token>";
     };
     volumes = [
-      "/opt/dockercontainers/beszel/agent_data:/var/lib/beszel-agent:rw"
-      "/opt/dockercontainers/beszel/socket:/beszel_socket:rw"
+      "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
+      "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
       "/var/run/docker.sock:/var/run/docker.sock:ro"
     ];
     log-driver = "journald";
