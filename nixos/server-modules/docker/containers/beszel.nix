@@ -76,14 +76,14 @@
     image = "henrygd/beszel-agent:latest";
     environment = {
       "HUB_URL" = "http://localhost:8090";
-      "KEY" = "";
+      "KEY" = "<key>";
       "LISTEN" = "/beszel_socket/beszel.sock";
-      "TOKEN" = "";
+      "TOKEN" = "<token>";
     };
     volumes = [
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
       "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
-      "/run/podman/podman.sock:/var/run/docker.sock:ro"
+      "/var/run/docker.sock:/var/run/docker.sock:ro"
     ];
     log-driver = "journald";
     extraOptions = [
@@ -93,27 +93,7 @@
   systemd.services."podman-beszel-agent" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
-      ExecStartPre = [
-        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers"
-        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel"
-        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/agent_data"
-        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/socket"
-        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/data"
-      ];
     };
-    wants = [
-      "systemd-tmpfiles-setup.service"
-    ];
-    after = [
-      "local-fs.target"
-      "systemd-tmpfiles-setup.service"
-      "podman.socket"
-      "podman-beszel.service"
-    ];
-    requires = [
-      "podman.socket"
-      "podman-beszel.service"
-    ];
     partOf = [
       "podman-compose-beszel-root.target"
     ];
