@@ -21,6 +21,7 @@
     };
     onthespot.url = "github:johron/onthespot";
     sonora.url = "github:sonorahq/sonora";
+    sops-nix.url = "github:Mic92/sops-nix";
 
     dux = {
       url = "github:duxlabs-dev/dux-shell/stable";
@@ -85,6 +86,7 @@
             ./hosts/${host.dir}/nixos
             { nixpkgs.overlays = overlays; }
             home-manager.nixosModules.home-manager
+            inputs.sops-nix.nixosModules.sops
             {
               home-manager.extraSpecialArgs = { inherit inputs host; };
               home-manager.useGlobalPkgs = true;
