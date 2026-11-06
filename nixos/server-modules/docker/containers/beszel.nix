@@ -83,7 +83,7 @@
     volumes = [
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
       "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
-      "/var/run/docker.sock:/var/run/docker.sock:ro"
+      "/run/podman/podman.sock:/var/run/docker.sock:ro"
     ];
     log-driver = "journald";
     extraOptions = [
@@ -94,6 +94,14 @@
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
     };
+    after = [
+      "podman.socket"
+      "podman-beszel.service"
+    ];
+    requires = [
+      "podman.socket"
+      "podman-beszel.service"
+    ];
     partOf = [
       "podman-compose-beszel-root.target"
     ];
