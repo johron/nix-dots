@@ -76,9 +76,9 @@
     image = "henrygd/beszel-agent:latest";
     environment = {
       "HUB_URL" = "http://localhost:8090";
-      "KEY" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMGozf2GCfncVfqxl0wbr8t6en0WS8MWR+gDenaNJP2n";
+      "KEY" = "";
       "LISTEN" = "/beszel_socket/beszel.sock";
-      "TOKEN" = "79201c60-8b98-4b90-a022-5fb68f2ec31a";
+      "TOKEN" = "";
     };
     volumes = [
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
