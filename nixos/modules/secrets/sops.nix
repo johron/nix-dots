@@ -11,6 +11,6 @@
 
   sops = {
     defaultSopsFile = ../../../secrets.yaml;
-    age.keyFile = "${config.users.users.${host.user}.home}/sops/age/keys.txt";
+    age.keyFile = "${config.users.users.${host.user}.home}/.config/sops/age/keys.txt";
   };
 }
