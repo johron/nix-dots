@@ -3,12 +3,12 @@
 { pkgs, lib, config, ... }:
 
 {
-  sops.secrets.beszel_key = { };
-  sops.secrets.beszel_token = { };
+  sops.secrets."beszel/key" = { };
+  sops.secrets."beszel/token" = { };
 
   sops.templates."beszel-agent.env".content = ''
-    KEY=${config.sops.placeholder.beszel_key}
-    TOKEN=${config.sops.placeholder.beszel_token}
+    KEY=${config.sops.placeholder."beszel/key"}
+    TOKEN=${config.sops.placeholder."beszel/token"}
   '';
 
   environment.systemPackages = with pkgs; [
