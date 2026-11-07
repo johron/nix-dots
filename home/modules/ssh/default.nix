@@ -22,6 +22,20 @@
       path = "${config.home.homeDirectory}/.ssh/keys/moholt-janitor";
       mode = "0600";
     };
+
+    "moholt/public_ip" = { };
+  };
+
+  sops.templates."ssh-moholt-pub" = {
+    mode = "0600";
+    content = ''
+      Host moholt-pub ${config.sops.placeholder."moholt/public_ip"}
+        HostName ${config.sops.placeholder."moholt/public_ip"}
+        User janitor
+        Port 5959
+        IdentityFile ${config.sops.secrets."ssh/moholt-janitor".path}
+        IdentitiesOnly yes
+    '';
   };
 
   programs.ssh = {
@@ -30,6 +44,9 @@
     extraConfig = ''
       IdentitiesOnly yes
     '';
+
+      includes = [ config.sops.templates."ssh-moholt-pub".path
+      ];
 
     matchBlocks = {
       "github.com" = {
@@ -65,22 +82,6 @@
         hostname = "192.168.0.150";
         user = "janitor";
         port = 22;
-        identityFile = config.sops.secrets."ssh/moholt-janitor".path;
-        identitiesOnly = true;
-      };
-
-      "moholt-pub" = {
-        hostname = "109.108.211.77";
-        user = "janitor";
-        port = 5959;
-        identityFile = config.sops.secrets."ssh/moholt-janitor".path;
-        identitiesOnly = true;
-      };
-
-      "109.108.211.77" = {
-        hostname = "109.108.211.77";
-        user = "janitor";
-        port = 5959;
         identityFile = config.sops.secrets."ssh/moholt-janitor".path;
         identitiesOnly = true;
       };
