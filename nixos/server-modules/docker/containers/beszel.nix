@@ -11,6 +11,10 @@
     TOKEN=${config.sops.placeholder.beszel_token}
   '';
 
+  environment.systemPackages = with pkgs; [
+    smartmontools
+  ]
+
   # Runtime
   virtualisation.podman = {
     enable = true;
