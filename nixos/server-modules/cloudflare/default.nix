@@ -1,6 +1,12 @@
-{ config, pkgs, ... }: {
-  # Keep pkgs.cloudflared installed system-wide
+{ config, pkgs, ... }:
+
+{
   environment.systemPackages = [ pkgs.cloudflared ];
+
+  sops.secrets."cloudflare/tunnel_token" = { };
+  sops.templates."cloudflare-tunnel.env".content = ''
+    TUNNEL_TOKEN=${config.sops.placeholder."cloudflare/tunnel_token"}
+  '';
 
   systemd.services.cloudflared-tunnel = {
     description = "Cloudflare Tunnel (Dashboard Managed)";
@@ -9,7 +15,7 @@
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      EnvironmentFile = "/var/lib/cloudflare/tunnel.env";
+      EnvironmentFile = config.sops.templates."cloudflare-tunnel.env".path;
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token \"$TUNNEL_TOKEN\"'";
       StandardOutput = "journal";
       StandardError = "journal";
