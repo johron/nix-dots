@@ -15,18 +15,15 @@ let
     RUN corepack enable
     WORKDIR /app
 
-    # Dependencies (cached as long as the lockfile is unchanged)
     FROM base AS deps
     COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
     RUN pnpm install --frozen-lockfile
 
-    # Build
     FROM base AS build
     COPY --from=deps /app/node_modules ./node_modules
     COPY . .
     RUN node_modules/.bin/next build
 
-    # Runtime
     FROM node:22-alpine AS run
     RUN apk add --no-cache libc6-compat
     ENV NODE_ENV=production \
