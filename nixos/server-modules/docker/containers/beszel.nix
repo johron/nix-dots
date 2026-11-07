@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     smartmontools
-  ];
+  ]
 
   # Runtime
   virtualisation.podman = {
@@ -105,8 +105,6 @@
     log-driver = "journald";
     extraOptions = [
       "--network=host"
-      "--device=/dev/sda:/dev/sda"
-      "--device=/dev/sdb:/dev/sdb"
       "--privileged"
     ];
   };
