@@ -11,6 +11,6 @@
 
   sops = {
     defaultSopsFile = ./secrets.enc.yaml;
-    age.keyFile = "/home/johron/.config/sops/age/keys.txt";
+    age.keyFile = "/opt/sops/age/keys.txt";
   };
 }
