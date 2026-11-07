@@ -9,12 +9,8 @@
     pkgs.sops
   ];
 
-  environment.variables = {
-    SOPS_AGE_KEY_FILE = "/opt/sops/age/keys.txt";
-  };
-
   sops = {
     defaultSopsFile = ../../../secrets.yaml;
-    age.keyFile = "/opt/sops/age/keys.txt";
+    age.keyFile = "~/sops/age/keys.txt";
   };
 }
