@@ -87,7 +87,9 @@
     image = "henrygd/beszel-agent:latest";
     environment = {
       "HUB_URL" = "http://localhost:8090";
+      KEY = lib.trim (builtins.readFile config.sops.secrets.beszel_key.path);
       LISTEN = "/beszel_socket/beszel.sock";
+      TOKEN = lib.trim (builtins.readFile config.sops.secrets.beszel_token.path);
     };
     volumes = [
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
@@ -97,8 +99,6 @@
     log-driver = "journald";
     extraOptions = [
       "--network=host"
-      "--env=KEY=$(tr -d '\\n' < ${config.sops.secrets.beszel_key.path})"
-      "--env=TOKEN=$(tr -d '\\n' < ${config.sops.secrets.beszel_token.path})"
     ];
   };
   systemd.services."podman-beszel-agent" = {
