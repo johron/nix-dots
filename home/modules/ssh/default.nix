@@ -92,4 +92,22 @@
     chmod 700 "${config.home.homeDirectory}/.ssh"
     chmod 700 "${config.home.homeDirectory}/.ssh/keys"
   '';
+
+  home.file = {
+    ".ssh/keys/github-johron.pub".text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN+qZbeUx9eFm/ZAeABAJP276dN1yRw4uLZIkSB4sNfa johanhrong@icloud.com
+    '';
+    ".ssh/keys/codeberg-johron.pub".text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtrY2ArMsPo0PUj35EbnF4S28kOfYr5+3MRtDULFeCJ johron@straume
+    '';
+    ".ssh/keys/ntnu-github-johanhr.pub".text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPebyNcvVBwSauBHyLlrC43jBIfrdzzxGkmj5p1h1NAb johanhr@stud.ntnu.no
+    '';
+    ".ssh/keys/forgejo-johron.pub".text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICC3ti/G1y+Zh2uVKkSEJrYgxsQWyLUSZDEyf71bG8ps johanhrong@icloud.com
+    '';
+    ".ssh/keys/moholt-janitor.pub".text = ''
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAeqt18TNlmeqMAPP+Pkb5EGpU9D1RBcyV71/NNI3HQ johron@ideapad
+    '';
+  };
 }

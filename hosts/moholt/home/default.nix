@@ -9,4 +9,8 @@
 
     ../../../home/modules/apps/fish
   ];
+
+  home.file.".ssh/authorized_keys".text = lib.concatStringsSep "\n" [
+    config.home.file.".ssh/keys/moholt-janitor.pub".text
+  ];
 }
