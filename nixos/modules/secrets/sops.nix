@@ -9,8 +9,8 @@
     pkgs.sops
   ];
 
-  # sops = {
-  #   defaultSopsFile = ../../../secrets/secrets.enc.yaml;
-  #   age.keyFile = "/home/johron/.config/sops/age/keys.txt";
-  # };
+  sops = {
+    defaultSopsFile = ./secrets.enc.yaml;
+    age.keyFile = "/home/johron/.config/sops/age/keys.txt";
+  };
 }

@@ -3,6 +3,11 @@
 { pkgs, lib, config, ... }:
 
 {
+  sops.secrets.beszel-agent-key = {
+    path = "/run/secrets/beszel-agent-key";
+    mode = "0400";
+  };
+
   # Runtime
   virtualisation.podman = {
     enable = true;
@@ -76,10 +81,10 @@
     image = "henrygd/beszel-agent:latest";
     environment = {
       "HUB_URL" = "http://localhost:8090";
-      "KEY" = "<key>";
-      "LISTEN" = "/beszel_socket/beszel.sock";
-      "TOKEN" = "<token>";
-    };
+      KEY = lib.trim (builtins.readFile config.sops.secrets.beszel-key.path);
+      LISTEN = "/beszel_socket/beszel.sock";
+      TOKEN = lib.trim (builtins.readFile config.sops.secrets.beszel-token.path);
+  };
     volumes = [
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
       "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
