@@ -1,0 +1,12 @@
+keys:
+  # - &straume age1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  - &ono age1lg9nqulatrzjlwr9dlcxx28n47rfdvmum65snmrapq6rxf97uqpqqcf2ah
+  - &moholt age1efryw56qlwewwv5af2hjmsyuf2y06dy28q3ur3u72pd92nekq9usc83wle
+
+creation_rules:
+  - path_regex: secrets\.yaml$
+    key_groups:
+      - age:
+          # - *straume
+          - *ono
+          - *moholt

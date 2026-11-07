@@ -1,6 +1,10 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  imports = [
+    ../../modules/secrets/sops.nix
+  ];
+
   boot.kernelPackages = pkgs.linuxPackages;
 
   nixpkgs.config.allowUnfree = true;

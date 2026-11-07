@@ -3,11 +3,24 @@
 { pkgs, lib, config, ... }:
 
 {
+  sops.secrets.beszel_key = { };
+  sops.secrets.beszel_token = { };
+
+  sops.templates."beszel-agent.env".content = ''
+    KEY=${config.sops.placeholder.beszel_key}
+    TOKEN=${config.sops.placeholder.beszel_token}
+  '';
+
+  environment.systemPackages = with pkgs; [
+    smartmontools
+  ];
+
   # Runtime
   virtualisation.podman = {
     enable = true;
     autoPrune.enable = true;
     dockerCompat = true;
+    dockerSocket.enable = true;
   };
 
   # Enable container name DNS for all Podman networks.
@@ -18,6 +31,7 @@
   };
 
   systemd.tmpfiles.rules = [
+    "d /opt/docker-containers 0755 root root -"
     "d /opt/docker-containers/beszel 0755 root root -"
     "d /opt/docker-containers/beszel/data 0755 root root -"
     "d /opt/docker-containers/beszel/socket 0755 root root -"
@@ -48,8 +62,17 @@
   systemd.services."podman-beszel" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
+      ExecStartPre = [
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/data"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/socket"
+      ];
     };
+    wants = [
+      "systemd-tmpfiles-setup.service"
+    ];
     after = [
+      "local-fs.target"
+      "systemd-tmpfiles-setup.service"
       "podman-network-beszel_default.service"
     ];
     requires = [
@@ -66,30 +89,38 @@
     image = "henrygd/beszel-agent:latest";
     environment = {
       "HUB_URL" = "http://localhost:8090";
-      "KEY" = "<key>";
-      "LISTEN" = "/beszel_socket/beszel.sock";
-      "TOKEN" = "<token>";
+      LISTEN = "/beszel_socket/beszel.sock";
     };
+    environmentFiles = [ config.sops.templates."beszel-agent.env".path ];
     volumes = [
-      "/opt/dockercontainers/beszel/agent_data:/var/lib/beszel-agent:rw"
-      "/opt/dockercontainers/beszel/socket:/beszel_socket:rw"
+      "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
+      "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
       "/var/run/docker.sock:/var/run/docker.sock:ro"
+      
+      "${pkgs.smartmontools}/bin/smartctl:/usr/sbin/smartctl:ro"
+      
+      "/run/current-system/sw/lib:/lib/host-libs:ro"
+      "/nix/store:/nix/store:ro"
     ];
     log-driver = "journald";
     extraOptions = [
       "--network=host"
+      "--privileged"
     ];
   };
   systemd.services."podman-beszel-agent" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
+      ExecStartPre = [
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/agent_data"
+        "${pkgs.coreutils}/bin/mkdir -p /opt/docker-containers/beszel/socket"
+      ];
     };
-    partOf = [
-      "podman-compose-beszel-root.target"
-    ];
-    wantedBy = [
-      "podman-compose-beszel-root.target"
-    ];
+    wants = [ "systemd-tmpfiles-setup.service" ];
+    after = [ "local-fs.target" "systemd-tmpfiles-setup.service" "podman.socket" ];
+    requires = [ "podman.socket" ];
+    partOf = [ "podman-compose-beszel-root.target" ];
+    wantedBy = [ "podman-compose-beszel-root.target" ];
   };
 
   # Networks

@@ -47,6 +47,7 @@
     cifs-utils
     webcamoid
     slack
+    rage
 
     inputs.something-x.packages.${pkgs.system}.something-x
     inputs.onthespot.packages.${pkgs.stdenv.hostPlatform.system}.default
