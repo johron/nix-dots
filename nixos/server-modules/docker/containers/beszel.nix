@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     smartmontools
-  ]
+  ];
 
   # Runtime
   virtualisation.podman = {
