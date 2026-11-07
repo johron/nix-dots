@@ -20,7 +20,6 @@ in
   home.activation.installAuthorizedKeys = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     run mkdir -p "$HOME/.ssh"
     run chmod 700 "$HOME/.ssh"
-    # Remove any leftover symlink, then write a real file
     run rm -f "$HOME/.ssh/authorized_keys"
     run ${pkgs.coreutils}/bin/install -m 600 ${authorizedKeys} "$HOME/.ssh/authorized_keys"
   '';
