@@ -45,7 +45,8 @@
       IdentitiesOnly yes
     '';
 
-      includes = [ config.sops.templates."ssh-moholt-pub".path
+      includes = [
+        config.sops.templates."ssh-moholt-pub".path
       ];
 
     matchBlocks = {

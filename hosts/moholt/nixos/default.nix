@@ -19,7 +19,7 @@ in
     ../../../nixos/server-modules/docker/containers/snapotter.nix
     ../../../nixos/server-modules/docker/containers/forgejo.nix
     ../../../nixos/server-modules/docker/containers/beszel.nix
-    # ../../../nixos/server-modules/docker/containers/johron-no.nix
+    ../../../nixos/server-modules/docker/containers/johron-no.nix
 
     ../../../nixos/server-modules/cloudflare
   ];
