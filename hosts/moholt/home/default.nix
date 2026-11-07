@@ -10,7 +10,13 @@
     ../../../home/modules/apps/fish
   ];
 
-  home.file.".ssh/authorized_keys".text = lib.concatStringsSep "\n" [
-    config.home.file.".ssh/keys/moholt-janitor.pub".text
-  ];
+  home.file.".ssh/authorized_keys" = {
+    text = lib.concatStringsSep "\n" [
+      config.home.file.".ssh/keys/moholt-janitor.pub".text
+    ];
+  };
+
+  home.activation.setSshAuthorizedKeysPermissions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    chmod 600 ${config.home.homeDirectory}/.ssh/authorized_keys
+  '';
 }
