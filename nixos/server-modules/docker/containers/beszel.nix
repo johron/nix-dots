@@ -107,7 +107,8 @@
       ];
     };
     wants = [ "systemd-tmpfiles-setup.service" ];
-    after = [ "local-fs.target" "systemd-tmpfiles-setup.service" ];
+    after = [ "local-fs.target" "systemd-tmpfiles-setup.service" "podman.socket" ];
+    requires = [ "podman.socket" ];
     partOf = [ "podman-compose-beszel-root.target" ];
     wantedBy = [ "podman-compose-beszel-root.target" ];
   };
