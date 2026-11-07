@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, host, ... }:
 
 {
   imports = [
@@ -11,6 +11,6 @@
 
   sops = {
     defaultSopsFile = ../../../secrets.yaml;
-    age.keyFile = "~/sops/age/keys.txt";
+    age.keyFile = "${config.users.users.${host.user}.home}/sops/age/keys.txt";
   };
 }
