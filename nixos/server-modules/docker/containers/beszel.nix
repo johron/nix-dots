@@ -96,10 +96,18 @@
       "/opt/docker-containers/beszel/agent_data:/var/lib/beszel-agent:rw"
       "/opt/docker-containers/beszel/socket:/beszel_socket:rw"
       "/var/run/docker.sock:/var/run/docker.sock:ro"
+      
+      "${pkgs.smartmontools}/bin/smartctl:/usr/sbin/smartctl:ro"
+      
+      "/run/current-system/sw/lib:/lib/host-libs:ro"
+      "/nix/store:/nix/store:ro"
     ];
     log-driver = "journald";
     extraOptions = [
       "--network=host"
+      "--device=/dev/sda:/dev/sda"
+      "--device=/dev/sdb:/dev/sdb"
+      "--privileged"
     ];
   };
   systemd.services."podman-beszel-agent" = {
