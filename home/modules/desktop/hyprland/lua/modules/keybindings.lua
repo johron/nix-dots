@@ -3,7 +3,7 @@ local secMod = "SUPER"
 
 local terminal    = "alacritty"
 local fileManager = "dfiles"
-local editor = "nvim"
+local editor = "hx"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))

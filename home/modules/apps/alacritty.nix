@@ -34,6 +34,12 @@
           style = "Bold Italic";
         };
       };
+      keyboard.bindings = [
+        {
+          key = "F12";
+          chars = builtins.fromJSON ''"\u001b"'';
+        }
+      ];
       colors = { # Enfocado Dark colorscheme ++
         primary = {
           background =  "#090603"; # modified
