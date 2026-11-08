@@ -7,6 +7,9 @@
     ../../../home/modules/desktop/hyprland
     ./hyprland.nix
 
+    ../../../home/modules/secrets/sops.nix
+    ../../../home/modules/ssh
+
     ../../../home/modules/apps/alacritty.nix
     ../../../home/modules/apps/firefox.nix
     ../../../home/modules/apps/sonora.nix
