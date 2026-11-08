@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   noArrows = {
@@ -73,12 +78,21 @@ in
           insert = "bar";
           select = "underline";
         };
+        auto-save = {
+          focus-lost = true;
+          after-delay = {
+            enable = true;
+          };
+        };
       };
 
       keys = {
-        normal = noArrows // jklo_normal // {
-          h = "no_op";
-        };
+        normal =
+          noArrows
+          // jklo_normal
+          // {
+            h = "no_op";
+          };
         select = noArrows // jklo_select // { h = "no_op"; };
         insert = noArrows;
       };
@@ -118,7 +132,10 @@ in
         {
           name = "json";
           language-servers = [
-            { name = "vscode-json-language-server"; except-features = [ "format" ]; }
+            {
+              name = "vscode-json-language-server";
+              except-features = [ "format" ];
+            }
             "biome"
           ];
           auto-format = true;
@@ -126,7 +143,10 @@ in
         {
           name = "css";
           language-servers = [
-            { name = "vscode-css-language-server"; except-features = [ "format" ]; }
+            {
+              name = "vscode-css-language-server";
+              except-features = [ "format" ];
+            }
             "biome"
           ];
           auto-format = true;
@@ -147,11 +167,17 @@ in
         }
         {
           name = "python";
-          language-servers = [ "basedpyright" "ruff" ];
+          language-servers = [
+            "basedpyright"
+            "ruff"
+          ];
           auto-format = true;
           formatter = {
             command = "ruff";
-            args = [ "format" "-" ];
+            args = [
+              "format"
+              "-"
+            ];
           };
         }
         {
