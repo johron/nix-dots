@@ -9,10 +9,12 @@
       source ${./nix_tools.fish}
       direnv hook fish | source
 
-      if status is-interactive
-          if not set -q TMUX
-              exec tmux new-session -A -s main
-          end
+      if not test "$hostname" = "moholt"
+        if status is-interactive
+            if not set -q TMUX
+                exec tmux new-session -A -s main
+            end
+        end
       end
     '';
 
@@ -36,7 +38,7 @@
 
       fish_prompt = ''
         set -g fish_prompt_pwd_dir_length 0
-        
+
         set -l primary_color "brblue"
         set -l pwd_color "blue"
 
