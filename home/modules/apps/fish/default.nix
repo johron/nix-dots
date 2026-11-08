@@ -8,6 +8,12 @@
       source ${./project_cd.fish}
       source ${./nix_tools.fish}
       direnv hook fish | source
+
+      if status is-interactive
+          if not set -q TMUX
+              exec tmux new-session -A -s main
+          end
+      end
     '';
 
     functions = {

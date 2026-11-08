@@ -5,6 +5,8 @@
     gdb
     onefetch
     graphite-cli
+    tmux
+    live-server
   ];
 
   programs.direnv = {
