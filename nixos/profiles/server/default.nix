@@ -7,6 +7,7 @@
     curl
     rage
     unzip
+    tmux
   ];
   
   programs.fish.enable = true;
