@@ -11,9 +11,8 @@
 
       if not test "$hostname" = "moholt"
         if status is-interactive
-            if not set -q TMUX
-                exec tmux new-session -A -s main
-            end
+          and not set -q TMUX
+          exec tmux new-session
         end
       end
     '';
