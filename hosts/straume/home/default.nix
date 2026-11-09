@@ -15,5 +15,7 @@
     ../../../home/modules/apps/sonora.nix
     ../../../home/modules/apps/fish
     ../../../home/modules/apps/helix
+    ../../../home/modules/apps/tmux
+
   ];
 }

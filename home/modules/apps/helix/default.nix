@@ -13,20 +13,6 @@ let
     right = "no_op";
   };
 
-  jklo_normal = {
-    j = "move_char_left";
-    l = "move_visual_line_up";
-    k = "move_visual_line_down";
-    "ø" = "move_char_right";
-  };
-
-  jklo_select = {
-    j = "extend_char_left";
-    l = "extend_visual_line_up";
-    k = "extend_visual_line_down";
-    "ø" = "extend_char_right";
-  };
-
   # JS/TS-family: typescript-language-server for intelligence, biome for formatting/lint
   webLangServers = [
     {
@@ -87,14 +73,12 @@ in
       };
 
       keys = {
-        normal =
-          noArrows
-          // jklo_normal
-          // {
-            h = "no_op";
-          };
-        select = noArrows // jklo_select // { h = "no_op"; };
-        insert = noArrows;
+        insert = {
+          "C-h" = "move_char_left";
+          "C-j" = "move_line_down";
+          "C-k" = "move_line_up";
+          "C-l" = "move_char_right";
+        };
       };
     };
 
