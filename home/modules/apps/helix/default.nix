@@ -55,9 +55,12 @@ in
     ];
 
     settings = {
-      theme = "autumn_night_transparent";
+      theme = "darcula_intellij";
 
       editor = {
+        default-yank-register = "+";
+        line-number = "relative";
+
         lsp.display-inlay-hints = true;
         cursor-shape = {
           normal = "block";
@@ -184,9 +187,45 @@ in
     };
 
     themes = {
-      autumn_night_transparent = {
-        "inherits" = "autumn_night";
+      darcula_intellij = {
         "ui.background" = { };
+        "ui.text" = "#d4d4d4";
+        "ui.linenr" = "#404040";
+        "ui.linenr.selected" = "#d4d4d4";
+        "ui.selection" = {
+          bg = "#3a3d41";
+        };
+        "ui.cursorline.primary" = {
+          bg = "#2A2A2B";
+        };
+
+        "comment" = "#808080";
+        "keyword" = {
+          fg = "#CC7832";
+          modifiers = [ "bold" ];
+        };
+        "keyword.control" = {
+          fg = "#CC7832";
+          modifiers = [ "bold" ];
+        };
+        "operator" = "#A9B7C6";
+
+        "function" = "#FFC66D";
+        "function.macro" = "#CC7832";
+
+        "string" = "#6A8759";
+        "constant" = "#CC7832";
+        "constant.numeric" = "#6897BB";
+
+        "variable" = "#9876AA";
+        "variable.other.member" = "#9876AA";
+        "variable.parameter" = "#A9B7C6";
+
+        "type" = "#4EC9B0";
+        "namespace" = "#A9B7C6";
+
+        "tag" = "#FFC66D";
+        "attribute" = "#BABABA";
       };
     };
   };
