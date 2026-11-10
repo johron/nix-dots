@@ -63,12 +63,21 @@ in
 
       nil
       nixfmt
+
+      steel-language-server
     ];
 
     plugins = {
       inherit (pkgs.helixPlugins)
         oil-hx
         steel-pty # include for libs..
+        case-hx
+        # cliff-hx
+        scooter-hx
+        scopeline-hx
+        # vista-hx
+        who-hx
+        yank-flash-hx
         ;
 
       "steel-pty-fish" = pkgs.fetchFromGitHub {
@@ -133,6 +142,10 @@ in
         };
 
         rust-analyzer.config.check.command = "clippy";
+
+        steel-language-server = {
+          command = "steel-language-server";
+        };
       };
 
       language = [
@@ -207,6 +220,26 @@ in
           language-servers = [ "nil" ];
           auto-format = true;
           formatter.command = lib.getExe pkgs.nixfmt;
+        }
+
+        {
+          name = "steel";
+          scope = "source.steel";
+          injection-regex = "steel";
+          file-types = [
+            "scm"
+            "steel"
+          ];
+          roots = [
+            "helix.scm"
+            "init.scm"
+          ];
+          comment-token = ";";
+          language-servers = [ "steel-language-server" ];
+          indent = {
+            tab-width = 2;
+            unit = "  ";
+          };
         }
       ];
     };
