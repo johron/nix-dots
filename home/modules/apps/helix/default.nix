@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
@@ -29,8 +30,18 @@ let
   };
 in
 {
+  imports = [ inputs.helix-plugins.homeManagerModules.default ];
+
+  xdg.configFile."helix/scm" = {
+    source = ./scm;
+    recursive = true;
+  };
+
+  xdg.configFile."helix/init.scm".source = ./init.scm;
+
   programs.helix = {
     enable = true;
+    package = pkgs.steelix;
 
     extraPackages = with pkgs; [
       lua-language-server
@@ -53,6 +64,25 @@ in
       nil
       nixfmt
     ];
+
+    plugins = {
+      inherit (pkgs.helixPlugins)
+        oil-hx
+        ;
+
+      "steel-pty-fish" = pkgs.fetchFromGitHub {
+        owner = "johron";
+        repo = "steel-pty-fish";
+        rev = "6f2d4c970359dc36c04abf992ab5e95bb1866788";
+        hash = "sha256-uXZxwgWKZD7QGIHcVIm337Cv+4TirHfQ4pF9gqJ79OI=";
+      };
+    };
+
+    # [
+    #   hx-tmux-navigator
+    #   steel-pty
+    #   oil-hx
+    # ];
 
     settings = {
       theme = "darcula_intellij";

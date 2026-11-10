@@ -22,6 +22,10 @@
     onthespot.url = "github:johron/onthespot";
     sonora.url = "github:sonorahq/sonora";
     sops-nix.url = "github:Mic92/sops-nix";
+    helix-plugins = {
+      url = "github:maxschipper/helix-plugins-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     dux = {
       url = "github:duxlabs-dev/dux-shell/stable";
@@ -48,6 +52,8 @@
       lib = inputs.nixpkgs.lib;
       hosts = import ./config/hosts.nix;
 
+      overlays = [ inputs.helix-plugins.overlays.default ];
+
       mkHomeConfigurations =
         {
           host,
@@ -61,11 +67,13 @@
             config = {
               allowUnfree = true;
             };
+            inherit overlays;
           };
           extraSpecialArgs = { inherit inputs host; };
           modules = [
             ./hosts/${host.dir}/home
-          ] ++ modules;
+          ]
+          ++ modules;
         };
 
       mkNixOSConfigurations =
@@ -74,7 +82,7 @@
           nixpkgs,
           home-manager,
           modules ? [ ],
-          overlays ? [],
+          overlays ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           system = host.arch;
@@ -94,7 +102,8 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users."${host.user}" = import ./hosts/${host.dir}/home;
             }
-          ] ++ modules;
+          ]
+          ++ modules;
         };
       mkISOConfiguration = # Build with: nix build .#nixosConfigurations.<hostname>-iso.config.system.build.isoImage
         {
@@ -111,36 +120,29 @@
     in
     {
       nixosConfigurations =
-        lib.mapAttrs
-          (name: host:
-            mkNixOSConfigurations {
-              inherit host;
-              nixpkgs = inputs.nixpkgs;
-              home-manager = inputs.home-manager;
-            }
-          )
-          hosts
-        // lib.mapAttrs'
-          (name: host:
-            lib.nameValuePair
-              "${host.hostname}-iso"
-              (mkISOConfiguration {
-                inherit host;
-                nixpkgs = inputs.nixpkgs;
-              })
-          )
-          hosts;
+        lib.mapAttrs (
+          name: host:
+          mkNixOSConfigurations {
+            inherit host overlays;
+            nixpkgs = inputs.nixpkgs;
+            home-manager = inputs.home-manager;
+          }
+        ) hosts
+        // lib.mapAttrs' (
+          name: host:
+          lib.nameValuePair "${host.hostname}-iso" (mkISOConfiguration {
+            inherit host;
+            nixpkgs = inputs.nixpkgs;
+          })
+        ) hosts;
 
-      homeConfigurations = lib.mapAttrs'
-        (name: host:
-          lib.nameValuePair
-            "${host.user}@${host.hostname}"
-            (mkHomeConfigurations {
-              inherit host;
-              nixpkgs = inputs.nixpkgs;
-              home-manager = inputs.home-manager;
-            })
-        )
-        hosts;
+      homeConfigurations = lib.mapAttrs' (
+        name: host:
+        lib.nameValuePair "${host.user}@${host.hostname}" (mkHomeConfigurations {
+          inherit host;
+          nixpkgs = inputs.nixpkgs;
+          home-manager = inputs.home-manager;
+        })
+      ) hosts;
     };
 }
