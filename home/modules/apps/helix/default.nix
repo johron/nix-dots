@@ -68,6 +68,7 @@ in
     plugins = {
       inherit (pkgs.helixPlugins)
         oil-hx
+        steel-pty # include for libs..
         ;
 
       "steel-pty-fish" = pkgs.fetchFromGitHub {
@@ -77,12 +78,6 @@ in
         hash = "sha256-uXZxwgWKZD7QGIHcVIm337Cv+4TirHfQ4pF9gqJ79OI=";
       };
     };
-
-    # [
-    #   hx-tmux-navigator
-    #   steel-pty
-    #   oil-hx
-    # ];
 
     settings = {
       theme = "darcula_intellij";
