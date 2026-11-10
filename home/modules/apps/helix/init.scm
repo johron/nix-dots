@@ -10,3 +10,4 @@
 
 (require "scm/oil.scm")
 (require "scm/steel-pty-term.scm")
+(require "scm/who.scm")
