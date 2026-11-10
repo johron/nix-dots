@@ -1,27 +1,4 @@
 (require "oil/oil.scm")
-; (require "helix/keymaps.scm")
-
-; (define oil-keymaps
-;   (hash
-;     "normal"
-;     (hash
-;       "-"  ":oil-up"
-;       "I"  ":oil-toggle-git-ignored"
-;       "X"  ":oil-cut"
-;       "c"  ":oil-clipboard-clear"
-;       "h"  ":oil-toggle-hidden"
-;       "p"  ":oil-paste"
-;       "q"  ":oil-close"
-;       "ret" ":oil-enter"
-;       "w"  ":oil-save"
-;       "y"  ":oil-yank")))
-
-; (define oil-keybindings (deep-copy-global-keybindings))
-; (merge-keybindings oil-keybindings oil-keymaps)
-; (set-global-buffer-or-extension-keymap
-;   (hash OIL-BUFFER-NAME oil-keybindings))
-
-
 (require "helix/keymaps.scm")
 
 (keymap (global)

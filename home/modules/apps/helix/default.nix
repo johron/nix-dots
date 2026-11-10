@@ -145,6 +145,9 @@ in
 
         steel-language-server = {
           command = "steel-language-server";
+          environment = {
+            STEEL_HOME = "~/.local/share/steel";
+          };
         };
       };
 
@@ -223,23 +226,9 @@ in
         }
 
         {
-          name = "steel";
-          scope = "source.steel";
-          injection-regex = "steel";
-          file-types = [
-            "scm"
-            "steel"
-          ];
-          roots = [
-            "helix.scm"
-            "init.scm"
-          ];
-          comment-token = ";";
+          name = "scheme";
+          auto-format = true;
           language-servers = [ "steel-language-server" ];
-          indent = {
-            tab-width = 2;
-            unit = "  ";
-          };
         }
       ];
     };
