@@ -8,5 +8,5 @@
         (t ":open-term")
         (n ":new-term")
         (s ":switch-term")
-        (h ":hide-term")
+        (h ":hide-terminal")
         (q ":kill-active-terminal")))))
