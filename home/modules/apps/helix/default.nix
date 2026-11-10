@@ -17,7 +17,7 @@ let
   # JS/TS-family: typescript-language-server for intelligence, biome for formatting/lint
   webLangServers = [
     {
-      name = "typescript-language-server";
+      name = "${lib.getExe pkgs.typescript-language-server}";
       except-features = [ "format" ];
     }
     "biome"
@@ -39,8 +39,14 @@ in
 
   xdg.configFile."helix/init.scm".source = ./init.scm;
 
+  home.packages = with pkgs; [
+    typescript-language-server
+    biome
+  ];
+
   programs.helix = {
     enable = true;
+
     package = pkgs.steelix;
 
     extraPackages = with pkgs; [
@@ -74,7 +80,7 @@ in
         case-hx
         # cliff-hx
         scooter-hx
-        scopeline-hx
+        # scopeline-hx
         # vista-hx
         who-hx
         yank-flash-hx
@@ -122,7 +128,7 @@ in
     languages = {
       language-server = {
         biome = {
-          command = "biome";
+          command = "${lib.getExe pkgs.biome}";
           args = [ "lsp-proxy" ];
         };
 

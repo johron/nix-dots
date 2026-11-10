@@ -3,7 +3,7 @@
 (require "case.hx/case.scm")
 ; (require "cliff/cliff.scm")
 (require "scooter/scooter.scm")
-(require "scopeline/scopeline.scm")
+; (require "scopeline/scopeline.scm")
 ; (require "vista/vista.scm")
 (require "who/who.scm")
 (require "yank-flash/yank-flash.scm")
@@ -11,3 +11,4 @@
 (require "scm/oil.scm")
 (require "scm/steel-pty-term.scm")
 (require "scm/who.scm")
+; (require "scm/scopeline.scm")
