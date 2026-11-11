@@ -8,6 +8,7 @@
 {
   programs.tmux = {
     enable = true;
+    terminal = "tmux-256color";
     extraConfig = ''
       bind | split-window -h -c "#{pane_current_path}"
       bind - split-window -v -c "#{pane_current_path}"
@@ -16,8 +17,8 @@
 
       bind c new-window -c "#{pane_current_path}"
 
-      set -as terminal-features ",alacritty:RGB,alacritty:Sync,tmux-256color:Sync"
-      set -ga terminal-overrides ",*256col*:Tc,*:Sync=\\E[?2026h:\\E[?2026l"
+      set -as terminal-features ",alacritty:RGB:sync"
+      set -ga terminal-overrides ",*256col*:Tc"
       set -g mouse on
     '';
   };

@@ -82,7 +82,6 @@ in
         scooter-hx
         # scopeline-hx
         # vista-hx
-        who-hx
         yank-flash-hx
         ;
 
@@ -116,6 +115,9 @@ in
       };
 
       keys = {
+        normal = {
+          space.B = ":blame-line";
+        };
         insert = {
           "C-h" = "move_char_left";
           "C-j" = "move_line_down";
