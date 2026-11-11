@@ -20,3 +20,21 @@
           (x ":oil-cut")
           (p ":oil-paste")
           (c ":oil-clipboard-clear"))))))
+
+(define oil-keymaps
+  (hash
+    "normal"
+    (hash
+      "-"  ":oil-up"
+      "I"  ":oil-toggle-git-ignored"
+      "X"  ":oil-cut"
+      "c"  ":oil-clipboard-clear"
+      "h"  ":oil-toggle-hidden"
+      "p"  ":oil-paste"
+      "ret" ":oil-enter"
+      "y"  ":oil-yank")))
+
+(define oil-keybindings (deep-copy-global-keybindings))
+(merge-keybindings oil-keybindings oil-keymaps)
+(set-global-buffer-or-extension-keymap
+  (hash OIL-BUFFER-NAME oil-keybindings))
