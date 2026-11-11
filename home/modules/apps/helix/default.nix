@@ -99,6 +99,7 @@ in
       editor = {
         default-yank-register = "+";
         line-number = "relative";
+        bufferline = "always";
 
         lsp.display-inlay-hints = true;
         cursor-shape = {
