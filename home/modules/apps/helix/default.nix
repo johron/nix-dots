@@ -71,6 +71,8 @@ in
       nixfmt
 
       steel-language-server
+
+      prisma-language-server
     ];
 
     plugins = {
@@ -157,6 +159,16 @@ in
             STEEL_HOME = "~/.local/share/steel";
           };
         };
+
+        prisma-language-server = {
+          command = "prisma-language-server";
+          args = [ "--stdio" ];
+          config = {
+            prisma = {
+              enableDiagnostics = true;
+            };
+          };
+        };
       };
 
       language = [
@@ -237,6 +249,11 @@ in
           name = "scheme";
           auto-format = true;
           language-servers = [ "steel-language-server" ];
+        }
+        {
+          name = "prisma";
+          auto-format = true;
+          language-servers = [ "prisma-language-server" ];
         }
       ];
     };
