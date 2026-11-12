@@ -19,6 +19,7 @@
 
       set -as terminal-features ",alacritty:RGB:sync"
       set -ga terminal-overrides ",*256col*:Tc"
+      set -g default-terminal "tmux-256color"
       set -g mouse on
     '';
   };

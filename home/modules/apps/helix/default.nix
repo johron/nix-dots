@@ -102,6 +102,7 @@ in
         default-yank-register = "+";
         line-number = "relative";
         bufferline = "always";
+        cursorline = true;
 
         lsp.display-inlay-hints = true;
         cursor-shape = {
@@ -262,8 +263,8 @@ in
     themes = {
       darcula_intellij = {
         palette = {
-          panel = "#1a1a1a";
-          panel_alt = "#141414";
+          panel = "#12100e";
+          panel_alt = "#0E0D0C";
           line = "#1f1f1f";
           sel = "#2a3550";
           menu_sel = "#33425f";
@@ -312,10 +313,10 @@ in
           bg = "sel";
         };
         "ui.cursorline.primary" = {
-          bg = "line";
+          bg = "panel_alt";
         };
         "ui.cursorline.secondary" = {
-          bg = "line";
+          bg = "panel";
         };
         "ui.cursor" = {
           modifiers = [ "reversed" ];
