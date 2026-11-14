@@ -14,19 +14,20 @@ let
     right = "no_op";
   };
 
-  # JS/TS-family: typescript-language-server for intelligence, biome for formatting/lint
-  webLangServers = [
-    {
-      name = "${lib.getExe pkgs.typescript-language-server}";
-      except-features = [ "format" ];
-    }
-    "biome"
-  ];
-
-  mkWebLang = name: {
+  mkWebLang = name: ext: {
     inherit name;
-    language-servers = webLangServers;
+    language-servers = [
+      "typescript-language-server"
+      "biome"
+    ];
     auto-format = true;
+    formatter = {
+      command = lib.getExe pkgs.biome;
+      args = [
+        "format"
+        "--stdin-file-path=stdin.${ext}"
+      ];
+    };
   };
 in
 {
@@ -73,6 +74,8 @@ in
       steel-language-server
 
       prisma-language-server
+
+      tailwindcss-language-server
     ];
 
     plugins = {
@@ -132,9 +135,24 @@ in
 
     languages = {
       language-server = {
+
+        typescript-language-server = {
+          command = lib.getExe pkgs.typescript-language-server;
+          args = [ "--stdio" ];
+          config = {
+            hostInfo = "helix";
+            disableAutomaticTypingAcquisition = true;
+            tsserver = {
+              path = "${pkgs.typescript}/lib/node_modules/typescript/lib/tsserver.js";
+              logDirectory = "/tmp/tsserver";
+            };
+          };
+        };
+
         biome = {
-          command = "${lib.getExe pkgs.biome}";
+          command = lib.getExe pkgs.biome;
           args = [ "lsp-proxy" ];
+          required-root-patterns = [ ];
         };
 
         ruff = {
@@ -173,10 +191,10 @@ in
       };
 
       language = [
-        (mkWebLang "javascript")
-        (mkWebLang "typescript")
-        (mkWebLang "jsx")
-        (mkWebLang "tsx")
+        (mkWebLang "javascript" "js")
+        (mkWebLang "typescript" "ts")
+        (mkWebLang "jsx" "jsx")
+        (mkWebLang "tsx" "tsx")
 
         {
           name = "json";
