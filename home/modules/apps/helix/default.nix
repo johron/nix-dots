@@ -83,7 +83,6 @@ in
         case-hx
         scooter-hx
         grove-hx
-        scopeline-hx
         ;
 
       "steel-pty-fish" = pkgs.fetchFromGitHub {
@@ -172,7 +171,7 @@ in
         steel-language-server = {
           command = "steel-language-server";
           environment = {
-            STEEL_HOME = "~/.local/share/steel";
+            STEEL_HOME = "${config.home.homeDirectory}/.local/share/steel";
           };
         };
 

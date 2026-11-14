@@ -1,6 +1,4 @@
 ;; scopeline.hx
-(require "scopeline/scopeline.scm")
-
 ;; steel-pty-fish.hx
 (require "steel-pty-fish/term.scm")
 (require "helix/keymaps.scm")
