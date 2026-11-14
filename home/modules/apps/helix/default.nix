@@ -83,11 +83,8 @@ in
         oil-hx
         steel-pty # include for libs..
         case-hx
-        # cliff-hx
         scooter-hx
-        # scopeline-hx
-        # vista-hx
-        yank-flash-hx
+        grove-hx
         ;
 
       "steel-pty-fish" = pkgs.fetchFromGitHub {
@@ -221,7 +218,7 @@ in
         {
           name = "python";
           language-servers = [
-            "basedpyright"
+            # "basedpyright"
             "ruff"
           ];
           auto-format = true;
