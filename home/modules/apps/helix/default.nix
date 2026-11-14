@@ -36,11 +36,6 @@ in
     ./darcula-intellij.nix
   ];
 
-  xdg.configFile."helix/scm" = {
-    source = ./scm;
-    recursive = true;
-  };
-
   xdg.configFile."helix/init.scm".source = ./init.scm;
 
   home.packages = with pkgs; [
@@ -88,6 +83,7 @@ in
         case-hx
         scooter-hx
         grove-hx
+        scopeline-hx
         ;
 
       "steel-pty-fish" = pkgs.fetchFromGitHub {
