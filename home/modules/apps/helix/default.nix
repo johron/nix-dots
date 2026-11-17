@@ -74,6 +74,8 @@ in
       prisma-language-server
 
       tailwindcss-language-server
+
+      prettier
     ];
 
     plugins = {
